@@ -8,13 +8,15 @@ import AP from '../../assets/Achievements/AP.jpeg';
 import SAT from '../../assets/Achievements/SAT.jpeg'; 
 import SIMUW from '../../assets/Achievements/SIMUW.jpeg'; 
 import CIMC from '../../assets/Achievements/CIMC.jpeg'; 
+import APScholar from '../../assets/Achievements/APScholar.jpeg'; 
 
 const Achievements = () => {
     const slideshow = [
         <Achievement image={AP} description="5 on 7 AP Exams"/>, 
         <Achievement image={SAT} description="1550 SAT, 800 on 2 SAT Subject Tests"/>,
         <Achievement image={CIMC} description="CIMC 2019 Group V Honour Roll"/>,
-        <Achievement image={SIMUW} description="SIMUW 2019 Invitee & Participant"/>
+        <Achievement image={SIMUW} description="SIMUW 2019 Invitee & Participant"/>,
+        <Achievement image={APScholar} description="AP Scholar with Distinction"/>,
     ];
     let [i, setIndexI] = useState(slideshow.length - 1); 
     let [j, setIndexJ] = useState(0); 
