@@ -1,0 +1,45 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Title {
+    font-weight: 800; 
+    font-size: 1.5em; 
+    text-align: center; 
+}
+
+.Image {
+    object-fit: cover;
+    height: 320px; 
+    width: 320px; 
+    background-size: cover; 
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+}
+
+.Overlay {
+    position: absolute; 
+    width: 320px; 
+    height: 320px; 
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA; 
+}
+  
+.Text {
+    width: 85%; 
+    line-height: 25px; 
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Container:hover .Overlay {
+    opacity: 0.9;
+}

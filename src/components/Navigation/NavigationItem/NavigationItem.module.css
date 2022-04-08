@@ -1,0 +1,22 @@
+.NavigationItem {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+
+.NavigationItem a {
+    color: #717171;
+    height: 100%;
+    padding: 12px 16px;
+    text-decoration: none; 
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+    transition: 0.25s; 
+    background-color: #0097fe;
+    color: white; 
+}

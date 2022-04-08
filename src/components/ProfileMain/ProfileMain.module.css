@@ -1,0 +1,42 @@
+.Container {
+    background-color: #5fa4bd;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.Image {
+    display: block; 
+    border-radius: 50%; 
+    border: 5px solid white; 
+    width: 375px; 
+}
+
+.TextContainer {
+    margin-left: 50px; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.FirstText {
+    color: white; 
+    font-size: 7.5em; 
+    font-weight: 900; 
+}
+
+.SecondText {
+    color: black; 
+    font-size: 1.5em; 
+}
+
+.DynamicText {
+    display: flex;
+    align-items: center;
+}
+
+.TypingBar {
+    background-color: white;
+    height: 7.5em; 
+    width: 5px; 
+    margin-left: 5px; 
+}

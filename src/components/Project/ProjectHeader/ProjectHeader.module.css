@@ -1,0 +1,24 @@
+.Header {
+    border-bottom: 2px solid #b8b8b8;  
+    display: flex; 
+    justify-content: space-between;
+    align-items: baseline; 
+    width: 1200px; 
+    margin: auto; 
+    margin-top: 200px; 
+    margin-bottom: 30px;
+}
+
+.Title {
+    font-size: 5em; 
+    font-weight: 900; 
+}
+
+.HeaderInfo {
+    display: flex; 
+    font-size: 1.15em; 
+}
+
+.Credits {
+    margin-right: 5px; 
+}
