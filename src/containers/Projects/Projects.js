@@ -70,37 +70,6 @@ class Projects extends Component {
                     credits="Jerry Zheng"
                     thinking="Creative Thinking | Critical and Reflective Thinking"
                 />
-                <Project 
-                    description={descriptionC}
-                    linkA="https://docs.google.com/document/d/18y2DqlsYkiZphES7Jhy-_Bdi6FsVWMSARt7bSI6eURs/edit?usp=sharing"
-                    linkAName="Google Doc"
-                    image={poetryProject} 
-                    title="Mini Poetry Project"
-                    date="November 2020"
-                    credits="Jerry Zheng"
-                    personalSocial="Social Awareness and Responsibility"
-                />
-                <Project 
-                    description={descriptionD}
-                    linkA="https://docs.google.com/document/d/1yYDtpM0w00YMjrZuy0ObQK0_MeIxqhJnl2c3HQ10h1w/edit?usp=sharing"
-                    linkAName="Google Doc"
-                    image={lotteryQuestions} 
-                    title="Lottery Questions" 
-                    date="September 2020"
-                    credits="Jerry, Lawrence, Timothy, & Vhea"
-                    communication="Communicating | Collaborating"
-                />
-                <Project 
-                    description={descriptionE}
-                    linkA="https://docs.google.com/presentation/d/10WTkvmcdr3zsag6SyQJDwpZYdEXC71EfIC4zvDTSml8/edit?usp=sharing"
-                    linkAName="Google Slide"
-                    image={gratitudeJournal} 
-                    title="Gratitude Journal" 
-                    date="October 2020"
-                    credits="Jerry Zheng"
-                    thinking="Critical and Reflective Thinking"
-                    personalSocial="Personal Awareness and Responsibility"
-                />
                 <div style={{height: "200px"}}/>
             </>
         )
