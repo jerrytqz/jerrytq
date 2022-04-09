@@ -15,18 +15,10 @@ const Overview = () => {
         studying math (especially for upcoming math competitions) and science (such as by working on my newest coding project). 
         Otherwise, I'm usually playing badminton with my friends, or if it's winter, skiing on a mountain.`;
 
-    const titleC = "Skills"; 
-    const bodyC = 
-        `I have lots of experience and knowledge in math (especially competition math), physics, and computer science. 
-        I am skilled in JavaScript, Python, CSS, and Java as well as frameworks such as React and Django. From my extracurriculars, 
-        I also have leadership, teaching, and customer service abilities. Finally, as for athletics, I am a highly proficient 
-        skier and badminton player.`;
-
     return (
         <section>
             <OverviewSection title={titleA} body={bodyA}/>
             <OverviewSection title={titleB} body={bodyB} altStyling/>
-            <OverviewSection title={titleC} body={bodyC}/>
         </section> 
     )
 }
