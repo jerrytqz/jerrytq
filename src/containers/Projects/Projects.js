@@ -101,18 +101,6 @@ class Projects extends Component {
                     thinking="Critical and Reflective Thinking"
                     personalSocial="Personal Awareness and Responsibility"
                 />
-                 <Project 
-                    description={descriptionF}
-                    linkA="https://docs.google.com/presentation/d/1VHfb3pvY8TGKUky0rL__Nm7rcl12jx_xVclnl2zXd6s/edit?usp=sharing"
-                    linkAName="Google Slide"
-                    linkB="https://docs.google.com/presentation/d/1JSX6lA99XhdgpCJUOKQysFTXONjcedD0m9FrA_oK2wY/edit?usp=sharing"
-                    linkBName="Comparison"
-                    image={astronomyProject} 
-                    title="Astronomy Project" 
-                    date="January 2020"
-                    credits="Jerry Zheng & Tom Chen"
-                    communication="Communicating | Collaborating"
-                />
                 <div style={{height: "200px"}}/>
             </>
         )
