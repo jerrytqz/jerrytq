@@ -18,7 +18,7 @@ class Projects extends Component {
             profile and stats. I also implemented a Django backend for authentication and access to a database. This project came solely from my 
             imagination and creativity outside of school. While making it, I had to reflect on and revise my code numerous times for best practices 
             and optimization purposes.`; 
-
+            
         return (
             <>
                 <Project 
