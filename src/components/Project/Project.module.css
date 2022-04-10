@@ -31,34 +31,10 @@
     flex-direction: column;
 }
 
-.CoreCompetencies {
-    flex-grow: 1; 
-    display: flex;
-    flex-direction: column;
-}
-
 .TextHeader {
     font-weight: 700; 
     font-size: 1.5em; 
     margin-bottom: 10px; 
     padding-bottom: 10px; 
     border-bottom: 1px solid black; 
-}
-
-.CCContainer {
-    flex-grow: 1; 
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.CoreCompetency {
-    width: 60px; 
-    margin-right: 20px; 
-}
-
-.SubContainer {
-    display: flex; 
-    align-items: center;
-    font-size: 1.15em; 
 }

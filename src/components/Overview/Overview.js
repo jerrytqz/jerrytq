@@ -5,7 +5,7 @@ import OverviewSection from './OverviewSection/OverviewSection';
 const Overview = () => {
     const titleA = "About Me"; 
     const bodyA = 
-        `I am currently a high school student in Grade 11 at Fraser Heights Secondary School. For as far back as I can remember,
+        `I am currently a high school student in Grade 12 at Fraser Heights Secondary School. For as far back as I can remember,
         I have loved math and science, especially computer science and physics. I am highly interested in STEM and plan on working
         in the field down the road.`;
 
