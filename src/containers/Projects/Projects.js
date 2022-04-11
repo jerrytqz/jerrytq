@@ -29,8 +29,6 @@ class Projects extends Component {
                     title="Personal Website"
                     date="November 2020 - Present"
                     credits="Jerry Zheng"
-                    thinking="Creative Thinking"
-                    personalSocial="Positive Personal and Cultural Identity"
                 />
                 <Project 
                     description={descriptionB}
@@ -42,7 +40,6 @@ class Projects extends Component {
                     title="Spin"
                     date="July 2020 - Present"
                     credits="Jerry Zheng"
-                    thinking="Creative Thinking | Critical and Reflective Thinking"
                 />
                 <div style={{height: "200px"}}/>
             </>
