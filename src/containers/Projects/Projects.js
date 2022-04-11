@@ -7,17 +7,18 @@ import spin from '../../assets/Projects/Spin.jpeg';
 
 class Projects extends Component {
     render() {
-        const descriptionA = 
-            `I designed and implemented my own personal website from scratch using React, a JavaScript framework for building user interfaces. 
-            For presentations, I have always used a slideshow as my means of presenting. However, for the Capstone Project, I chose to do something 
-            much more creative by making a website. In doing this, I have also managed to gain a better understanding and appreciation of 
-            myself, especially by recognizing all my achievements in my high school career.`; 
+        const descriptionA = (
+            `I designed and implemented my own personal website from scratch using React, a 
+            JavaScript framework for building user interfaces.` 
+        );
 
-        const descriptionB = 
-            `Spin is a React game website where players can spin a wheel to unbox items, view an inventory of their items, and check up on their 
-            profile and stats. I also implemented a Django backend for authentication and access to a database. This project came solely from my 
-            imagination and creativity outside of school. While making it, I had to reflect on and revise my code numerous times for best practices 
-            and optimization purposes.`; 
+        const descriptionB = (
+            `Spin is a React game website where players can spin a wheel to unbox items, view an 
+            inventory of their items, and check up on their profile and stats. I also implemented 
+            a Django backend for authentication and access to a database. This project came solely 
+            from my imagination and creativity outside of school. While making it, I had to reflect 
+            on and revise my code numerous times for best practices and optimization purposes.` 
+        );
 
         const descriptionC = (
             `This is a database of anime I created using C++. The user can list, search for, delete, 
