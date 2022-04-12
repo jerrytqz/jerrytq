@@ -23,7 +23,7 @@ class Projects extends Component {
         const descriptionC = (
             `This is a database of anime I created using C++. The user can list, search for, delete, 
             and add anime. The only library other than STL I used is ncurses, which I used for the 
-            GUI.`
+            GUI. There is a built-in menu system to help the user navigate the database.`
         ); 
             
         return (
