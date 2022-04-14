@@ -1,0 +1,15 @@
+.Skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.Image {
+    height: 75px; 
+    width: 75px; 
+}
+
+.Name {
+    margin-top: 20px; 
+}

@@ -1,7 +1,11 @@
 .Container {
-    padding: 45px 0 45px 0; 
+    padding-top: 45px; 
 }
 
-.Placeholder {
-    height: 500px; 
+.Skills {
+    padding: 45px; 
+    display: grid; 
+    grid-gap: 50px 0;
+    grid-template-columns: auto auto auto auto;
+    justify-items: center; 
 }
