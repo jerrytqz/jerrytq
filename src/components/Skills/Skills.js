@@ -10,6 +10,7 @@ import css from '../../assets/Skills/CSS.jpeg';
 import html from '../../assets/Skills/HTML.jpeg'; 
 import python from '../../assets/Skills/Python.jpeg'; 
 import java from '../../assets/Skills/Java.jpeg'; 
+import react from '../../assets/Skills/React.jpeg'; 
 
 const Skills = () => {
 
@@ -23,6 +24,7 @@ const Skills = () => {
                 <Skill image={html} alt="HTML" name="HTML"/>
                 <Skill image={python} alt="Python" name="Python"/>
                 <Skill image={java} alt="Java" name="Java"/>
+                <Skill image={react} alt="React" name="React"/>
             </div>
         </div>
     )
