@@ -11,6 +11,10 @@ import html from '../../assets/Skills/HTML.jpeg';
 import python from '../../assets/Skills/Python.jpeg'; 
 import java from '../../assets/Skills/Java.jpeg'; 
 import react from '../../assets/Skills/React.jpeg'; 
+import redux from '../../assets/Skills/Redux.jpeg'; 
+import django from '../../assets/Skills/Django.jpeg'; 
+import git from '../../assets/Skills/Git.jpeg'; 
+import bash from '../../assets/Skills/Bash.jpeg'; 
 
 const Skills = () => {
 
@@ -25,6 +29,10 @@ const Skills = () => {
                 <Skill image={python} alt="Python" name="Python"/>
                 <Skill image={java} alt="Java" name="Java"/>
                 <Skill image={react} alt="React" name="React"/>
+                <Skill image={redux} alt="Redux" name="Redux"/>
+                <Skill image={django} alt="Django" name="Django"/>
+                <Skill image={git} alt="Git" name="Git"/>
+                <Skill image={bash} alt="Bash" name="Bash"/>
             </div>
         </div>
     )
