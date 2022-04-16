@@ -17,7 +17,6 @@ import git from '../../assets/Skills/Git.jpeg';
 import bash from '../../assets/Skills/Bash.jpeg'; 
 
 const Skills = () => {
-
     return (
         <div className={classes.Container}>
             <SectionHeader title="Skills"/>
