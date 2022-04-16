@@ -4,6 +4,7 @@ import Project from '../../components/Project/Project';
 
 import personalWebsite from '../../assets/Projects/PersonalWebsite.jpeg';
 import spin from '../../assets/Projects/Spin.jpeg'; 
+import animeDatabase from '../../assets/Projects/AnimeDatabase.jpeg'; 
 
 class Projects extends Component {
     render() {
@@ -50,6 +51,7 @@ class Projects extends Component {
                 />
                 <Project
                     description={descriptionC}
+                    image={animeDatabase}
                     title="Anime Database"
                     date="April 2022 - Present"
                     credits="Jerry Zheng"
