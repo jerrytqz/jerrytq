@@ -9,12 +9,12 @@ const Project = (props) => (
         <div className={classes.Container}>
             <img className={classes.Image} src={props.image} alt="Project"/>
             <div className={classes.Text}>
-                <div className={classes.Description}>
-                    <div className={classes.TextHeader}>Description</div>
-                    {props.description}
-                    <a href={props.linkA} target="blank" rel="noreferrer" style={{marginTop: "20px"}}>{props.linkAName}</a>
-                    <a href={props.linkB} target="blank" rel="noreferrer">{props.linkBName}</a>
-                </div> 
+                <div className={classes.DescriptionHeader}>Description</div>
+                {props.description}
+                <div className={classes.LinksHeader}>Links</div>
+                <a href={props.linkA} target="blank" rel="noreferrer" className={classes.Link}>{props.linkAName}</a>
+                <a href={props.linkB} target="blank" rel="noreferrer" className={classes.Link}>{props.linkBName}</a>
+                <a href={props.linkC} target="blank" rel="noreferrer" className={classes.Link}>{props.linkCName}</a>
             </div>
         </div>
     </div>
