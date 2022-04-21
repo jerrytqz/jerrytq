@@ -17,10 +17,10 @@ class PostSecondary extends Component {
                     <div className={classes.Left}>
                         <h3 style={{marginTop: 0}}>General Information</h3>
                         <ul>
-                           <li>Computer Science</li>
-                           <li style={{marginTop: "8px"}}>Bachelor of Computer Science (BCS)</li> 
-                           <li style={{marginTop: "8px"}}>Co-op available</li> 
-                           <li style={{marginTop: "8px"}}>4 years</li> 
+                           <li>Software Engineering</li>
+                           <li style={{marginTop: "8px"}}>Bachelor of Software Engineering</li> 
+                           <li style={{marginTop: "8px"}}>Co-op & Honours</li> 
+                           <li style={{marginTop: "8px"}}>5 years</li> 
                         </ul>
                         <h3 style={{marginTop: 0}}>Admission Requirements</h3>
                         <ul>
