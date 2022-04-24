@@ -42,15 +42,6 @@ class Projects extends Component {
         return (
             <>
                 <Project 
-                    title="Personal Website"
-                    credits="Jerry Zheng"
-                    date="November 2020 - Present"
-                    image={personalWebsite} 
-                    description={descriptionA}
-                    linkA="https://github.com/JerryZhengPro/personal-website"
-                    linkAName="GitHub Repository"
-                />
-                <Project 
                     title="Spin"
                     credits="Jerry Zheng"
                     date="July 2020 - Present"
@@ -80,6 +71,15 @@ class Projects extends Component {
                     linkAName="GitHub Repository"
                     linkB="https://marketplace.visualstudio.com/items?itemName=DevFriend.dev-friend&ssr=false#overview"
                     linkBName="Visual Studio Marketplace"
+                />
+                <Project 
+                    title="Personal Website"
+                    credits="Jerry Zheng"
+                    date="November 2020 - Present"
+                    image={personalWebsite} 
+                    description={descriptionA}
+                    linkA="https://github.com/JerryZhengPro/personal-website"
+                    linkAName="GitHub Repository"
                 />
                 <div style={{height: "200px"}}/>
             </>
