@@ -78,8 +78,10 @@ class Projects extends Component {
                     date="November 2020 - Present"
                     image={personalWebsite} 
                     description={descriptionA}
-                    linkA="https://github.com/JerryZhengPro/personal-website"
-                    linkAName="GitHub Repository"
+                    linkA="https://jerryzhengpro.github.io/personal-website"
+                    linkAName="Website"
+                    linkB="https://github.com/JerryZhengPro/personal-website"
+                    linkBName="GitHub Repository"
                 />
                 <div style={{height: "200px"}}/>
             </>

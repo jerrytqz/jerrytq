@@ -1,2 +1,2 @@
 # personal-website
-Hosted @ https://JerryZhengPro.github.io/personal-website
+Hosted @ https://jerryzhengpro.github.io/personal-website
