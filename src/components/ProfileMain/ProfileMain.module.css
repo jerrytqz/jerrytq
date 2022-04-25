@@ -10,6 +10,8 @@
     border-radius: 50%; 
     border: 5px solid white; 
     width: 375px; 
+    height: 375px;
+    object-fit: cover; 
 }
 
 .TextContainer {
