@@ -21,17 +21,17 @@ const Skills = () => {
         <div className={classes.Container}>
             <SectionHeader title="Skills"/>
             <div className={classes.Skills}>
+                <Skill image={javascript} alt="JavaScript" name="JavaScript"/>
                 <Skill image={cpp} alt="C++" name="C++"/>
-                <Skill image={javascript} alt="Javascript" name="Javascript"/>
+                <Skill image={java} alt="Java" name="Java"/>
+                <Skill image={python} alt="Python" name="Python"/>
                 <Skill image={css} alt="CSS" name="CSS"/>
                 <Skill image={html} alt="HTML" name="HTML"/>
-                <Skill image={python} alt="Python" name="Python"/>
-                <Skill image={java} alt="Java" name="Java"/>
                 <Skill image={react} alt="React" name="React"/>
-                <Skill image={redux} alt="Redux" name="Redux"/>
                 <Skill image={django} alt="Django" name="Django"/>
                 <Skill image={git} alt="Git" name="Git"/>
                 <Skill image={bash} alt="Bash" name="Bash"/>
+                <Skill image={redux} alt="Redux" name="Redux"/>
             </div>
         </div>
     )
