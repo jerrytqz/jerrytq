@@ -22,7 +22,7 @@ const Extracurriculars = () => {
     const titleB = "Kumon"; 
     const descriptionB = 
         `I work as a mathematics tutor at the Walnut Grove Kumon Centre, where I teach students mathematics
-        ranging from arithmetic to calculus. I currently have over 250 hours of teaching experience.`; 
+        ranging from arithmetic to calculus. I currently have over 350 hours of teaching experience.`; 
 
     const titleC = "307 RCSCC Mariner"; 
     const descriptionC = 

@@ -9,6 +9,7 @@ import SAT from '../../assets/Achievements/SAT.jpeg';
 import SIMUW from '../../assets/Achievements/SIMUW.jpeg'; 
 import CIMC from '../../assets/Achievements/CIMC.jpeg'; 
 import APScholar from '../../assets/Achievements/APScholar.jpeg'; 
+import Kumon from '../../assets/Achievements/Kumon.jpeg'; 
 
 const Achievements = () => {
     const slideshow = [
@@ -17,6 +18,7 @@ const Achievements = () => {
         <Achievement image={CIMC} description="CIMC 2019 Group V Honour Roll"/>,
         <Achievement image={SIMUW} description="SIMUW 2019 Invitee & Participant"/>,
         <Achievement image={APScholar} description="AP Scholar with Distinction"/>,
+        <Achievement image={Kumon} description="Kumon Math & Reading Finisher"/>
     ];
     let [i, setIndexI] = useState(slideshow.length - 1); 
     let [j, setIndexJ] = useState(0); 
