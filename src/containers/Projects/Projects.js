@@ -69,6 +69,8 @@ class Projects extends Component {
                     date="April 2022 - Present"
                     image={animeDatabase}
                     description={descriptionB}
+                    linkA="https://github.com/JerryZhengPro/anime-database"
+                    linkAName="GitHub Repository"
                 />
                 <Project
                     title="Dev Friend"
