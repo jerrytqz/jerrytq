@@ -42,10 +42,11 @@ const Extracurriculars = () => {
         `I am a Special Events Volunteer for the City of Surrey, and I assist in events such as the
         Surrey International Children's Festival by helping set up, maintain, and clean up activities.`; 
 
-    const titleF = "Fraser Heights Firehawks"; 
+    const titleF = "FHSS Coding Club"; 
     const descriptionF = 
-        `I was part of Fraser Heights Secondary's Grade 8 Badminton Team and Junior Badminton Team. I competed in 
-        numerous regional competitions as a doubles player.`; 
+        `I am an executive member of Fraser Heights Secondary School's Coding Club. I plan and host
+        weekly meetings to foster interest in computer science by teaching C++ and helping members 
+        create their own coding projects.`; 
 
     return (
         <div className={classes.Container}>

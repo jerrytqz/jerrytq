@@ -24,7 +24,7 @@ class Projects extends Component {
             order for all numeric fields. When they are searching, they can choose to search exactly 
             or by using keywords for all string fields, and exactly or within a range for all 
             numeric fields. The only library other than the STL I used is ncurses, which was used 
-            for the GUI (the built-in menu system)`
+            for the GUI (the built-in menu system).`
         ); 
 
         const descriptionC = (
