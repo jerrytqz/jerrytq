@@ -45,7 +45,7 @@ const Extracurriculars = () => {
     const titleF = "FHSS Coding Club"; 
     const descriptionF = 
         `I am an executive member of Fraser Heights Secondary School's Coding Club. I plan and host
-        weekly meetings to foster interest in computer science by teaching C++ and helping members 
+        weekly meetings to foster interest in computer science, teaching C++ and helping members 
         create their own coding projects.`; 
 
     return (
