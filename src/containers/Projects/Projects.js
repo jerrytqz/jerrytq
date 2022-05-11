@@ -12,9 +12,9 @@ class Projects extends Component {
     render() {
         const descriptionA = (
             `Spin is an online economy game where players can spin a wheel to unbox items, view an 
-            inventory of their items, and see their profile and stats. I also implemented 
-            a Django backend for authentication and access to a database, as well as Socket.IO to
-            enable real-time UI updating.` 
+            inventory of their items, and see their profile and stats. I implemented the frontend using
+            React. I also implemented a Django backend for authentication and access to a database, as 
+            well as Socket.IO to enable real-time UI updating.` 
         );
 
         const descriptionB = (
