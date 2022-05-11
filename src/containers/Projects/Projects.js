@@ -11,9 +11,9 @@ import burgerBuilder from '../../assets/Projects/BurgerBuilder.jpeg';
 class Projects extends Component {
     render() {
         const descriptionA = (
-            `Spin is a React game website where players can spin a wheel to unbox items, view an 
-            inventory of their items, and view their profile and stats. I also implemented 
-            a Django backend for authentication and access to a database, as well as WebSocket to
+            `Spin is an online economy game where players can spin a wheel to unbox items, view an 
+            inventory of their items, and see their profile and stats. I also implemented 
+            a Django backend for authentication and access to a database, as well as Socket.IO to
             enable real-time UI updating.` 
         );
 
