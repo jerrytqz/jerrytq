@@ -11,10 +11,11 @@ import burgerBuilder from '../../assets/Projects/BurgerBuilder.jpeg';
 class Projects extends Component {
     render() {
         const descriptionA = (
-            `Spin is an online economy game where players can spin a wheel to unbox items, view an 
-            inventory of their items, and see their profile and stats. I implemented the frontend using
-            React. I also implemented a Django backend for authentication and access to a database, as 
-            well as Socket.IO to enable real-time UI updating.` 
+            `Spin is a full stack web application built primarily with React and Django. It aims to 
+            emulate a basic online economy by allowing players to spin a wheel to obtain collectibles, 
+            which can later be sold on the market to other players using a fictional currency called 
+            SP (Spin Points). The project consists of 3 major parts: a frontend built with React,
+            a backend built with Django, and an independent Socket.IO server.` 
         );
 
         const descriptionB = (
@@ -30,8 +31,8 @@ class Projects extends Component {
         const descriptionC = (
             `Dev Friend is an open-source extension for Visual Studio Code. Its purpose is to 
             help developers by offering features such as time tracking, automatic break
-            notifications, and a meme page. This was the main project my group and I worked on 
-            during Major League Hacking's 2021 Summer Pre-Fellowship program.`
+            notifications, and a page for viewing comics during breaks. This was the main project 
+            my group and I worked on during Major League Hacking's 2021 Summer Pre-Fellowship program.`
         ); 
 
         const descriptionD = (
@@ -56,12 +57,14 @@ class Projects extends Component {
                     date="July 2020 - Present"
                     image={spin} 
                     description={descriptionA}
-                    linkA="https://github.com/JerryZhengPro/spin"
-                    linkAName="GitHub Repository"
-                    linkB="https://github.com/JerryZhengPro/spin-backend"
-                    linkBName="Backend GitHub Repository"
-                    linkC="https://github.com/JerryZhengPro/spin-websocket"
-                    linkCName="WebSocket Repository"
+                    linkA="https://spin.jerrytq.com"
+                    linkAName="Website"
+                    linkB="https://github.com/JerryZhengPro/spin"
+                    linkBName="GitHub Repository"
+                    linkC="https://github.com/JerryZhengPro/spin-backend"
+                    linkCName="Backend GitHub Repository"
+                    linkD="https://github.com/JerryZhengPro/spin-socketio"
+                    linkDName="Socket.IO Repository"
                 />
                 <Project
                     title="Anime Database"
@@ -74,7 +77,7 @@ class Projects extends Component {
                 />
                 <Project
                     title="Dev Friend"
-                    credits="Jerry Zheng, Akshat Mangal, Gerald Akorli, and Tianhui Xu"
+                    credits="MLH Fellowship Pod 3.1.4"
                     date="July 2021 - August 2021"
                     image={devFriend}
                     description={descriptionC}
