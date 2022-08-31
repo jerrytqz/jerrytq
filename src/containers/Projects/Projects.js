@@ -15,7 +15,7 @@ class Projects extends Component {
             emulate a basic online economy by allowing players to spin a wheel to obtain collectibles, 
             which can later be sold on the market to other players using a fictional currency called 
             SP (Spin Points). The project consists of 3 major parts: a frontend built with React,
-            a backend built with Django, and an independent Socket.IO server.` 
+            a backend built with Django, and a Socket.IO server.` 
         );
 
         const descriptionB = (
