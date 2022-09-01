@@ -59,11 +59,11 @@ class Projects extends Component {
                     description={descriptionA}
                     linkA="https://spin.jerrytq.com"
                     linkAName="Website"
-                    linkB="https://github.com/JerryZhengPro/spin"
+                    linkB="https://github.com/jerrytqz/spin"
                     linkBName="GitHub Repository"
-                    linkC="https://github.com/JerryZhengPro/spin-backend"
+                    linkC="https://github.com/jerrytqz/spin-backend"
                     linkCName="Backend GitHub Repository"
-                    linkD="https://github.com/JerryZhengPro/spin-socketio"
+                    linkD="https://github.com/jerrytqz/spin-socketio"
                     linkDName="Socket.IO Repository"
                 />
                 <Project
@@ -72,7 +72,7 @@ class Projects extends Component {
                     date="April 2022 - Present"
                     image={animeDatabase}
                     description={descriptionB}
-                    linkA="https://github.com/JerryZhengPro/anime-database"
+                    linkA="https://github.com/jerrytqz/anime-database"
                     linkAName="GitHub Repository"
                 />
                 <Project
@@ -92,9 +92,9 @@ class Projects extends Component {
                     date="November 2020 - Present"
                     image={personalWebsite} 
                     description={descriptionD}
-                    linkA="https://jerryzhengpro.github.io/personal-website"
+                    linkA="https://jerrytqz.github.io/personal-website"
                     linkAName="Website"
-                    linkB="https://github.com/JerryZhengPro/personal-website"
+                    linkB="https://github.com/jerrytqz/personal-website"
                     linkBName="GitHub Repository"
                 />
                 <Project 
@@ -105,7 +105,7 @@ class Projects extends Component {
                     description={descriptionE}
                     linkA="https://react-my-burger-53fda.web.app/"
                     linkAName="Website"
-                    linkB="https://github.com/JerryZhengPro/burger-builder"
+                    linkB="https://github.com/jerrytqz/burger-builder"
                     linkBName="GitHub Repository"
                 />
                 <div style={{height: "200px"}}/>
