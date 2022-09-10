@@ -5,7 +5,7 @@ import Project from '../../components/Project/Project';
 import spin from '../../assets/Projects/Spin.jpeg'; 
 import animeDatabase from '../../assets/Projects/AnimeDatabase.jpeg'; 
 import devFriend from '../../assets/Projects/DevFriend.jpeg'; 
-import personalWebsite from '../../assets/Projects/PersonalWebsite.jpeg';
+import jerryTQ from '../../assets/Projects/JerryTQ.jpeg';
 import burgerBuilder from '../../assets/Projects/BurgerBuilder.jpeg'; 
 
 class Projects extends Component {
@@ -87,14 +87,14 @@ class Projects extends Component {
                     linkBName="GitHub Repository"
                 />
                 <Project 
-                    title="Personal Website"
+                    title="JerryTQ"
                     credits="Jerry Zheng"
                     date="November 2020 - Present"
-                    image={personalWebsite} 
+                    image={jerryTQ} 
                     description={descriptionD}
-                    linkA="https://jerrytqz.github.io/personal-website"
+                    linkA="https://jerrytq.com"
                     linkAName="Website"
-                    linkB="https://github.com/jerrytqz/personal-website"
+                    linkB="https://github.com/jerrytqz/jerrytq"
                     linkBName="GitHub Repository"
                 />
                 <Project 
