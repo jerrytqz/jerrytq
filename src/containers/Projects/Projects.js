@@ -11,7 +11,7 @@ import burgerBuilder from '../../assets/Projects/BurgerBuilder.jpeg';
 class Projects extends Component {
     render() {
         const descriptionA = (
-            `Spin is a full stack web application built primarily with React and Django. It aims to 
+            `Spin is a full-stack web application built primarily with React and Django. It aims to 
             emulate a basic online economy by allowing players to spin a wheel to obtain collectibles, 
             which can later be sold on the market to other players using a fictional currency called 
             SP (Spin Points). The project consists of 3 major parts: a frontend built with React,

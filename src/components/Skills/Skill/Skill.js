@@ -6,8 +6,8 @@ const Skills = (props) => {
 
     return (
         <div className={classes.Skill}>
-            <img src={props.image} alt={props.alt} class={classes.Image}/>
-            <div class={classes.Name}>{props.name}</div>
+            <img src={props.image} alt={props.alt} className={classes.Image}/>
+            <div className={classes.Name}>{props.name}</div>
         </div>
     )
 }

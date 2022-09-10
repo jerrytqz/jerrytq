@@ -11,9 +11,9 @@ class App extends Component {
     return (
       <div>
         <Layout>
-          <Route path={process.env.PUBLIC_URL} exact component={Home}/>
-          <Route path={process.env.PUBLIC_URL+"/projects"} component={Projects}/>
-          <Route path={process.env.PUBLIC_URL+"/post-secondary"} component={PostSecondary}/>
+          <Route path="/" exact component={Home}/>
+          <Route path="/projects" component={Projects}/>
+          <Route path="/post-secondary" component={PostSecondary}/>
         </Layout>
       </div>
     );

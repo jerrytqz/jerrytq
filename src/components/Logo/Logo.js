@@ -5,8 +5,8 @@ import logoImg from '../../assets/Icon.jpeg';
 
 const Logo = () => (
     <div className={classes.Logo}>
-        <img src={logoImg} alt="Jerry Zheng"/>
-        <strong className={classes.Name}>Jerry Zheng</strong>
+        <img src={logoImg} alt="Logo"/>
+        <strong className={classes.Name}>JerryTQ</strong>
     </div>
 )
 
