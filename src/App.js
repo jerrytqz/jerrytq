@@ -11,13 +11,23 @@ import {ASSETS_BASE_DIR} from './shared/constants';
 class App extends Component {
   state = {
     homeContent: null,
+    projectsContent: null,
     fetchLoading: true
   }
 
   async componentDidMount() {
-    const response = await fetch(`${ASSETS_BASE_DIR}/home/home.json`);
-    const result = await response.json();
-    this.setState({homeContent: result, fetchLoading: false})
+    Promise.all([
+      fetch(`${ASSETS_BASE_DIR}/home/home.json`).then(content => content.json()),
+      fetch(`${ASSETS_BASE_DIR}/projects/projects.json`).then(content => content.json())
+    ]).then(([homeContent, projectsContent]) => {
+      this.setState({
+        homeContent: homeContent,
+        projectsContent: projectsContent,
+        fetchLoading: false
+      });
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   render() {
@@ -32,7 +42,7 @@ class App extends Component {
           <Layout>
             <Routes>
               <Route path="/" element={<Home content={this.state.homeContent}/>}/>
-              <Route path="/projects" element={<Projects/>}/>
+              <Route path="/projects" element={<Projects content={this.state.projectsContent}/>}/>
             </Routes>
           </Layout>
         </div>

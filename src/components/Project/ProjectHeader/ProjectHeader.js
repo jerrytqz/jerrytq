@@ -6,8 +6,8 @@ const ProjectHeader = (props) => (
     <div className={classes.Container}>
         <strong className={classes.Title}>{props.title}</strong>
         <div className={classes.HeaderInfo}>
-            <div className={classes.Credits}>{props.credits} |</div>
-            <div>{props.date}</div>
+            <div className={classes.Credits}>{props.credits.join(' & ')} |</div>
+            <div>{`${props.date.start} - ${props.date.end}`}</div>
         </div>
     </div>
 )
