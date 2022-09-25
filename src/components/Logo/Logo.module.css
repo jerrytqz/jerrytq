@@ -1,4 +1,4 @@
-.Logo {
+.Container {
     padding: 10px; 
     height: 85%;
     display: flex; 
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.Logo img {
+.Container img {
     height: 100%; 
 }
 

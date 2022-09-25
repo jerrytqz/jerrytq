@@ -15,10 +15,10 @@ class Home extends Component {
                 <Hero content={this.props.content.hero}/>
                 <Overview content={this.props.content.overview}/>
                 <Skills content={this.props.content.skills}/> 
-                <Extracurriculars/>
+                <Extracurriculars content={this.props.content.extracurriculars}/>
                 <div className={classes.AchievementsCertifications}>
-                    <Achievements/>
-                    <Certifications/>
+                    <Achievements content={this.props.content.achievements}/>
+                    <Certifications content={this.props.content.certifications}/>
                 </div>
             </>
         )

@@ -13,13 +13,10 @@ const OverviewPart = (props) => {
     }
 
     return (
-        <div style={altStyling}>
-            <div className={classes.Container} style={altStyling}>
-                <p className={classes.Title} style={{color: "black"}}>{props.title}</p>
-                <p className={classes.Body}>{props.body}</p> 
-            </div>
+        <div className={classes.Container} style={altStyling}>
+            <p className={classes.Title} style={{color: "black"}}>{props.title}</p>
+            <p className={classes.Body}>{props.body}</p> 
         </div>
-      
     )
 }
 

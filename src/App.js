@@ -6,6 +6,7 @@ import Home from './containers/Home/Home';
 import Projects from './containers/Projects/Projects';
 
 import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
+import {ASSETS_BASE_DIR} from './shared/constants';
 
 class App extends Component {
   state = {
@@ -14,7 +15,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`https://starship.jerrytq.com/jerrytq/home/home.json`);
+    const response = await fetch(`${ASSETS_BASE_DIR}/home/home.json`);
     const result = await response.json();
     this.setState({homeContent: result, fetchLoading: false})
   }

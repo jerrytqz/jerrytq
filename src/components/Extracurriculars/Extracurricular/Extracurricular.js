@@ -8,7 +8,7 @@ const Extracurricular = (props) => (
         <div className={classes.Overlay}>
             <div className={classes.Text}>{props.description}</div>
         </div>
-        <p className={classes.Title}>{props.title}</p> 
+        <p className={classes.Name}>{props.name}</p> 
     </div>
 )
 

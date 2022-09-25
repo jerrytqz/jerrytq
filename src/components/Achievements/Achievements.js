@@ -4,22 +4,17 @@ import classes from './Achievements.module.css';
 import Achievement from './Achievement/Achievement'; 
 import AreaHeader from '../AreaHeader/AreaHeader'; 
 
-import AP from '../../assets/Achievements/AP.jpeg'; 
-import SAT from '../../assets/Achievements/SAT.jpeg'; 
-import SIMUW from '../../assets/Achievements/SIMUW.jpeg'; 
-import CIMC from '../../assets/Achievements/CIMC.jpeg'; 
-import APScholar from '../../assets/Achievements/APScholar.jpeg'; 
-import Kumon from '../../assets/Achievements/Kumon.jpeg'; 
-
-const Achievements = () => {
-    const slideshow = [
-        <Achievement image={AP} description="5 on 7 AP Exams"/>, 
-        <Achievement image={SAT} description="1550 SAT, 800 on 2 SAT Subject Tests"/>,
-        <Achievement image={CIMC} description="CIMC 2019 Group V Honour Roll"/>,
-        <Achievement image={SIMUW} description="SIMUW 2019 Invitee & Participant"/>,
-        <Achievement image={APScholar} description="AP Scholar with Distinction"/>,
-        <Achievement image={Kumon} description="Kumon Math & Reading Finisher"/>
-    ];
+const Achievements = (props) => {
+    const slideshow = props.content.map(
+        (achievement, index) => (
+            <Achievement 
+                key={index} 
+                image={achievement.image} 
+                alt={achievement.name} 
+                description={achievement.description}
+            />
+        )
+    );
     let [i, setIndexI] = useState(slideshow.length - 1); 
     let [j, setIndexJ] = useState(0); 
     let [k, setIndexK] = useState(1); 
@@ -68,7 +63,7 @@ const Achievements = () => {
     return (
         <>
             <AreaHeader title="Achievements/Certifications"/>
-            <div className={classes.SlideshowContainer}>
+            <div className={classes.Container}>
                 <button className={classes.PrevButton} onClick={prevSlide}>&#8249;</button>
                 <div className={classes.Slideshow}>
                     <div className={classes.AchievementWrapper} style={altStyling}>{slideshow[i]}</div>

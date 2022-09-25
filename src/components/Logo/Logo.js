@@ -1,11 +1,12 @@
 import React from 'react';
 
 import classes from './Logo.module.css';
-import logoImg from '../../assets/Icon.jpeg'; 
+
+import {ASSETS_BASE_DIR} from '../../shared/constants';
 
 const Logo = () => (
-    <div className={classes.Logo}>
-        <img src={logoImg} alt="Logo"/>
+    <div className={classes.Container}>
+        <img src={`${ASSETS_BASE_DIR}/icon.png`} alt="Icon"/>
         <strong className={classes.Name}>JerryTQ</strong>
     </div>
 )

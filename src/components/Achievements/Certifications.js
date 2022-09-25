@@ -3,16 +3,17 @@ import React, {useState} from 'react';
 import classes from './Achievements.module.css'; 
 import Achievement from './Achievement/Achievement'; 
 
-import CSIA from '../../assets/Certifications/CSIA.jpeg'; 
-import firstAid from '../../assets/Certifications/FirstAid.jpeg'; 
-import musicProficiency from '../../assets/Certifications/MusicProficiency.jpeg'; 
-
-const Certifications = () => {
-    const slideshow = [
-        <Achievement image={CSIA} description="CSIA Level 1"/>, 
-        <Achievement image={firstAid} description="Standard First Aid & CPR/AED Level C"/>, 
-        <Achievement image={musicProficiency} description="Music Proficiency Level - Basic"/>
-    ];
+const Certifications = (props) => {
+    const slideshow = props.content.map(
+        (certification, index) => (
+            <Achievement 
+                key={index} 
+                image={certification.image} 
+                alt={certification.name} 
+                description={certification.description}
+            />
+        )
+    );
     let [i, setIndexI] = useState(slideshow.length - 1); 
     let [j, setIndexJ] = useState(0); 
     let [k, setIndexK] = useState(1); 
@@ -59,7 +60,7 @@ const Certifications = () => {
     }
     
     return (
-        <div className={classes.SlideshowContainer}>
+        <div className={classes.Container}>
             <button className={classes.PrevButton} onClick={prevSlide}>&#8249;</button>
             <div className={classes.Slideshow}>
                 <div className={classes.AchievementWrapper} style={altStyling}>{slideshow[i]}</div>

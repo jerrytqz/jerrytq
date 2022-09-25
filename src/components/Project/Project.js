@@ -4,7 +4,7 @@ import classes from './Project.module.css';
 import ProjectHeader from './ProjectHeader/ProjectHeader'; 
 
 const Project = (props) => (
-    <div>
+    <>
         <ProjectHeader title={props.title} date={props.date} credits={props.credits}/>
         <div className={classes.Container}>
             <img className={classes.Image} src={props.image} alt="Project"/>
@@ -18,7 +18,7 @@ const Project = (props) => (
                 <a href={props.linkD} target="blank" rel="noreferrer" className={classes.Link}>{props.linkDName}</a>
             </div>
         </div>
-    </div>
+    </>
 )
 
 export default Project;
