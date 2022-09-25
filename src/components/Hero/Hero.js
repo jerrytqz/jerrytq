@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 
-import classes from './ProfileMain.module.css'; 
-import image from '../../assets/ProfileMain.jpeg'; 
+import classes from './Hero.module.css'; 
 
-const ProfileMain = () => {
+const Hero = (props) => {
     let i = 0;
     let j = 0; 
     const speed = 200; 
@@ -55,13 +54,12 @@ const ProfileMain = () => {
     return (
         <section className={classes.Container}>
             <div style={{padding: "40px 0"}}>
-                <img className={classes.Image} src={image} alt="Jerry Zheng"/>
+                <img className={classes.Image} src={props.content.heroImage} alt="Jerry Zheng"/>
             </div>
             <div className={classes.TextContainer}>
                 <div className={classes.DynamicText}>
                     <div className={classes.FirstText} ref={greeting}></div>
                     <div className={classes.TypingBar}/>
-                    {/* <div className={classes.FirstText} style={{opacity: "0"}}>l</div> */}
                 </div>
                 <div className={classes.SecondText}>My name is <strong>Jerry Zheng</strong>.</div>
             </div>
@@ -69,4 +67,4 @@ const ProfileMain = () => {
     )
 }
 
-export default ProfileMain;
+export default Hero;

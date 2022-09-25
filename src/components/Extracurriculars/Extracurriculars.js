@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Extracurriculars.module.css'; 
 import Extracurricular from './Extracurricular/Extracurricular'; 
-import SectionHeader from '../SectionHeader/SectionHeader'; 
+import AreaHeader from '../AreaHeader/AreaHeader'; 
 
 import grouseMountain from '../../assets/Extracurriculars/GrouseMountain.jpeg'; 
 import kumon from '../../assets/Extracurriculars/Kumon.jpeg'; 
@@ -51,7 +51,7 @@ const Extracurriculars = () => {
 
     return (
         <div className={classes.Container}>
-            <SectionHeader title="Extracurriculars"/>
+            <AreaHeader title="Extracurriculars"/>
             <section className={classes.Extracurriculars}>
                 <Extracurricular title={titleA} image={grouseMountain} description={descriptionA} alt="Grouse Mountain"/>
                 <Extracurricular title={titleB} image={kumon} description={descriptionB} alt="Kumon"/>

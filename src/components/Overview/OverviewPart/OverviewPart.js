@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classes from './OverviewSection.module.css'; 
+import classes from './OverviewPart.module.css'; 
 
-const OverviewSection = (props) => {
+const OverviewPart = (props) => {
     let altStyling = null; 
 
     if (props.altStyling) {
@@ -23,4 +23,4 @@ const OverviewSection = (props) => {
     )
 }
 
-export default OverviewSection;
+export default OverviewPart;

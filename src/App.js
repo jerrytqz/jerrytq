@@ -1,21 +1,41 @@
 import React, {Component} from 'react'; 
-import {Route} from 'react-router-dom'; 
+import {Routes, Route} from 'react-router-dom'; 
 
 import Layout from './components/Layout/Layout'; 
 import Home from './containers/Home/Home';
 import Projects from './containers/Projects/Projects';
-import PostSecondary from './containers/PostSecondary/PostSecondary'; 
+
+import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
 
 class App extends Component {
+  state = {
+    homeContent: null,
+    fetchLoading: true
+  }
+
+  async componentDidMount() {
+    const response = await fetch(`https://starship.jerrytq.com/jerrytq/home/home.json`);
+    const result = await response.json();
+    this.setState({homeContent: result, fetchLoading: false})
+  }
+
   render() {
-    return (
-      <div>
-        <Layout>
-          <Route path="/" exact component={Home}/>
-          <Route path="/projects" component={Projects}/>
-          <Route path="/post-secondary" component={PostSecondary}/>
-        </Layout>
-      </div>
+    return (this.state.fetchLoading
+      ? (
+        <div style={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}>
+          <LoadingSpinner/>
+        </div>
+      )
+      : (
+        <div>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home content={this.state.homeContent}/>}/>
+              <Route path="/projects" element={<Projects/>}/>
+            </Routes>
+          </Layout>
+        </div>
+      )
     );
   }
 }

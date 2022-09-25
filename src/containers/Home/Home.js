@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 
 import classes from './Home.module.css'; 
-import ProfileMain from '../../components/ProfileMain/ProfileMain'; 
+import Hero from '../../components/Hero/Hero'; 
 import Overview from '../../components/Overview/Overview';
 import Skills from '../../components/Skills/Skills'; 
 import Extracurriculars from '../../components/Extracurriculars/Extracurriculars';
@@ -12,9 +12,9 @@ class Home extends Component {
     render() {
         return (
             <>
-                <ProfileMain/>
-                <Overview/>
-                <Skills/> 
+                <Hero content={this.props.content.hero}/>
+                <Overview content={this.props.content.overview}/>
+                <Skills content={this.props.content.skills}/> 
                 <Extracurriculars/>
                 <div className={classes.AchievementsCertifications}>
                     <Achievements/>

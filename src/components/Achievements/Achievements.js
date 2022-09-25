@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import classes from './Achievements.module.css'; 
 import Achievement from './Achievement/Achievement'; 
-import SectionHeader from '../SectionHeader/SectionHeader'; 
+import AreaHeader from '../AreaHeader/AreaHeader'; 
 
 import AP from '../../assets/Achievements/AP.jpeg'; 
 import SAT from '../../assets/Achievements/SAT.jpeg'; 
@@ -67,7 +67,7 @@ const Achievements = () => {
     
     return (
         <>
-            <SectionHeader title="Achievements/Certifications"/>
+            <AreaHeader title="Achievements/Certifications"/>
             <div className={classes.SlideshowContainer}>
                 <button className={classes.PrevButton} onClick={prevSlide}>&#8249;</button>
                 <div className={classes.Slideshow}>
