@@ -3,18 +3,10 @@ import React from 'react';
 import classes from './OverviewPart.module.css'; 
 
 const OverviewPart = (props) => {
-    let altStyling = null; 
-
-    if (props.altStyling) {
-        altStyling = {
-            backgroundColor: 'lightblue',
-            color: 'white'
-        }
-    }
-
     return (
-        <div className={classes.Container} style={altStyling}>
-            <p className={classes.Title} style={{color: "black"}}>{props.title}</p>
+        <div className={classes.Container}>
+            <h2 className={classes.Title}>{props.title}</h2>
+            <hr className={classes.Divider}/>
             <p className={classes.Body}>{props.body}</p> 
         </div>
     )

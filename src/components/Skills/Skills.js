@@ -6,7 +6,7 @@ import Skill from './Skill/Skill';
 
 const Skills = (props) => {
     return (
-        <div className={classes.Container}>
+        <div>
             <AreaHeader title="Skills"/>
             <div className={classes.Skills}>
                 {props.content.map((skill, index) => (

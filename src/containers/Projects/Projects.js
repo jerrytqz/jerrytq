@@ -10,7 +10,7 @@ class Projects extends Component {
                     (project, index) => (
                         <Project 
                             key={index}
-                            title={project.title}
+                            name={project.name}
                             credits={project.credits}
                             date={project.date}
                             images={project.images} 

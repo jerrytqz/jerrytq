@@ -5,7 +5,7 @@ import ProjectHeader from './ProjectHeader/ProjectHeader';
 
 const Project = (props) => (
     <>
-        <ProjectHeader title={props.title} date={props.date} credits={props.credits}/>
+        <ProjectHeader name={props.name} date={props.date} credits={props.credits}/>
         <div className={classes.Container}>
             <img className={classes.Image} src={props.images[0]} alt="Project"/>
             <div className={classes.Text}>
