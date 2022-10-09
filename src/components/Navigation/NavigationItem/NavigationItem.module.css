@@ -13,10 +13,12 @@
     text-decoration: none; 
 }
 
-.Container a:hover,
-.Container a:active,
+.Container a:hover{
+    color: #969696;
+}
+
 .Container a.active {
+    color: #717171;
+    background-color: #eeeeee;
     transition: 0.25s; 
-    background-color: #0097fe;
-    color: white; 
 }
