@@ -1,13 +1,15 @@
 .Container {
-    padding: 10px; 
+    padding: 0 8px 0 8px; 
     height: 85%;
     display: flex; 
     justify-content: center; 
     align-items: center;
+    text-decoration: none;
+    color: black;
 }
 
-.Container img {
-    height: 100%; 
+.Icon {
+    max-height: 45px;
 }
 
 .Name {

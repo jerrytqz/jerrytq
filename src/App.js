@@ -1,12 +1,12 @@
-import React, {Component} from 'react'; 
-import {Routes, Route} from 'react-router-dom'; 
+import React, { Component } from 'react'; 
+import { Routes, Route, ScrollRestoration } from 'react-router-dom'; 
 
 import Layout from './components/Layout/Layout'; 
 import Home from './containers/Home/Home';
 import Projects from './containers/Projects/Projects';
 
 import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
-import {ASSETS_BASE_DIR} from './shared/constants';
+import { ASSETS_BASE_DIR } from './shared/constants';
 
 class App extends Component {
   state = {
@@ -45,6 +45,7 @@ class App extends Component {
               <Route path="/projects" element={<Projects content={this.state.projectsContent}/>}/>
             </Routes>
           </Layout>
+          <ScrollRestoration/>
         </div>
       )
     );

@@ -13,20 +13,38 @@
     background: #4fc3dc;
     margin: 0 4px;
     border-radius: 50%;
-    box-shadow: 0 0 0 19px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    box-shadow: 0 0 0 15px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
     animation: float 10s linear infinite;
     animation-duration: calc(125s / var(--i));
+    transform: scale(0);
 }
 
-.Bubble:nth-child(even) {
+.Bubble:nth-child(2n) {
     background: #ff2d75;
-    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+    box-shadow: 0 0 0 12px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+.Bubble:nth-child(3n) {
+    background: #2dff2d;
+    box-shadow: 0 0 0 10px #2dff2d44, 0 0 50px #2dff2d, 0 0 100px #2dff2d;
+}
+
+.Bubble:nth-child(4n) {
+    animation-delay: 1.5s;
+}
+
+.Bubble:nth-child(5n) {
+    animation-delay: 3s;
+}
+
+.Bubble:nth-child(6n) {
+    animation-delay: 4.5s;
 }
 
 @keyframes float {
     0% {
         top: 100%;
-        transform: translateY(100px) scale(0);
+        transform: translateY(0px) scale(0);
     }
     100% {
         top: 0%;
