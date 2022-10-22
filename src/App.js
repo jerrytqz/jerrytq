@@ -7,6 +7,7 @@ import Projects from './containers/Projects/Projects';
 
 import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
 import { ASSETS_BASE_DIR } from './shared/constants';
+import Error from './shared/UI/Error/Error';
 
 class App extends Component {
   state = {
@@ -41,8 +42,8 @@ class App extends Component {
         <div>
           <Layout>
             <Routes>
-              <Route path="/" element={<Home content={this.state.homeContent}/>}/>
-              <Route path="/projects" element={<Projects content={this.state.projectsContent}/>}/>
+              <Route path="/" element={<Home content={this.state.homeContent}/>} errorElement={<Error/>}/>
+              <Route path="/projects" element={<Projects content={this.state.projectsContent}/>} errorElement={<Error/>}/>
             </Routes>
           </Layout>
           <ScrollRestoration/>

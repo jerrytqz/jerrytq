@@ -16,6 +16,7 @@
     box-shadow: 0 0 0 15px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
     animation: float 10s linear infinite;
     animation-duration: calc(125s / var(--i));
+    animation-delay: calc(30s / var(--j));
     transform: scale(0);
 }
 

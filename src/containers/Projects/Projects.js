@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Project from '../../components/Project/Project';  
 
 class Projects extends Component {
-    render() {   
+    render() { 
         return (
             <>
                 {this.props.content.projects.map(

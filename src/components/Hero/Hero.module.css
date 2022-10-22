@@ -25,6 +25,7 @@
     font-weight: bold;
     font-size: 64px;
     z-index: 50;
+    text-align: center;
 }
 
 .CommandContainer {
@@ -73,9 +74,27 @@
     color: white;
     cursor: default;
     z-index: 50;
+    line-height: 0;
 }
 
 .StatusMessage {
     color: white;
     font-size: 12px;
+}
+
+.Min768Block, 
+.Min768Flex {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .Min768None {
+        display: none;
+    }
+    .Min768Block {
+        display: block;
+    }
+    .Min768Flex {
+        display: flex;
+    }
 }

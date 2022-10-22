@@ -55,14 +55,15 @@ const Hero = (props) => {
     return (
         <section className={classes.Container}>
             <BubbleBackground/>
-            <img className={classes.HeroImage} src={props.content.heroImage} alt="Jerry Zheng" draggable={false}/>
-            <h1 className={classes.PrimaryText}>{props.content.primaryText}</h1>
-            <div className={classes.CommandContainer}>
+            <img className={classes.HeroImage} src={props.content.heroImage} alt={props.content.heroImageAlt} draggable={false}/>
+            <h1 className={[classes.PrimaryText, classes.Min768None].join(' ')}>{props.content.shortPrimaryText}</h1>
+            <h1 className={[classes.PrimaryText, classes.Min768Block].join(' ')}>{props.content.longPrimaryText}</h1>
+            <div className={[classes.CommandContainer, classes.Min768Flex].join(' ')}>
                 <code className={classes.LineNumber}>{lineNumber} &nbsp;</code>
                 <code className={classes.Command} ref={command}/>
                 <div className={`${classes.TypingBar} ${typingBarBlink && classes.Blink}`}/>
             </div>
-            <div className={classes.StatusContainer} style={statusContainerStyle}
+            <div className={[classes.StatusContainer, classes.Min768Flex].join(' ')} style={statusContainerStyle}
                 onMouseEnter={() => { setStatusContainerStyle({borderRadius: '10px', padding: '3px 6px'}); setStatusStyle({display: 'block'}); }} 
                 onMouseLeave={() => { setStatusContainerStyle({borderRadius: '50%', padding: '0'}); setStatusStyle({display: 'none'}); }}
             >
