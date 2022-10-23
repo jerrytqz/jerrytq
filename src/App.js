@@ -7,7 +7,9 @@ import Projects from './containers/Projects/Projects';
 
 import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
 import { ASSETS_BASE_DIR } from './shared/constants';
-import Error from './shared/UI/Error/Error';
+import GeneralError from './shared/UI/Errors/GeneralError/GeneralError';
+import NotFoundError from './shared/UI/Errors/NotFoundError/NotFoundError';
+import ErrorBoundary from './shared/ErrorBoundary';
 
 class App extends Component {
   state = {
@@ -41,10 +43,13 @@ class App extends Component {
       : (
         <div>
           <Layout>
-            <Routes>
-              <Route path="/" element={<Home content={this.state.homeContent}/>} errorElement={<Error/>}/>
-              <Route path="/projects" element={<Projects content={this.state.projectsContent}/>} errorElement={<Error/>}/>
-            </Routes>
+            <ErrorBoundary>
+              <Routes>
+                <Route path="/" element={<Home content={this.state.homeContent}/>} errorElement={<GeneralError/>}/>
+                <Route path="/projects" element={<Projects content={this.state.projectsContent}/>} errorElement={<GeneralError/>}/>
+                <Route path="*" element={<NotFoundError/>} errorElement={<GeneralError/>}/> 
+              </Routes>
+            </ErrorBoundary>
           </Layout>
           <ScrollRestoration/>
         </div>

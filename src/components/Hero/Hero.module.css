@@ -23,9 +23,10 @@
     margin-top: 15px;
     color: white; 
     font-weight: bold;
-    font-size: 64px;
+    font-size: 52px;
     z-index: 50;
     text-align: center;
+    white-space: nowrap;
 }
 
 .CommandContainer {
@@ -96,5 +97,8 @@
     }
     .Min768Flex {
         display: flex;
+    }
+    .PrimaryText {
+        font-size: 64px;
     }
 }
