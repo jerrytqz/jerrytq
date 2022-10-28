@@ -21,6 +21,12 @@
     transform: scale(1);
 }
 
+.CopyrightText {
+    color: white;
+    margin: 0;
+    font-size: 12px;
+}
+
 @media only screen and (min-width: 768px) {
     .Container {
         padding: 0 20px;
@@ -28,4 +34,8 @@
         flex-direction: row;
         justify-content: space-between;
     }
+
+    .CopyrightText {
+        font-size: 16px;
+    } 
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import { Routes, Route, ScrollRestoration } from 'react-router-dom'; 
 
-import Layout from './components/Layout/Layout'; 
+import Layout from './Layout'; 
 import Home from './containers/Home/Home';
 import Projects from './containers/Projects/Projects';
 
