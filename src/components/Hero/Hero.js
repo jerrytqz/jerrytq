@@ -24,7 +24,7 @@ const Hero = (props) => {
 
         const typeWriter = (i, j) => {
             if (i < props.content.commands[j].length) {
-                command.current.textContent += props.content.commands[j].charAt(i);
+                if (command.current) command.current.textContent += props.content.commands[j].charAt(i);
                 writeTimeout = setTimeout(() => typeWriter(++i, j), WRITE_DELAY);
             } else {
                 setTypingBarBlink(true);
@@ -35,7 +35,7 @@ const Hero = (props) => {
         const typeDeleter = (i, j) => {
             setTypingBarBlink(false);
             if (i > 0) {
-                command.current.textContent = props.content.commands[j].slice(0, i - 1);
+                if (command.current) command.current.textContent = props.content.commands[j].slice(0, i - 1);
                 deleteTimeout = setTimeout(() => typeDeleter(--i, j), DELETE_DELAY);
             } else {
                 setLineNumber(prev => (prev === props.content.commands.length ? 1 : prev + 1));

@@ -41,7 +41,7 @@ class App extends Component {
         </div>
       )
       : (
-        <div>
+        <>
           <Layout>
             <ErrorBoundary>
               <Routes>
@@ -52,7 +52,7 @@ class App extends Component {
             </ErrorBoundary>
           </Layout>
           <ScrollRestoration/>
-        </div>
+        </>
       )
     );
   }
