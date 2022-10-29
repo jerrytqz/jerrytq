@@ -9,9 +9,9 @@ const Toolbar = (props) => {
     return (
         <header className={classes.Container}>
             <Button buttonClass={classes.SidebarButton} onClick={props.onSidebarOpen}>
-                <span className={classes.Line}/>
-                <span className={classes.Line}/>
-                <span className={classes.Line}/>
+                <span className={classes.HamburgerLine}/>
+                <span className={classes.HamburgerLine}/>
+                <span className={classes.HamburgerLine}/>
             </Button>
             <Logo/>
             <nav className={classes.Min768Block}>

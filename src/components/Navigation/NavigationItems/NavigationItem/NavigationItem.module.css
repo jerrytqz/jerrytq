@@ -15,6 +15,7 @@
 
 .Container a:hover {
     color: #969696;
+    transition: 0.25s;
 } 
 
 .Container a.active {
@@ -35,6 +36,7 @@
 
 .ContainerToolbar a:hover{
     color: #969696;
+    transition: 0.25s;
 }
 
 .ContainerToolbar a.active {

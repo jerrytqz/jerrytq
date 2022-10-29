@@ -22,13 +22,13 @@
     justify-content: center;
 }
 
-.Line {
+.HamburgerLine {
     height: 2px;
     width: 16px;
     background-color: white;
 }
 
-.Line + .Line {
+.HamburgerLine + .HamburgerLine {
     margin-top: 4px;
 }
 
