@@ -7,7 +7,7 @@ import Backdrop from '../../../shared/UI/Backdrop/Backdrop';
 const Sidebar = (props) => (
     <>
         <div className={[props.show ? classes.Show : '', classes.Container].join(' ')}>
-            <nav>
+            <nav className={classes.NavItems}>
                 <NavigationItems/>
             </nav>
         </div>

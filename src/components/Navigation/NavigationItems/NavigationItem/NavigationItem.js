@@ -12,7 +12,7 @@ const NavigationItem = (props) => {
             <NavLink 
                 to={props.link}
                 end={props.end}
-                className={({ isActive }) => isActive ? classes.active : ""}
+                className={({ isActive }) => isActive ? classes.active : ''}
             >
                 {props.children}
             </NavLink>

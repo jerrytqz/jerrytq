@@ -1,12 +1,12 @@
 import React, { Component } from 'react'; 
 
-import Project from '../../components/Project/Project';  
+// import Project from '../../components/Project/Project';  
 
 class Projects extends Component {
     render() { 
         return (
             <>
-                {this.props.content.projects.map(
+                {/* {this.props.content.projects.map(
                     (project, index) => (
                         <Project 
                             key={index}
@@ -19,7 +19,7 @@ class Projects extends Component {
                         />
                     )
                 )}
-                <div style={{height: "200px"}}/>
+                <div style={{height: "200px"}}/> */}
             </>
         )
     }
