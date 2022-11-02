@@ -7,8 +7,7 @@
     outline: none; 
 }
 
-.Button:hover,
-.Button:active {
+.Button:hover {
     background-color: #5355d4; 
     cursor: pointer; 
     outline: none; 
@@ -18,4 +17,12 @@
     opacity: 0.3; 
     cursor: not-allowed; 
     background-color: #393ae7; 
+}
+
+@media (any-hover: hover) and (pointer: fine) {
+    .Button:hover {
+        background-color: #5355d4; 
+        cursor: pointer; 
+        outline: none; 
+    }
 }

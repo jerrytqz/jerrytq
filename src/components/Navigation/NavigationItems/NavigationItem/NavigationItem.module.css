@@ -13,11 +13,6 @@
     width: 100%;
 }
 
-.Link:hover {
-    color: #969696;
-    transition: 0.25s;
-} 
-
 .Link.active {
     color: #717171;
     background-color: #eeeeee;
@@ -34,12 +29,24 @@
     text-decoration: none; 
 }
 
-.LinkToolbar:hover {
-    color: #969696;
-    transition: 0.25s;
-}
-
 .LinkToolbar.active {
     color: #717171;
     background-color: #eeeeee;
+}
+
+@media (any-hover: hover) and (pointer: fine) {
+    .Link:hover {
+        color: #969696;
+        transition: 0.25s;
+    } 
+
+    .LinkToolbar:hover {
+        color: #969696;
+        transition: 0.25s;
+    }
+
+    .Link.active,
+    .LinkToolbar.active {
+        color: #717171;
+    }
 }

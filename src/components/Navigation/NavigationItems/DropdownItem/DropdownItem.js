@@ -19,7 +19,11 @@ const DropdownItem = (props) => {
     return (
         <li className={props.toolbar ? classes.ContainerToolbar : classes.Container}>
             <div
-                className={[props.toolbar ? classes.ButtonToolbar : classes.Button, location.pathname.startsWith(props.baseLink) ? classes.active : ''].join(' ')}
+                className={[
+                    props.toolbar ? classes.ButtonToolbar : classes.Button, 
+                    showDropdown ? classes.clicked : '',
+                    location.pathname.startsWith(props.baseLink) ? classes.active : ''
+                ].join(' ')}
                 onClick={clickDropdownHandler}
             >
                 {props.name}
