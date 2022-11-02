@@ -2,15 +2,16 @@ import React from 'react';
 
 import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem.js'; 
+import DropdownItem from './DropdownItem/DropdownItem.js'; 
 
 const NavigationItems = (props) => {
-    let containerClass = classes.Container;
-    if (props.toolbar) containerClass = classes.ContainerToolbar;
-
     return (
-        <ul className={containerClass}>
+        <ul className={props.toolbar ? classes.ContainerToolbar : classes.Container}>
             <NavigationItem link="/" end toolbar={props.toolbar}>Home</NavigationItem>
-            <NavigationItem link="/projects" toolbar={props.toolbar}>Projects</NavigationItem>
+            <DropdownItem baseLink="/projects" name="Projects" toolbar={props.toolbar}>
+                Spin
+            </DropdownItem>
+            <NavigationItem link="/contact" toolbar={props.toolbar}>Contact</NavigationItem>
         </ul>
     );
 };

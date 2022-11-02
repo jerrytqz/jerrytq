@@ -4,9 +4,10 @@ import { Routes, Route, ScrollRestoration } from 'react-router-dom';
 import Layout from './Layout'; 
 import Home from './containers/Home/Home';
 import Projects from './containers/Projects/Projects';
+import Contact from './containers/Contact/Contact';
 
-import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
 import { ASSETS_BASE_DIR } from './shared/constants';
+import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
 import GeneralError from './shared/UI/Errors/GeneralError/GeneralError';
 import NotFoundError from './shared/UI/Errors/NotFoundError/NotFoundError';
 import ErrorBoundary from './shared/ErrorBoundary';
@@ -46,7 +47,8 @@ class App extends Component {
             <ErrorBoundary>
               <Routes>
                 <Route path="/" element={<Home content={this.state.homeContent}/>} errorElement={<GeneralError/>}/>
-                <Route path="/projects" element={<Projects content={this.state.projectsContent}/>} errorElement={<GeneralError/>}/>
+                <Route path="/projects/:projectName" element={<Projects content={this.state.projectsContent}/>} errorElement={<GeneralError/>}/>
+                <Route path="/contact" element={<Contact/>} errorElement={<GeneralError/>}/>
                 <Route path="*" element={<NotFoundError/>} errorElement={<GeneralError/>}/> 
               </Routes>
             </ErrorBoundary>
