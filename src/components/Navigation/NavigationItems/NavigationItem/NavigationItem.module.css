@@ -4,7 +4,6 @@
 }
 
 .Link {
-    font-size: 18px;
     color: #717171;
     text-decoration: none;
     display: inline-block;
@@ -14,7 +13,7 @@
 }
 
 .Link.active {
-    color: #717171;
+    color: black;
     background-color: #eeeeee;
 }
 
@@ -30,23 +29,18 @@
 }
 
 .LinkToolbar.active {
-    color: #717171;
+    color: black;
     background-color: #eeeeee;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
     .Link:hover {
-        color: #969696;
+        color: black;
         transition: 0.25s;
     } 
 
     .LinkToolbar:hover {
-        color: #969696;
+        color: black;
         transition: 0.25s;
-    }
-
-    .Link.active,
-    .LinkToolbar.active {
-        color: #717171;
     }
 }

@@ -25,7 +25,6 @@
 
 .Button {
     user-select: none;
-    font-size: 18px;
     color: #717171;
     padding: 16px 20px;
     box-sizing: border-box;
@@ -35,15 +34,20 @@
 }
 
 .Button.clicked {
-    color: #969696;
+    color: black;
 }
 
 .Button.clicked > .ArrowUp {
-    border-bottom-color: #969696;
+    border-bottom-color: black;
 }
 
 .Button.active {
+    color: black;
     background-color: #eeeeee;
+}
+
+.Button.active > .ArrowDown {
+    border-top-color: black;
 }
 
 .ContainerToolbar {
@@ -60,37 +64,50 @@
 }
 
 .ButtonToolbar.clicked {
-    color: #969696;
+    color: black;
 }
 
 .ButtonToolbar.clicked > .ArrowUp {
-    border-bottom-color: #969696;
+    border-bottom-color: black;
 }
 
 .ButtonToolbar.active {
+    color: black;
     background-color: #eeeeee;
+}
+
+.ButtonToolbar.active > .ArrowDown {
+    border-top-color: black;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
     .Button:hover {
-        color: #969696;
-        transition: 0.25s;
+        color: black;
         cursor: pointer;
+        transition: 0.25s;
     } 
     
     .Button:hover > .ArrowDown {
-        border-top-color: #969696;
+        border-top-color: black;
+        transition: 0.25s;
+    }
+
+    .Button:hover > .ArrowUp {
         transition: 0.25s;
     }
 
     .ButtonToolbar:hover {
-        color: #969696;
-        transition: 0.25s;
+        color: black;
         cursor: pointer;
+        transition: 0.25s;
     }
     
     .ButtonToolbar:hover > .ArrowDown {
-        border-top-color: #969696;
+        border-top-color: black;
+        transition: 0.25s;
+    }
+
+    .ButtonToolbar:hover > .ArrowUp {
         transition: 0.25s;
     }
 }

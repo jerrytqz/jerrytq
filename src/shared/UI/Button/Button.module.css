@@ -1,15 +1,9 @@
-.Button {
+.Container {
     background-color: #393ae7; 
     border: none;
     color: white;
     text-decoration: none;
     border-radius: 8px; 
-    outline: none; 
-}
-
-.Button:hover {
-    background-color: #5355d4; 
-    cursor: pointer; 
     outline: none; 
 }
 
@@ -20,7 +14,7 @@
 }
 
 @media (any-hover: hover) and (pointer: fine) {
-    .Button:hover {
+    .Container:hover {
         background-color: #5355d4; 
         cursor: pointer; 
         outline: none; 
