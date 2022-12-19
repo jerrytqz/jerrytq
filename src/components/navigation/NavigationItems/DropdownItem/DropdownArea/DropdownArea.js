@@ -7,7 +7,7 @@ import classes from './DropdownArea.module.css';
 const DropdownArea = (props) => {
     return (
         <div className={[props.toolbar ? classes.ContainerToolbar : classes.Container, props.show ? classes.Show : ''].join(' ')}>
-            {props.fetchLoading ? <LoadingSpinner style={{fontSize: '9px', margin: '26px'}}/> : props.links.map(
+            {props.fetchLoading ? <LoadingSpinner style={{fontSize: props.toolbar ? '9px' : '6px', margin: '26px auto'}}/> : props.links.map(
                 (link, index) => (
                     <NavLink 
                         key={index} 
