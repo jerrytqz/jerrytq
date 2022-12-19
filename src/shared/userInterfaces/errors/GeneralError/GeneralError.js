@@ -3,7 +3,7 @@ import React from 'react';
 import Error from '../Error/Error';
 
 const GeneralError = () => {
-    return <Error title="Oh, No!" description="Something went wrong! Please try refreshing."/>;
+    return <Error title="Oh, No!" description="Something went wrong! Please try refreshing or going back to home."/>;
 };
 
 export default GeneralError; 

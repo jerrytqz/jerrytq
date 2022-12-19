@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'; 
 import classes from './BubbleBackground.module.css';
 
-import useWindowDimensions from '../../Hooks/useWindowDimensions';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 
 const BubbleBackground = () => {

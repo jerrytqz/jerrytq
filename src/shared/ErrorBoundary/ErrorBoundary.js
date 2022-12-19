@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 
-import GeneralError from './UI/Errors/GeneralError/GeneralError';
+import GeneralError from '../userInterfaces/errors/GeneralError/GeneralError';
 
 class ErrorBoundary extends Component {
     state = { hasError: false };

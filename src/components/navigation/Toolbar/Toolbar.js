@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Toolbar.module.css'; 
 import NavigationItems from '../NavigationItems/NavigationItems'; 
 import Logo from '../../Logo/Logo'; 
-import Button from '../../../shared/UI/Button/Button';
+import Button from '../../../shared/userInterfaces/Button/Button';
 
 const Toolbar = (props) => {
     return (

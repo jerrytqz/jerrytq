@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import BubbleBackground from '../../shared/UI/BubbleBackground/BubbleBackground';
+import BubbleBackground from '../../shared/userInterfaces/BubbleBackground/BubbleBackground';
 import classes from './Hero.module.css';
 
 const WRITE_DELAY = 50;

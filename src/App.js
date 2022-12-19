@@ -7,10 +7,10 @@ import Projects from './containers/Projects/Projects';
 import Contact from './containers/Contact/Contact';
 
 import { ASSETS_BASE_DIR } from './shared/constants';
-import LoadingSpinner from './shared/UI/LoadingSpinner/LoadingSpinner';
-import GeneralError from './shared/UI/Errors/GeneralError/GeneralError';
-import NotFoundError from './shared/UI/Errors/NotFoundError/NotFoundError';
-import ErrorBoundary from './shared/ErrorBoundary';
+import LoadingSpinner from './shared/userInterfaces/LoadingSpinner/LoadingSpinner';
+import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralError';
+import NotFoundError from './shared/userInterfaces/errors/NotFoundError/NotFoundError';
+import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   state = {

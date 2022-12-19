@@ -4,7 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 
 import './index.css';
 import App from './App';
-import GeneralError from './shared/UI/Errors/GeneralError/GeneralError';
+import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralError';
 
 const router = (createBrowserRouter(
   createRoutesFromElements(

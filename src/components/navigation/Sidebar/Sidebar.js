@@ -2,8 +2,8 @@ import React from 'react';
 import classes from './Sidebar.module.css'; 
 
 import NavigationItems from '../NavigationItems/NavigationItems'; 
-import Backdrop from '../../../shared/UI/Backdrop/Backdrop';
-import Button from '../../../shared/UI/Button/Button';
+import Backdrop from '../../../shared/userInterfaces/Backdrop/Backdrop';
+import Button from '../../../shared/userInterfaces/Button/Button';
 
 const Sidebar = (props) => (
     <>
