@@ -3,7 +3,7 @@ import { Routes, Route, ScrollRestoration } from 'react-router-dom';
 
 import Layout from './Layout'; 
 import Home from './containers/Home/Home';
-import Projects from './containers/Projects/Projects';
+import Project from './components/Project/Project';
 import Contact from './containers/Contact/Contact';
 
 import { ASSETS_BASE_DIR } from './shared/constants';
@@ -47,7 +47,7 @@ class App extends Component {
             <ErrorBoundary>
               <Routes>
                 <Route path="/" element={<Home content={this.state.homeContent}/>} errorElement={<GeneralError/>}/>
-                <Route path="/projects/:projectName" element={<Projects content={this.state.projectsContent}/>} errorElement={<GeneralError/>}/>
+                <Route path="/projects/:urlName" element={<Project/>} errorElement={<GeneralError/>}/>
                 <Route path="/contact" element={<Contact/>} errorElement={<GeneralError/>}/>
                 <Route path="*" element={<NotFoundError/>} errorElement={<GeneralError/>}/> 
               </Routes>

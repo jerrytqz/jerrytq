@@ -20,10 +20,9 @@ const NavigationItems = (props) => {
             .then(result => {
                 setProjectNames(result.projectNames);
                 setFetchLoading(false);
-            }).catch((error) => {
+            }).catch(() => {
                 setFetchError(true);
                 setFetchLoading(false);
-                console.log(`${error}`);
             });
     }, []);
 
