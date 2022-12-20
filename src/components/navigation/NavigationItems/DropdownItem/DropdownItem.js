@@ -42,7 +42,14 @@ const DropdownItem = (props) => {
                 {props.name}
                 {showDropdown ? <span className={classes.ArrowUp}/> : <span className={classes.ArrowDown}/>}
             </div>
-            <DropdownArea baseLink={props.baseLink} links={props.links} show={showDropdown} toolbar={props.toolbar} fetchLoading={props.fetchLoading}/>
+            <DropdownArea 
+                baseLink={props.baseLink} 
+                links={props.links} 
+                show={showDropdown} 
+                toolbar={props.toolbar} 
+                fetchLoading={props.fetchLoading} 
+                fetchError={props.fetchError}
+            />
         </li>
     );
 };

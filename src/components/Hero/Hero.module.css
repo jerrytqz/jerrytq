@@ -17,6 +17,7 @@
     height: 300px;
     object-fit: cover; 
     z-index: 50;
+    background-color: white;
 }
 
 .PrimaryText {

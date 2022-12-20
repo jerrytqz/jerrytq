@@ -8,10 +8,10 @@ const Error = (props) => {
     const history = useNavigate();
     
     return (
-        <section className={classes.Container}>
-            <h2 className={classes.Title}>{props.title}</h2>
-            <p className={classes.Description}>{props.description}</p>
-            <Button onClick={() => history('/')} buttonClass={classes.HomeButton}>🏠 Home</Button>
+        <section className={classes.Container} style={props.containerStyle}>
+            <h2 className={classes.Title} style={props.titleStyle}>{props.title}</h2>
+            <p className={classes.Description} style={props.descriptionStyle}>{props.description}</p>
+            {props.homeButton ? <Button onClick={() => history('/')} buttonClass={classes.HomeButton}>🏠 Home</Button> : null}
         </section>
     );
 };
