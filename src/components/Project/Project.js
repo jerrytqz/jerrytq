@@ -7,7 +7,7 @@ import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 
 const Project = (props) => {
-    const { urlName } = useParams();
+    const { slug } = useParams();
     const [fetchLoading, setFetchLoading] = useState(false);
     const [fetchError, setFetchError] = useState(false);
     const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
@@ -15,7 +15,7 @@ const Project = (props) => {
     
     useEffect(() => {
         setFetchLoading(true);
-        fetch(`${BACKEND_BASE_DIR}/fetch-project/?urlName=${urlName}`, {method: 'GET'})
+        fetch(`${BACKEND_BASE_DIR}/fetch-project/?slug=${slug}`, {method: 'GET'})
             .then(response => {
                 if (!response.ok) return response.json().then(result => { 
                     if (response.status === 404) setFetchErrorMsg(result.error); 
@@ -30,12 +30,12 @@ const Project = (props) => {
                 setFetchError(true);
                 setFetchLoading(false);
             });
-    }, [urlName]);
+    }, [slug]);
 
     return (
         fetchLoading ? (
             <div style={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}> 
-                <LoadingSpinner/> 
+                <LoadingSpinner style={{fontSize: '11px'}}/> 
             </div>
         ) : fetchError ? <FetchError description={fetchErrorMsg} homeButton/> : (
             <div/>

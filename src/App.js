@@ -47,7 +47,7 @@ class App extends Component {
             <ErrorBoundary>
               <Routes>
                 <Route path="/" element={<Home content={this.state.homeContent}/>} errorElement={<GeneralError/>}/>
-                <Route path="/projects/:urlName" element={<Project/>} errorElement={<GeneralError/>}/>
+                <Route path="/projects/:slug" element={<Project/>} errorElement={<GeneralError/>}/>
                 <Route path="/contact" element={<Contact/>} errorElement={<GeneralError/>}/>
                 <Route path="*" element={<NotFoundError/>} errorElement={<GeneralError/>}/> 
               </Routes>

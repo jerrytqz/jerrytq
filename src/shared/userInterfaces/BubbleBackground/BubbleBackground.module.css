@@ -49,6 +49,6 @@
     }
     100% {
         top: 0%;
-        transform: translateY(-100px) scale(1);
+        transform: translateY(-150px) scale(1);
     }
 }

@@ -3,7 +3,6 @@ import classes from './BubbleBackground.module.css';
 
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
-
 const BubbleBackground = () => {
     const ANIMATION_DELAY = useRef(Math.random() * -10);
     const { width } = useWindowDimensions(); 

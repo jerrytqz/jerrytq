@@ -16,7 +16,7 @@ const DropdownArea = (props) => {
                     (link, index) => (
                         <NavLink 
                             key={index} 
-                            to={`${props.baseLink}/${link.urlName}`}
+                            to={`${props.baseLink}/${link.slug}`}
                             className={({ isActive }) => [props.toolbar ? classes.LinkToolbar : classes.Link, isActive ? classes.active : ''].join(' ')}
                         >
                             {link.name}
