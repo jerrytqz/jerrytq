@@ -6,12 +6,11 @@ import DropdownItem from './DropdownItem/DropdownItem.js';
 import { BACKEND_BASE_DIR } from '../../../shared/constants';
 
 const NavigationItems = (props) => {
-    const [fetchLoading, setFetchLoading] = useState(false);
+    const [fetchLoading, setFetchLoading] = useState(true);
     const [fetchError, setFetchError] = useState(false);
     const [projectNames, setProjectNames] = useState([]);
     
     useEffect(() => {
-        setFetchLoading(true);
         fetch(`${BACKEND_BASE_DIR}/fetch-project-names/`, {method: 'GET'})
             .then(response => {
                 if (!response.ok) return response.json().then(result => { throw new Error(result.error); });

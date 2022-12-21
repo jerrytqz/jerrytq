@@ -1,55 +1,68 @@
 .Container {
+    margin: auto;
+    max-width: 1000px;
+    padding: 60px;
+}
+
+.Header {
     display: flex;
     justify-content: space-between;
-    width: 1200px; 
-    margin: auto; 
+    align-items: baseline;
+}
+
+.HeaderRight {
+    display: flex;
+}
+
+.Name {
+    font-size: 72px;
+    font-weight: 800; 
+}
+
+.StartDate {
+    font-size: 18px;
+    color: black;
+    margin-right: 6px;
+}
+
+.Credits {
+    font-size: 18px;
+    color: black;
+}
+
+.Divider {
+    background-color: white;
 }
 
 .Image {
-    width: 700px; 
-    height: 700px; 
-    object-fit: cover;
-    margin-right: 30px; 
-    border: 2px solid #b8b8b8; 
+    max-width: 600px;
+    border: 1px solid gainsboro;
 }
 
-.Text {
-    border: 2px solid #b8b8b8; 
-    border-radius: 10px; 
-    padding: 20px; 
-    line-height: 25px; 
-    text-align: justify;
-    background: white; 
-    display: flex; 
-    flex-direction: column; 
+.Content {
+    margin-top: 30px;
+    display: flex;
+}
+
+.ContentRight {
+    margin-left: 30px;
+    padding: 20px;
+    border: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .Description {
-    display: flex; 
-    flex-direction: column;
+    text-align: justify;
+    margin: 0;
+    font-size: 16px;
+    line-height: 30px;
 }
 
-.DescriptionHeader {
-    font-weight: 700; 
-    font-size: 1.5em; 
-    margin-bottom: 10px; 
-    padding-bottom: 10px; 
-    border-bottom: 1px solid black; 
-}
-
-.LinksHeader {
-    font-weight: 700; 
-    font-size: 1.5em; 
-    margin-top: 30px; 
-    margin-bottom: 10px; 
-    padding-bottom: 10px; 
-    border-bottom: 1px solid black; 
-}
-
-.Link {
-    text-decoration: none;
-}
-
-.Link:hover {
-    text-decoration: underline;
+.WebsiteButton {
+    padding: 16px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
 }
