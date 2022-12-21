@@ -16,6 +16,7 @@ const Project = () => {
     const [project, setProject] = useState({});
     
     useEffect(() => {
+        setFetchLoading(true);
         fetch(`${BACKEND_BASE_DIR}/fetch-project/?slug=${slug}`, {method: 'GET'})
             .then(response => {
                 if (!response.ok) return response.json().then(result => { 
