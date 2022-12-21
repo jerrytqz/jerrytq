@@ -8,6 +8,9 @@ import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 import Button from '../../shared/userInterfaces/Button/Button';
 
+import creditsImage from '../../assets/images/projects/credits.png';
+import dateImage from '../../assets/images/projects/date.png';
+
 const Project = () => {
     const { slug } = useParams();
     const [fetchLoading, setFetchLoading] = useState(true);
@@ -44,13 +47,19 @@ const Project = () => {
                 <header className={classes.Header}>
                     <h2 className={classes.Name}>{project.name}</h2>
                     <div className={classes.HeaderRight}>
-                        <p className={classes.StartDate}>📅{project.startDate}</p>
-                        <p className={classes.Credits}>👤{project.credits}</p>
+                        <p className={classes.Credits}>
+                            <img src={creditsImage} alt="Credits" className={classes.CreditsImage} draggable={false}/>
+                            {project.credits}
+                        </p>
+                        <p className={classes.StartDate}>
+                            <img src={dateImage} alt="Date" className={classes.DateImage} draggable={false}/>
+                            {project.startDate}
+                        </p>
                     </div>
                 </header>
                 <hr className={classes.Divider}/>
                 <div className={classes.Content}>
-                    <img src={project.imageLinks[0].url} alt={project.imageLinks[0].alt} className={classes.Image} draggable={false}/>
+                    <img src={project.imageLinks[0].url} alt={project.imageLinks[0].alt} className={classes.ProjectImage} draggable={false}/>
                     <div className={classes.ContentRight}>
                         <p className={classes.Description}>{project.description}</p>
                         {project.projectLinks.WEB ? (
