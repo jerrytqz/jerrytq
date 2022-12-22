@@ -85,3 +85,9 @@
     padding: 20px;
     border: 1px solid gainsboro;
 }
+
+.Technologies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 64px);
+    grid-gap: 32px 32px;
+}

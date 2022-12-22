@@ -18,6 +18,7 @@
 }
 
 .ArrowLeft, .ArrowRight {
+    color: #393ae7;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -52,10 +53,10 @@
 
 @media (any-hover: hover) and (pointer: fine) {
     .ArrowLeft:hover, .ArrowRight:hover {
-        color: gray;
+        color: #8282da;
     }
 
     .Dot:hover {
-        background-color: darkgray;
+        background-color: #8282da;
     }
 }

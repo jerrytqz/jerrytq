@@ -6,10 +6,12 @@ import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSp
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 import Button from '../../shared/userInterfaces/Button/Button';
-import Slideshow from '../Slideshow/Slideshow';
+import Slideshow from './Slideshow/Slideshow';
 
 import creditsImage from '../../assets/images/projects/credits.png';
 import dateImage from '../../assets/images/projects/date.png';
+import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
+import Technology from '../Technology/Technology';
 
 const Project = () => {
     const { slug } = useParams();
@@ -70,7 +72,15 @@ const Project = () => {
                     </div>
                 </div>
                 <footer className={classes.Footer}>
-                    <p>Ni hao</p>
+                    <MultiArea areas={[
+                        {'title': "Technologies", 'body': (
+                            <div className={classes.Technologies}>
+                                {project.technologies.map((tech, index) => (<Technology key={index} imageURL={tech.imageLink.url} imageAlt={tech.imageLink.alt}/>))}
+                            </div>
+                        )},
+                        {'title': "Tags", 'body': <p>Coming soon!</p>},
+                        {'title': "Others", 'body': <p>Coming soon!</p>}
+                    ]}/>
                 </footer>
             </section>
         )
