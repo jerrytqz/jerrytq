@@ -1,0 +1,61 @@
+.Container {
+    position: relative;
+    border: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+}
+
+.Top {
+    display: flex;
+}
+
+.Image {
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    object-fit: cover;
+    height: 600px;
+    width: 600px;
+}
+
+.ArrowLeft, .ArrowRight {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: pointer;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.1s ease;
+    user-select: none;
+}
+
+.Counter {
+    border-top: 1px solid gainsboro;
+    text-align: center;
+    padding: 12px;
+}
+
+.Dot {
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.1s ease;
+}
+
+.Dot + .Dot {
+    margin-left: 8px;
+}
+
+@media (any-hover: hover) and (pointer: fine) {
+    .ArrowLeft:hover, .ArrowRight:hover {
+        color: gray;
+    }
+
+    .Dot:hover {
+        background-color: darkgray;
+    }
+}

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { SocialIcon } from 'react-social-icons';
 
 import classes from './Project.module.css'; 
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 import Button from '../../shared/userInterfaces/Button/Button';
+import Slideshow from '../Slideshow/Slideshow';
 
 import creditsImage from '../../assets/images/projects/credits.png';
 import dateImage from '../../assets/images/projects/date.png';
@@ -49,7 +49,7 @@ const Project = () => {
                     <div className={classes.HeaderRight}>
                         <p className={classes.Credits}>
                             <img src={creditsImage} alt="Credits" className={classes.CreditsImage} draggable={false}/>
-                            {project.credits}
+                            {project.credits.join(', ')}
                         </p>
                         <p className={classes.StartDate}>
                             <img src={dateImage} alt="Date" className={classes.DateImage} draggable={false}/>
@@ -59,7 +59,7 @@ const Project = () => {
                 </header>
                 <hr className={classes.Divider}/>
                 <div className={classes.Content}>
-                    <img src={project.imageLinks[0].url} alt={project.imageLinks[0].alt} className={classes.ProjectImage} draggable={false}/>
+                    <Slideshow imageLinks={project.imageLinks}/>
                     <div className={classes.ContentRight}>
                         <p className={classes.Description}>{project.description}</p>
                         {project.projectLinks.WEB ? (
@@ -69,6 +69,9 @@ const Project = () => {
                         ) : null}
                     </div>
                 </div>
+                <footer className={classes.Footer}>
+                    <p>Ni hao</p>
+                </footer>
             </section>
         )
     );
