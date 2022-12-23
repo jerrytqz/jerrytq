@@ -11,7 +11,7 @@ const MultiArea = (props) => {
                     <div 
                         key={index} 
                         className={classes.Title} 
-                        style={index === areaIndex ? {borderBottom: '1px solid #393ae7', backgroundColor: '#eeeeee'} : null} 
+                        style={index === areaIndex ? {boxShadow: '0 1px 0 #393ae7', backgroundColor: '#eeeeee', zIndex: props.areas.length-index} : {zIndex: props.areas.length-index}} 
                         onClick={() => setAreaIndex(index)}
                     >
                         {area.title}

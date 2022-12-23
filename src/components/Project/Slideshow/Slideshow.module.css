@@ -37,8 +37,11 @@
 }
 
 .Counter {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    gap: 8px;
     border-top: 1px solid gainsboro;
-    text-align: center;
     padding: 12px;
 }
 
@@ -50,10 +53,6 @@
     border-radius: 50%;
     display: inline-block;
     transition: 0.1s ease;
-}
-
-.Dot + .Dot {
-    margin-left: 8px;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
@@ -68,7 +67,7 @@
     }
     
     .Top:hover .ArrowLeft, .Top:hover .ArrowRight {
-        opacity: 0.1;
+        opacity: 0.3;
     }
 
     .Dot:hover {

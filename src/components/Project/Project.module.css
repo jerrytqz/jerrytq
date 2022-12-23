@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.HeaderSub {
+.CreditsDate {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,14 +36,14 @@
     margin-right: 6px;
 }
 
-.StartDate {
+.Date {
     display: flex;
     align-items: center;
     font-size: 20px;
     color: black;
     white-space: nowrap;
     overflow: hidden;
-    margin-top: 0;
+    margin-top: -8px;
 }
 
 .DateImage {
@@ -61,7 +61,7 @@
     flex-direction: column;
 }
 
-.ContentText {
+.DescriptionArea {
     margin-top: 30px;
     padding: 20px;
     border: 1px solid gainsboro;
@@ -72,7 +72,11 @@
     margin: 0;
     font-size: 16px;
     line-height: 30px;
-    margin-bottom: 32px;
+}
+
+.WebsiteButtonContainer {
+    display: block;
+    margin-top: 32px;
 }
 
 .WebsiteButton {
@@ -118,7 +122,7 @@
         font-size: 72px;
     }
 
-    .HeaderSub {
+    .CreditsDate {
         margin-top: 20px;
         flex-direction: row;
         align-items: normal;
@@ -129,7 +133,7 @@
         margin-right: 10px;
     }
 
-    .StartDate {
+    .Date {
         margin-top: 0;
     }
 }
@@ -139,11 +143,11 @@
         max-width: 1100px;
     }
 
-    .HeaderSub {
+    .CreditsDate {
         margin-top: 0;
     }
 
-    .Credits, .StartDate {
+    .Credits, .Date {
         margin-bottom: 0;
     }
 
@@ -162,7 +166,7 @@
         flex-direction: row;
     }
 
-    .ContentText {
+    .DescriptionArea {
         margin-top: 0;
         margin-left: 30px;
         display: flex;
@@ -172,5 +176,9 @@
 
     .Description {
         margin-bottom: 0;
+    }
+
+    .WebsiteButtonContainer {
+        margin-top: auto;
     }
 }

@@ -49,12 +49,12 @@ const Project = () => {
             <section className={classes.Container}>
                 <header className={classes.Header}>
                     <h2 className={classes.Name}>{project.name}</h2>
-                    <div className={classes.HeaderSub}>
+                    <div className={classes.CreditsDate}>
                         <p className={classes.Credits}>
                             <img src={creditsImage} alt="Credits" className={classes.CreditsImage} draggable={false}/>
                             {project.credits.join(', ')}
                         </p>
-                        <p className={classes.StartDate}>
+                        <p className={classes.Date}>
                             <img src={dateImage} alt="Date" className={classes.DateImage} draggable={false}/>
                             {project.startDate}
                         </p>
@@ -63,10 +63,10 @@ const Project = () => {
                 <hr className={classes.Divider}/>
                 <div className={classes.Content}>
                     <Slideshow imageLinks={project.imageLinks}/>
-                    <div className={classes.ContentText}>
+                    <div className={classes.DescriptionArea}>
                         <p className={classes.Description}>{project.description}</p>
                         {project.projectLinks.WEB ? (
-                            <a style={{marginTop: 'auto'}} href={project.projectLinks.WEB} target="_blank" rel="noreferrer">
+                            <a className={classes.WebsiteButtonContainer} href={project.projectLinks.WEB} target="_blank" rel="noreferrer">
                                 <Button buttonClass={classes.WebsiteButton}>✨ See it live! ✨</Button>
                             </a> 
                         ) : null}
