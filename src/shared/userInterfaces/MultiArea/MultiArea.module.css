@@ -1,6 +1,6 @@
 .Navigation {
     display: flex;
-    border-bottom: 1px solid gainsboro;
+    flex-direction: column;
 }
 
 .Title {
@@ -8,8 +8,8 @@
     font-weight: 600;
     padding: 16px;
     cursor: pointer;
-    transition: 0.3s ease;
     user-select: none;
+    border-bottom: 1px solid gainsboro;
 }
 
 .Body {
@@ -19,6 +19,16 @@
 @media (any-hover: hover) and (pointer: fine) {
     .Title:hover {
         border-bottom: 1px solid #393ae7;
-        transition: 0s;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .Navigation {
+        flex-direction: row;
+        border-bottom: 1px solid gainsboro;
+    }
+
+    .Title {
+        border: none;
     }
 }

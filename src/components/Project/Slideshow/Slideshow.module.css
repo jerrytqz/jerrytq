@@ -1,34 +1,39 @@
 .Container {
-    position: relative;
     border: 1px solid gainsboro;
     display: flex;
     flex-direction: column;
 }
 
 .Top {
+    position: relative;
     display: flex;
 }
 
 .Image {
-    border-left: 1px solid gainsboro;
-    border-right: 1px solid gainsboro;
     object-fit: cover;
-    height: 600px;
-    width: 600px;
+    width: 100%;
 }
 
 .ArrowLeft, .ArrowRight {
-    color: #393ae7;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    height: 100%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
     cursor: pointer;
+    font-size: 16px;
     padding: 16px;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.1s ease;
+    transition: 0.2s ease;
     user-select: none;
+}
+
+.ArrowRight {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    right: 0;
 }
 
 .Counter {
@@ -52,11 +57,38 @@
 }
 
 @media (any-hover: hover) and (pointer: fine) {
-    .ArrowLeft:hover, .ArrowRight:hover {
-        color: #8282da;
+    .ArrowRight {
+        height: fit-content;
+        width: fit-content;
+        padding: 16px;
+    }
+
+    .ArrowLeft:hover, .ArrowRight:hover{
+        opacity: 0.6 !important;
+    }
+    
+    .Top:hover .ArrowLeft, .Top:hover .ArrowRight {
+        opacity: 0.1;
     }
 
     .Dot:hover {
         background-color: #8282da;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .ArrowLeft, .ArrowRight {
+        font-size: 42px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .ArrowLeft, .ArrowRight {
+        font-size: 16px;
+    }
+
+    .Image {
+        width: 600px;
+        height: 600px;
     }
 }

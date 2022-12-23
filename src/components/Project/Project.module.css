@@ -1,20 +1,23 @@
 .Container {
     margin: auto;
-    max-width: 1100px;
-    padding: 60px;
+    max-width: 600px;
+    padding: 30px;
 }
 
 .Header {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
 }
 
-.HeaderRight {
+.HeaderSub {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Name {
+    text-align: center;
     font-size: 50px;
     font-weight: 800; 
 }
@@ -24,7 +27,6 @@
     align-items: center;
     font-size: 20px;
     color: black;
-    margin-right: 10px;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -41,6 +43,7 @@
     color: black;
     white-space: nowrap;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .DateImage {
@@ -55,15 +58,13 @@
 .Content {
     margin-top: 30px;
     display: flex;
+    flex-direction: column;
 }
 
-.ContentRight {
-    margin-left: 30px;
+.ContentText {
+    margin-top: 30px;
     padding: 20px;
     border: 1px solid gainsboro;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
 }
 
 .Description {
@@ -71,11 +72,12 @@
     margin: 0;
     font-size: 16px;
     line-height: 30px;
+    margin-bottom: 32px;
 }
 
 .WebsiteButton {
-    padding: 16px;
     width: 100%;
+    padding: 16px;
     font-size: 18px;
     font-weight: 600;
 }
@@ -90,4 +92,85 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 64px);
     grid-gap: 32px 32px;
+}
+
+.Links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    grid-gap: 32px 32px; 
+}
+
+.SocialMediaIcon {
+    transform: scale(1.65);
+}
+
+.SocialMediaIcon:hover {
+    transform: scale(1.85);
+}
+
+@media only screen and (min-width: 768px) {
+    .Container {
+        max-width: 800px;
+        padding: 60px;
+    }
+
+    .Name {
+        font-size: 72px;
+    }
+
+    .HeaderSub {
+        margin-top: 20px;
+        flex-direction: row;
+        align-items: normal;
+    }
+
+    .Credits {
+        margin-top: 0;
+        margin-right: 10px;
+    }
+
+    .StartDate {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Container {
+        max-width: 1100px;
+    }
+
+    .HeaderSub {
+        margin-top: 0;
+    }
+
+    .Credits, .StartDate {
+        margin-bottom: 0;
+    }
+
+    .Header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .Name {
+        text-align: left;
+        font-size: 50px;
+    }
+
+    .Content {
+        flex-direction: row;
+    }
+
+    .ContentText {
+        margin-top: 0;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .Description {
+        margin-bottom: 0;
+    }
 }

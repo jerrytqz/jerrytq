@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { SocialIcon } from 'react-social-icons';
 
 import classes from './Project.module.css'; 
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
@@ -48,7 +49,7 @@ const Project = () => {
             <section className={classes.Container}>
                 <header className={classes.Header}>
                     <h2 className={classes.Name}>{project.name}</h2>
-                    <div className={classes.HeaderRight}>
+                    <div className={classes.HeaderSub}>
                         <p className={classes.Credits}>
                             <img src={creditsImage} alt="Credits" className={classes.CreditsImage} draggable={false}/>
                             {project.credits.join(', ')}
@@ -62,7 +63,7 @@ const Project = () => {
                 <hr className={classes.Divider}/>
                 <div className={classes.Content}>
                     <Slideshow imageLinks={project.imageLinks}/>
-                    <div className={classes.ContentRight}>
+                    <div className={classes.ContentText}>
                         <p className={classes.Description}>{project.description}</p>
                         {project.projectLinks.WEB ? (
                             <a style={{marginTop: 'auto'}} href={project.projectLinks.WEB} target="_blank" rel="noreferrer">
@@ -78,8 +79,11 @@ const Project = () => {
                                 {project.technologies.map((tech, index) => (<Technology key={index} imageURL={tech.imageLink.url} imageAlt={tech.imageLink.alt}/>))}
                             </div>
                         )},
-                        {'title': "Tags", 'body': <p>Coming soon!</p>},
-                        {'title': "Others", 'body': <p>Coming soon!</p>}
+                        {'title': "Tags", 'body': <p>Coming soon!</p>}, 
+                        {'title': "Links", 'body': ((project.projectLinks.WEB && Object.keys(project.projectLinks).length >= 2) || (!project.projectLinks.WEB && Object.keys(project.projectLinks).length >= 1) 
+                            ? <div className={classes.Links}>{project.projectLinks.GIT && <SocialIcon className={classes.SocialMediaIcon} fgColor="#24292e" bgColor="transparent" url={project.projectLinks.GIT}/>}</div> 
+                            : <p>There are no other links for this project.</p>
+                        )}
                     ]}/>
                 </footer>
             </section>

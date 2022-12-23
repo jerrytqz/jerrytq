@@ -4,6 +4,7 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
+    backface-visibility: hidden;
 }
 
 .Bubble {
@@ -18,6 +19,7 @@
     animation-duration: calc(125s / var(--i));
     animation-delay: calc(30s / var(--j));
     transform: scale(0);
+    backface-visibility: hidden;
 }
 
 .Bubble:nth-child(2n) {
