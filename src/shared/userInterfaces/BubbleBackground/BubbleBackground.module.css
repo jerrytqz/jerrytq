@@ -4,6 +4,8 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .Bubble {
@@ -17,6 +19,7 @@
     animation: float 10s linear infinite;
     animation-duration: calc(125s / var(--i));
     animation-delay: calc(30s / var(--j));
+    transform: scale(0);
 }
 
 .Bubble:nth-child(2n) {
@@ -44,10 +47,10 @@
 @keyframes float {
     0% {
         top: 100%;
-        transform: translateY(0px);
+        transform: translateY(0px) scale(0);
     }
     100% {
         top: 0%;
-        transform: translateY(-150px);
+        transform: translateY(-150px) scale(1);
     }
 }
