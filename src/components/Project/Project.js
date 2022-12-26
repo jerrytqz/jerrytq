@@ -52,7 +52,7 @@ const Project = () => {
                     <div className={classes.CreditsDate}>
                         <p className={classes.Credits}>
                             <img src={creditsImage} alt="Credits" className={classes.CreditsImage} draggable={false}/>
-                            {project.credits.join(', ')}
+                            {project.projectCredits.join(', ')}
                         </p>
                         <p className={classes.Date}>
                             <img src={dateImage} alt="Date" className={classes.DateImage} draggable={false}/>
