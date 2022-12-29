@@ -2,12 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import BubbleBackground from '../../shared/userInterfaces/BubbleBackground/BubbleBackground';
 import classes from './Hero.module.css';
+import { ASSETS_BASE_DIR } from '../../shared/constants';
 
 const WRITE_DELAY = 50;
 const DELETE_DELAY = 50;
 const START_DELETE_DELAY = 5000;
+const COMMANDS = [
+    "System.out.println(\"Hello World!\");",
+    "print(\"I love programming!\")", 
+    "std::cout << \"I like watching anime!\";",
+    "printf(\"I also like playing video games!\");",
+    "console.log('Chocolate is my favourite food!');"
+];
 
-const Hero = (props) => {
+const Hero = () => {
     const command = useRef(null);
     const [typingBarBlink, setTypingBarBlink] = useState(false);
     const [lineNumber, setLineNumber] = useState(1);
@@ -23,8 +31,8 @@ const Hero = (props) => {
         let startDeleteTimeout = null;
 
         const typeWriter = (i, j) => {
-            if (i < props.content.commands[j].length) {
-                if (command.current) command.current.textContent += props.content.commands[j].charAt(i);
+            if (i < COMMANDS[j].length) {
+                if (command.current) command.current.textContent += COMMANDS[j].charAt(i);
                 writeTimeout = setTimeout(() => typeWriter(++i, j), WRITE_DELAY);
             } else {
                 setTypingBarBlink(true);
@@ -35,11 +43,11 @@ const Hero = (props) => {
         const typeDeleter = (i, j) => {
             setTypingBarBlink(false);
             if (i > 0) {
-                if (command.current) command.current.textContent = props.content.commands[j].slice(0, i - 1);
+                if (command.current) command.current.textContent = COMMANDS[j].slice(0, i - 1);
                 deleteTimeout = setTimeout(() => typeDeleter(--i, j), DELETE_DELAY);
             } else {
-                setLineNumber(prev => (prev === props.content.commands.length ? 1 : prev + 1));
-                typeWriter(i, j === props.content.commands.length - 1 ? 0 : ++j);
+                setLineNumber(prev => (prev === COMMANDS.length ? 1 : prev + 1));
+                typeWriter(i, j === COMMANDS.length - 1 ? 0 : ++j);
             }
         };
 
@@ -50,14 +58,14 @@ const Hero = (props) => {
             clearTimeout(deleteTimeout);
             clearTimeout(startDeleteTimeout);
         };
-    }, [props.content.commands]);
+    }, []);
 
     return (
         <section className={classes.Container}>
             <BubbleBackground/>
-            <img className={classes.HeroImage} src={props.content.heroImage} alt={props.content.heroImageAlt} draggable={false}/>
-            <h1 className={[classes.PrimaryText, classes.Min768None].join(' ')}>{props.content.shortPrimaryText}</h1>
-            <h1 className={[classes.PrimaryText, classes.Min768Block].join(' ')}>{props.content.longPrimaryText}</h1>
+            <img className={classes.HeroImage} src={`${ASSETS_BASE_DIR}/home/hero/jerry-zheng.png`} alt="Jerry Zheng" draggable={false}/>
+            <h1 className={[classes.PrimaryText, classes.Min768None].join(' ')}>Jerry Zheng</h1>
+            <h1 className={[classes.PrimaryText, classes.Min768Block].join(' ')}>Jerry TQ Zheng</h1>
             <div className={[classes.CommandContainer, classes.Min768Flex].join(' ')}>
                 <code className={classes.LineNumber}>{lineNumber} &nbsp;</code>
                 <code className={classes.Command} ref={command}/>
@@ -67,9 +75,9 @@ const Hero = (props) => {
                 onMouseEnter={() => { setStatusContainerStyle({borderRadius: '10px', padding: '3px 6px'}); setStatusStyle({display: 'block'}); }} 
                 onMouseLeave={() => { setStatusContainerStyle({borderRadius: '50%', padding: '0'}); setStatusStyle({display: 'none'}); }}
             >
-                {props.content.status.emoji}
+                ✨
                 <div className={classes.StatusMessage} style={statusStyle}>
-                    {props.content.status.message}
+                    Seeking Summer 2023 internships!
                 </div>
             </div>
         </section> 
