@@ -17,6 +17,7 @@ const COMMANDS = [
 
 const Hero = () => {
     const command = useRef(null);
+    const [heroImageStyle, setHeroImageStyle] = useState({display: 'none'});
     const [typingBarBlink, setTypingBarBlink] = useState(false);
     const [lineNumber, setLineNumber] = useState(1);
     const [statusStyle, setStatusStyle] = useState({display: 'none'});
@@ -63,7 +64,16 @@ const Hero = () => {
     return (
         <section className={classes.Container}>
             <BubbleBackground/>
-            <img className={classes.HeroImage} src={`${ASSETS_BASE_DIR}/home/hero/jerry-zheng.png`} alt="Jerry Zheng" draggable={false}/>
+            <div className={classes.HeroImageWrapper}>
+                <img 
+                    onLoad={() => setHeroImageStyle({display: 'block'})} 
+                    style={heroImageStyle} 
+                    className={classes.HeroImage} 
+                    src={`${ASSETS_BASE_DIR}/home/hero/jerry-zheng.png`} 
+                    alt="Jerry Zheng" 
+                    draggable={false}
+                />
+            </div>
             <h1 className={[classes.PrimaryText, classes.Min768None].join(' ')}>Jerry Zheng</h1>
             <h1 className={[classes.PrimaryText, classes.Min768Block].join(' ')}>Jerry TQ Zheng</h1>
             <div className={[classes.CommandContainer, classes.Min768Flex].join(' ')}>
