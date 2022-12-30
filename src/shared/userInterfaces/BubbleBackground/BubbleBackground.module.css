@@ -44,8 +44,14 @@
 }
 
 @keyframes float {
-    100% {
-        top: -15%;
+    10% {
+        top: 110%;
+    }
+    90% {
+        top: -10%;
         transform: scale(1);
+    }
+    100% {
+        top: -30%;
     }
 }
