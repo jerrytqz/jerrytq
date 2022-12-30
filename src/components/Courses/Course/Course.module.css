@@ -1,0 +1,19 @@
+.Data {
+    font-size: 16px;
+    padding: 16px;
+    border: 1px solid gainsboro;
+}
+
+.Min768TableCell {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .Min768TableCell {
+        display: table-cell;
+    }
+
+    .Data {
+        font-size: 18px;
+    }
+}

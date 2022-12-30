@@ -13,9 +13,9 @@ const DropdownArea = (props) => {
                 : props.fetchError 
                 ? props.toolbar ? <FetchError/> : <FetchError containerStyle={{padding: '0'}} titleStyle={{fontSize: '22px'}} descriptionStyle={{fontSize: '16px'}}/> 
                 : (props.links.map(
-                    (link, index) => (
+                    link => (
                         <NavLink 
-                            key={index} 
+                            key={link.name} 
                             to={`${props.baseLink}/${link.slug}`}
                             className={({ isActive }) => [props.toolbar ? classes.LinkToolbar : classes.Link, isActive ? classes.active : ''].join(' ')}
                         >

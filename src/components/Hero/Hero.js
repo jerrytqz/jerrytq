@@ -8,11 +8,11 @@ const WRITE_DELAY = 50;
 const DELETE_DELAY = 50;
 const START_DELETE_DELAY = 5000;
 const COMMANDS = [
-    "System.out.println(\"Hello World!\");",
-    "print(\"I love programming!\")", 
-    "std::cout << \"I like watching anime!\";",
-    "printf(\"I also like playing video games!\");",
-    "console.log('Chocolate is my favourite food!');"
+    'System.out.println("Hello World!");',
+    'print("I love programming!")', 
+    'std::cout << "I like watching anime!";',
+    'printf("I also like playing video games!");',
+    'console.log(\'Chocolate is my favourite food!\');'
 ];
 
 const Hero = () => {

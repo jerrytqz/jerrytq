@@ -4,22 +4,40 @@
 
 .Title {
     text-align: center; 
-    font-size: 64px;
+    font-size: 42px;
     font-weight: 800;
 }
 
 .Description {
     text-align: center; 
+    font-size: 14px;
 }
 
 .HomeButton {
     display: block;
     margin: 36px auto 0; 
     width: 100%;
-    max-width: 200px;
-    font-size: 14px;
-    padding: 10px;
+    max-width: 160px;
+    font-size: 12px;
+    padding: 8px;
 }
+
+@media only screen and (min-width: 600px) {
+    .Title {
+        font-size: 64px;
+    }
+
+    .Description {
+        font-size: 16px;
+    }
+
+    .HomeButton {
+        font-size: 14px;
+        padding: 10px;
+        max-width: 200px;
+    }
+}
+
 
 @media only screen and (min-width: 768px) {
     .Title {

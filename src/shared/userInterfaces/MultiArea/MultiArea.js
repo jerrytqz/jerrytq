@@ -9,7 +9,7 @@ const MultiArea = (props) => {
             <div className={classes.Navigation}>
                 {props.areas.map((area, index) => (
                     <div 
-                        key={index} 
+                        key={area.title} 
                         className={classes.Title} 
                         style={index === areaIndex ? {boxShadow: '0 1px 0 #393ae7', backgroundColor: '#eeeeee', zIndex: props.areas.length-index} : {zIndex: props.areas.length-index}} 
                         onClick={() => setAreaIndex(index)}

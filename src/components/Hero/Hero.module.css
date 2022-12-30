@@ -98,12 +98,15 @@
     .Min768None {
         display: none;
     }
+    
     .Min768Block {
         display: block;
     }
+
     .Min768Flex {
         display: flex;
     }
+
     .PrimaryText {
         font-size: 64px;
     }

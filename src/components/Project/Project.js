@@ -23,6 +23,7 @@ const Project = () => {
     
     useEffect(() => {
         setFetchLoading(true);
+        setFetchError(false);
         fetch(`${BACKEND_BASE_DIR}/fetch-project/?slug=${slug}`, {method: 'GET'})
             .then(response => {
                 if (!response.ok) return response.json().then(result => { 
@@ -74,13 +75,13 @@ const Project = () => {
                 </div>
                 <footer className={classes.Footer}>
                     <MultiArea areas={[
-                        {'title': "Technologies", 'body': (
+                        {title: 'Technologies', body: (
                             <div className={classes.Technologies}>
-                                {project.technologies.map((tech, index) => (<Technology key={index} imageURL={tech.imageLink.url} imageAlt={tech.imageLink.alt}/>))}
+                                {project.technologies.map(tech => (<Technology key={tech.name} imageURL={tech.imageLink.url} imageAlt={tech.imageLink.alt}/>))}
                             </div>
                         )},
-                        {'title': "Tags", 'body': <p>Coming soon!</p>}, 
-                        {'title': "Links", 'body': ((project.projectLinks.WEB && Object.keys(project.projectLinks).length >= 2) || (!project.projectLinks.WEB && Object.keys(project.projectLinks).length >= 1) 
+                        {title: 'Tags', body: <p>Coming soon!</p>}, 
+                        {title: 'Links', body: ((project.projectLinks.WEB && Object.keys(project.projectLinks).length >= 2) || (!project.projectLinks.WEB && Object.keys(project.projectLinks).length >= 1) 
                             ? <div className={classes.Links}>{project.projectLinks.GIT && <SocialIcon className={classes.SocialMediaIcon} fgColor="#24292e" bgColor="transparent" url={project.projectLinks.GIT}/>}</div> 
                             : <p>There are no other links for this project.</p>
                         )}

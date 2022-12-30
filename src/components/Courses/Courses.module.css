@@ -1,0 +1,78 @@
+.Container {
+    padding: 50px 0 50px 0;
+    background-color: #f7f7f7;
+}
+
+.Header {
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.Title {
+    font-size: 38px; 
+    font-weight: 800; 
+}
+
+.Table {
+    border-collapse: collapse;
+    margin: 8px auto 0 auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.TableHeader {
+    background-color: #1e4b5a;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    padding: 16px;
+    border: 1px solid gainsboro;
+}
+
+.TermNameSelect {
+    margin-left: 8px;
+    padding: 4px;
+}
+
+.TermNameSelectWrapper {
+    max-width: 1000px;
+    width: 80%;
+    margin: 18px auto 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+.Min768TableCell {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .Min768None {
+        display: none;
+    }
+
+    .Min768TableCell {
+        display: table-cell;
+    }
+
+    .Table {
+        margin: 32px auto 0 auto;
+    }
+
+    .TableHeader {
+        font-size: 18px;
+    }
+
+    .TermNameSelect {
+        padding: 0;
+    }
+
+    .TermNameSelectWrapper {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        font-size: inherit;
+    }
+}
