@@ -1,6 +1,5 @@
 .Container {
     padding: 50px 0 50px 0;
-    background-color: #f7f7f7;
 }
 
 .Header {
@@ -32,6 +31,8 @@
 
 .TermNameSelect {
     margin-left: 6px;
+    border-radius: 12px;
+    padding: 2px;
 }
 
 .TermNameSelectWrapper {

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Hero from '../../components/Hero/Hero'; 
 import Overview from '../../components/Overview/Overview';
 import Courses from '../../components/Courses/Courses';
+import Skills from '../../components/Skills/Skills';
 
 class Home extends Component {
     render() {
@@ -10,6 +11,7 @@ class Home extends Component {
             <>
                 <Hero/>
                 <Overview/>
+                <Skills/>
                 <Courses/>
             </>
         )

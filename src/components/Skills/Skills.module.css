@@ -1,0 +1,23 @@
+.Container {
+    padding: 50px 0 50px 0;
+    background-color: #f7f7f7;
+}
+
+.Header {
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.Title {
+    font-size: 38px; 
+    font-weight: 800; 
+}
+
+.MultiArea {
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 16px;
+    padding: 0 16px;
+}
