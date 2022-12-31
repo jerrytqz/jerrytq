@@ -63,7 +63,6 @@ const Courses = () => {
                         </th>
                         <th className={classes.TableHeader}>Name</th>
                         <th className={classes.TableHeader}>Description</th>
-                        <th className={classes.TableHeader}>Grade</th>
                     </tr>
                     {fetchLoading || fetchError ? null : courses.map((course, index) => (
                         <Course 
@@ -72,7 +71,6 @@ const Courses = () => {
                             term={course.term}
                             name={course.name}
                             description={course.description}
-                            grade={course.grade}
                         />
                     ))}
                 </tbody>
