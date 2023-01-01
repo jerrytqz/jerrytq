@@ -17,8 +17,8 @@
     animation: float 10s linear infinite;
     animation-duration: calc(125s / var(--i));
     animation-delay: calc(30s / var(--j));
-    transform: scale(0);
     top: 115%;
+    transform: scale(0);
 }
 
 .Bubble:nth-child(2n) {
@@ -44,8 +44,9 @@
 }
 
 @keyframes float {
-    10% {
+    15% {
         top: 115%;
+        transform: scale(0);
     }
     90% {
         top: -10%;

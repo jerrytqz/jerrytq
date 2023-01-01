@@ -5,7 +5,7 @@ import Error from '../Error/Error';
 const FetchError = (props) => {
     return (
         <Error 
-            title="Unavailable!" 
+            title="Not Available!" 
             description={props.description || 'The resource you requested could not be retrieved. Please try again later.'}
             containerStyle={props.containerStyle}
             titleStyle={props.titleStyle}

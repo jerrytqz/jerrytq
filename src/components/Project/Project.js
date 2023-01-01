@@ -77,7 +77,7 @@ const Project = () => {
                     <MultiArea areas={[
                         {title: 'Technologies', body: (
                             <div className={classes.Technologies}>
-                                {project.technologies.map(tech => (<Technology key={tech.name} imageURL={tech.imageLink.url} imageAlt={tech.imageLink.alt}/>))}
+                                {project.technologies.map(tech => (<Technology key={tech.name} imageUrl={tech.imageLink.url} imageAlt={tech.imageLink.alt}/>))}
                             </div>
                         )},
                         {title: 'Tags', body: <p>Coming soon!</p>}, 

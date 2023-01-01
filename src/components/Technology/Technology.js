@@ -4,7 +4,7 @@ import classes from './Technology.module.css';
 
 const Technology = (props) => {
     return (
-        <img src={props.imageURL} alt={props.imageAlt} className={classes.Image} draggable={false}/>
+        <img style={props.style} src={props.imageUrl} alt={props.imageAlt} className={classes.Image} draggable={false}/>
     );
 }
 

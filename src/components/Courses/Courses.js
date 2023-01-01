@@ -76,7 +76,7 @@ const Courses = () => {
                 </tbody>
             </table>
             {fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : null}
-            {fetchError ? <FetchError description={fetchErrorMsg}/> : null}
+            {fetchError ? <FetchError containerStyle={{boxSizing: 'border-box', width: '80%', margin: 'auto', maxWidth: '1000px'}} description={fetchErrorMsg}/> : null}
         </section> 
     )
 }

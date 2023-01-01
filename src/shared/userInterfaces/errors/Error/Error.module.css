@@ -1,5 +1,5 @@
 .Container {
-    padding: 50px;
+    padding: 25px;
 }
 
 .Title {
@@ -23,6 +23,10 @@
 }
 
 @media only screen and (min-width: 600px) {
+    .Container {
+        padding: 50px;
+    }
+
     .Title {
         font-size: 64px;
     }
