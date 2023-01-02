@@ -5,7 +5,7 @@ class Contact extends Component {
         return (
             <>
             </>
-        )
+        );
     }
 }
 

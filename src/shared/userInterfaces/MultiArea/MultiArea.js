@@ -20,6 +20,7 @@ const MultiArea = (props) => {
             </div>
             <div className={classes.Body}>
                 {props.areas[areaIndex].body}
+                {props.children}
             </div>
         </div>
     );

@@ -40,45 +40,47 @@ const Skills = () => {
             <MultiArea containerClass={classes.MultiArea} areas={[
                 {
                     title: 'Languages', 
-                    body: (fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError description={fetchErrorMsg}/> : 
+                    body: (fetchLoading || fetchError ? null :
                         <div className={classes.Skills}>
-                            {skills.languages.map(lang => <Skill key={lang.name} name={lang.name} imageUrl={lang.imageLink.url} imageAlt={lang.imageLink.alt}/>)}
+                            {skills.languages.map(lang => <Skill proficiency={lang.proficiency} key={lang.name} name={lang.name} imageUrl={lang.imageLink.url} imageAlt={lang.imageLink.alt}/>)}
                         </div>
                     )
                 },
                 {
                     title: 'Frameworks', 
-                    body: (fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError description={fetchErrorMsg}/> : 
+                    body: (fetchLoading || fetchError ? null :
                         <div className={classes.Skills}>
-                            {skills.frameworks.map(frame => <Skill key={frame.name} name={frame.name} imageUrl={frame.imageLink.url} imageAlt={frame.imageLink.alt}/>)}
+                            {skills.frameworks.map(frame => <Skill proficiency={frame.proficiency} key={frame.name} name={frame.name} imageUrl={frame.imageLink.url} imageAlt={frame.imageLink.alt}/>)}
                         </div>
                     )
                 },
                 {
                     title: 'Libraries', 
-                    body: (fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError description={fetchErrorMsg}/> : 
+                    body: (fetchLoading || fetchError ? null :
                         <div className={classes.Skills}>
-                            {skills.libraries.map(lib => <Skill key={lib.name} name={lib.name} imageUrl={lib.imageLink.url} imageAlt={lib.imageLink.alt}/>)}
+                            {skills.libraries.map(lib => <Skill proficiency={lib.proficiency} key={lib.name} name={lib.name} imageUrl={lib.imageLink.url} imageAlt={lib.imageLink.alt}/>)}
                         </div>
                     )
                 },
                 {
                     title: 'Tools', 
-                    body: (fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError description={fetchErrorMsg}/> : 
+                    body: (fetchLoading || fetchError ? null :
                         <div className={classes.Skills}>
-                            {skills.tools.map(tool => <Skill key={tool.name} name={tool.name} imageUrl={tool.imageLink.url} imageAlt={tool.imageLink.alt}/>)}
+                            {skills.tools.map(tool => <Skill proficiency={tool.proficiency} key={tool.name} name={tool.name} imageUrl={tool.imageLink.url} imageAlt={tool.imageLink.alt}/>)}
                         </div>
                     )
                 },
                 {
                     title: 'Platforms', 
-                    body: (fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError description={fetchErrorMsg}/> : 
+                    body: (fetchLoading || fetchError ? null :
                         <div className={classes.Skills}>
-                            {skills.platforms.map(plat => <Skill key={plat.name} name={plat.name} imageUrl={plat.imageLink.url} imageAlt={plat.imageLink.alt}/>)}
+                            {skills.platforms.map(plat => <Skill proficiency={plat.proficiency} key={plat.name} name={plat.name} imageUrl={plat.imageLink.url} imageAlt={plat.imageLink.alt}/>)}
                         </div>
                     )
                 }
-            ]}/>
+            ]}>
+                {fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError description={fetchErrorMsg}/> : null}
+            </MultiArea>
         </section>
     );
 }

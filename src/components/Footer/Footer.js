@@ -11,7 +11,7 @@ const Footer = () => {
                 <SocialIcon className={classes.SocialMediaIcon} bgColor="#14323c" fgColor="white" url="https://github.com/jerrytqz"/>
                 <SocialIcon className={classes.SocialMediaIcon} bgColor="#14323c" fgColor="white" url="https://instagram.com/jerrytqz"/>
             </div>
-            <p className={classes.CopyrightText}>© 2022 JerryTQ</p>
+            <p className={classes.CopyrightText}>© 2022 Jerry Zheng</p>
         </footer>
     );
 };

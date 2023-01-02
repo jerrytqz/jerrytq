@@ -7,10 +7,10 @@ const FetchError = (props) => {
         <Error 
             title="Not Available!" 
             description={props.description || 'The resource you requested could not be retrieved. Please try again later.'}
+            homeButton={props.homeButton}
             containerStyle={props.containerStyle}
             titleStyle={props.titleStyle}
             descriptionStyle={props.descriptionStyle}
-            homeButton={props.homeButton}
         />
     );
 };

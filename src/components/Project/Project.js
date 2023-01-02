@@ -46,7 +46,7 @@ const Project = () => {
             <div style={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}> 
                 <LoadingSpinner style={{fontSize: '11px'}}/> 
             </div>
-        ) : fetchError ? <FetchError description={fetchErrorMsg} homeButton/> : (
+        ) : fetchError ? <FetchError containerStyle={{marginTop: '64px'}} description={fetchErrorMsg} homeButton/> : (
             <section className={classes.Container}>
                 <header className={classes.Header}>
                     <h2 className={classes.Name}>{project.name}</h2>

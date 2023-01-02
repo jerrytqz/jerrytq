@@ -4,8 +4,24 @@
     align-items: center;
 }
 
-.Name {
+.Info {
     font-size: 18px;
     font-weight: 300;
     color: black;
+}
+
+.Name {
+    display: block;
+}
+
+.Proficiency {
+    display: none;
+}
+
+.Container img:hover + .Info > .Name {
+    display: none;
+}
+
+.Container img:hover + .Info > .Proficiency {
+    display: block;
 }

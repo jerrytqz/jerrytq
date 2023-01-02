@@ -20,7 +20,7 @@ class App extends Component {
               <Route path="/" element={<Home/>} errorElement={<GeneralError/>}/>
               <Route path="/projects/:slug" element={<Project/>} errorElement={<GeneralError/>}/>
               <Route path="/contact" element={<Contact/>} errorElement={<GeneralError/>}/>
-              <Route path="*" element={<NotFoundError/>} errorElement={<GeneralError/>}/> 
+              <Route path="*" element={<NotFoundError containerStyle={{marginTop: '64px'}}/>} errorElement={<GeneralError/>}/> 
             </Routes>
           </ErrorBoundary>
         </Layout>
