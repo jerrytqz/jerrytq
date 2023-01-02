@@ -7,14 +7,15 @@
 .Info {
     font-size: 18px;
     font-weight: 300;
-    color: black;
 }
 
 .Name {
+    color: black;
     display: block;
 }
 
 .Proficiency {
+    color: black;
     display: none;
 }
 
