@@ -11,7 +11,7 @@ const OverviewPart = (props) => {
             </header>
             <p className={classes.Body}>{props.body}</p> 
         </div>
-    )
-}
+    );
+};
 
 export default OverviewPart;

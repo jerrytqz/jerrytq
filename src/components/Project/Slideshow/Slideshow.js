@@ -17,6 +17,6 @@ const Slideshow = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default Slideshow; 

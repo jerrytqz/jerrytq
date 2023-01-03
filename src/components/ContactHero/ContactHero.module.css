@@ -1,0 +1,31 @@
+.Container {
+    padding: 60px 30px;
+    background-color: #14323c;
+}
+
+.Header {
+    color: white;
+    text-align: center;
+}
+
+.Title {
+    font-size: 72px;
+}
+
+.Subtitle {
+    margin-top: 64px; 
+    font-weight: normal;
+}
+
+.Email {
+    padding: 12px;
+    background-color: lightgray;
+    border-radius: 16px;
+    line-height: 72px;
+    text-decoration: none;
+}
+
+.Email:hover {
+    color: #5c5ce0;
+    transition: 0.3s ease;
+}

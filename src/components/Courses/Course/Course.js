@@ -9,7 +9,7 @@ const Course = (props) => {
             <td className={classes.Data}>{props.name}</td>
             <td className={classes.Data}>{props.description}</td>
         </tr>
-    )
-}
+    );
+};
 
 export default Course;

@@ -13,6 +13,6 @@ const Skill = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default Skill; 

@@ -26,7 +26,7 @@ const Overview = () => {
                 />
             ))}
         </section> 
-    )
-}
+    );
+};
 
 export default Overview;

@@ -83,6 +83,6 @@ const Skills = () => {
             </MultiArea>
         </section>
     );
-}
+};
 
 export default Skills; 

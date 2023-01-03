@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import BubbleBackground from '../../shared/userInterfaces/BubbleBackground/BubbleBackground';
-import classes from './Hero.module.css';
+import classes from './HomeHero.module.css';
 import { ASSETS_BASE_DIR } from '../../shared/constants';
 
 const WRITE_DELAY = 50;
@@ -15,7 +15,7 @@ const COMMANDS = [
     'console.log(\'Chocolate is my favourite food!\');'
 ];
 
-const Hero = () => {
+const HomeHero = () => {
     const command = useRef(null);
     const [heroImageStyle, setHeroImageStyle] = useState({display: 'none'});
     const [typingBarBlink, setTypingBarBlink] = useState(false);
@@ -91,7 +91,7 @@ const Hero = () => {
                 </div>
             </div>
         </section> 
-    )
-}
+    );
+};
 
-export default Hero;
+export default HomeHero;

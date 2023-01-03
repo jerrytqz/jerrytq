@@ -90,6 +90,6 @@ const Project = () => {
             </section>
         )
     );
-}
+};
 
 export default Project;

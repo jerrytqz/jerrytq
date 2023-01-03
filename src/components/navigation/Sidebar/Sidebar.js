@@ -19,7 +19,7 @@ const Sidebar = (props) => (
             <nav className={classes.NavItems}>
                 <NavigationItems/>
             </nav>
-            <footer className={classes.Footer}><p style={{margin: 0}}>© 2022 JerryTQ</p></footer>
+            <footer className={classes.Footer}><p style={{margin: 0}}>© 2022 Jerry Zheng</p></footer>
         </div>
         <Backdrop show={props.show} onClick={props.onSidebarClose}/>
     </>

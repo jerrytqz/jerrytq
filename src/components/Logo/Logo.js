@@ -12,6 +12,6 @@ const Logo = () => (
             <strong className={classes.Name}>JerryTQ</strong>
         </Link>
     </div>
-)
+);
 
 export default Logo; 
