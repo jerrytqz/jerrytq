@@ -1,0 +1,78 @@
+.Container, .SubmitMsgContainer {
+    width: 80%;
+    max-width: 1000px;
+    margin: 64px auto;
+    padding: 16px;
+    border: 1px solid gainsboro;
+    box-shadow: 0 2px 3px #ccc;
+}
+
+.Container > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.Container label {
+    margin-top: 22px;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.Container textarea, .Container input {
+    padding: 8px;
+    font-size: 18px;
+}
+
+.Container textarea {
+    resize: vertical;
+}
+
+.Container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: red;
+    font-size: 14px;
+}
+
+.SubmitButton {
+    width: 100%;
+    margin-top: 32px;
+    padding: 16px;
+    font-size: 18px;
+}
+
+.SubmitMsgTitle {
+    text-align: center; 
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.SubmitMsgDescription {
+    text-align: center; 
+    font-size: 16x;
+}
+
+@media only screen and (min-width: 600px) {
+    .Container, .SubmitMsgContainer {
+        padding: 32px;
+    }
+
+    .SubmitMsgTitle {
+        font-size: 64px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .Container, .SubmitMsgContainer {
+        padding: 64px;
+    }
+
+    .SubmitMsgTitle {
+        font-size: 96px;
+    }
+
+    .SubmitMsgDescription {
+        font-size: 20px;
+    }
+}
