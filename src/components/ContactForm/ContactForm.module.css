@@ -7,7 +7,7 @@
     box-shadow: 0 2px 3px #ccc;
 }
 
-.Container fieldset {
+.Form fieldset {
     margin: 0;
     padding: 0;
     border: none;
@@ -17,27 +17,27 @@
     gap: 16px;
 }
 
-.Container fieldset > input {
+.Form fieldset > input {
     flex-grow: 1;
 }
 
-.Container fieldset > ul {
+.Form fieldset > ul {
     flex-basis: 100%;
 }
 
-.Container > div {
+.Form > div {
     display: flex;
     flex-direction: column;
 }
 
-.Container label, legend {
+.Form label, legend {
     margin-top: 22px;
     margin-bottom: 4px;
     font-size: 18px;
     padding: 0;
 }
 
-.Container textarea, .Container input {
+.Form textarea, .Form input {
     padding: 8px;
     font-size: 18px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -46,11 +46,11 @@
     color: black;
 }
 
-.Container textarea {
+.Form textarea {
     resize: vertical;
 }
 
-.Container ul {
+.Form ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -81,7 +81,7 @@
         padding: 32px;
     }
 
-    .Container fieldset {
+    .Form fieldset {
         flex-direction: row;
     }
 

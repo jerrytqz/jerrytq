@@ -52,21 +52,23 @@ const ContactForm = () => {
     };
 
     let result = (fetchLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '64px auto 0 auto'}}/> : fetchError ? <FetchError/> :
-        <form className={classes.Container} onSubmit={(event) => submitHandler(event)}>
-            {submitLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '200px auto'}}/> : 
-                <>
-                    {form}
-                    <Button buttonClass={classes.SubmitButton}>Submit</Button>
-                </>
-            }
-        </form>
+        <section className={classes.Container}>
+            <form className={classes.Form} onSubmit={(event) => submitHandler(event)}>
+                {submitLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '200px auto'}}/> : 
+                    <>
+                        {form}
+                        <Button buttonClass={classes.SubmitButton}>Submit</Button>
+                    </>
+                }
+            </form>
+        </section>
     );
 
     if (submitSuccess) result = (
-        <div className={classes.SubmitMsgContainer}>
+        <section className={classes.SubmitMsgContainer}>
             <h2 className={classes.SubmitMsgTitle}>Thank you!</h2>
             <p className={classes.SubmitMsgDescription}>Your message has been received.</p>
-        </div>
+        </section>
     );
 
     return result;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import { Routes, Route, ScrollRestoration } from 'react-router-dom'; 
+import { inject } from '@vercel/analytics';
 
 import Layout from './Layout'; 
 import Home from './containers/Home/Home';
@@ -10,6 +11,8 @@ import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralErr
 import NotFoundError from './shared/userInterfaces/errors/NotFoundError/NotFoundError';
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 
+// Analytics
+inject();
 class App extends Component {
   render() {
     return (
