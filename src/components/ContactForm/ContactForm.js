@@ -56,13 +56,6 @@ const ContactForm = () => {
             <form className={classes.Form} onSubmit={(event) => submitHandler(event)}>
                 {submitLoading ? <LoadingSpinner style={{fontSize: '12px', margin: '200px auto'}}/> : 
                     <>
-                        <div>
-                            <fieldset>
-                                <legend>Name:</legend>
-                                <input id="id_sender_name_0" required="" name="sender_name_0" type="text"/>
-                                <input id="id_sender_name_1" required="" name="sender_name_1" type="text"/>
-                            </fieldset>
-                        </div>
                         {form}
                         <Button buttonClass={classes.SubmitButton}>Submit</Button>
                     </>

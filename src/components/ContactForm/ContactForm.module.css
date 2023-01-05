@@ -51,6 +51,10 @@
     color: black;
 }
 
+.Form input {
+    height: 24px;
+}
+
 .Form textarea {
     resize: vertical;
 }
