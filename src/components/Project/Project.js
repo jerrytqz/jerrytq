@@ -61,7 +61,7 @@ const Project = () => {
                         </p>
                     </div>
                 </header>
-                <hr className={classes.Divider}/>
+                <hr/>
                 <div className={classes.Content}>
                     <Slideshow imageLinks={project.imageLinks}/>
                     <div className={classes.DescriptionArea}>

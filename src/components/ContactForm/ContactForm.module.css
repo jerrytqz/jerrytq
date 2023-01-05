@@ -28,10 +28,15 @@
 .Form > div {
     display: flex;
     flex-direction: column;
+    margin-top: 22px;
+}
+
+.Form > div:first-child {
+    margin-top: 0;
 }
 
 .Form label, legend {
-    margin-top: 22px;
+    width: fit-content;
     margin-bottom: 4px;
     font-size: 18px;
     padding: 0;

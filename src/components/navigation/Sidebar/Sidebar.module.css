@@ -7,9 +7,9 @@
     flex-direction: column;
     z-index: 1050; 
     box-sizing: border-box;
-    padding: 16px 0;
     transform: translateX(-100%);
     transition: transform 0.3s ease-out; 
+    overflow: scroll;
 }
 
 .Show {
@@ -17,7 +17,8 @@
 }
 
 .Header {
-    padding: 0 16px;
+    padding: 16px;
+    border-bottom: 1px solid gainsboro;
 }
 
 .NavItems {
@@ -40,14 +41,6 @@
 
 .HamburgerLine + .HamburgerLine {
     margin-top: 4px;
-}
-
-.HeaderNavDivider {
-    height: 1px;
-    background-color: gainsboro;
-    margin: 16px 0;
-    border-width: 0;
-    width: 100%;
 }
 
 .Footer {
