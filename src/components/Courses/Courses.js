@@ -13,7 +13,7 @@ const TERM_NAMES = [
 ];
 
 const Courses = () => {
-    const [termName, setTermName] = useState(TERM_NAMES[1]);
+    const [termName, setTermName] = useState(TERM_NAMES[2]);
     const [courses, setCourses] = useState([]);
     const [fetchLoading, setFetchLoading] = useState(true);
     const [fetchError, setFetchError] = useState(false);
