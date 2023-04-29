@@ -8,7 +8,8 @@ import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError
 
 const TERM_NAMES = [
     '1A',
-    '1B'
+    '1B',
+    '2A'
 ];
 
 const Courses = () => {
