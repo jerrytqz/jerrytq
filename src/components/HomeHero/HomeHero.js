@@ -87,7 +87,7 @@ const HomeHero = () => {
             >
                 ✨
                 <div className={classes.StatusMessage} style={statusStyle}>
-                    Seeking Summer 2023 internships!
+                    Seeking Winter 2024 internships!
                 </div>
             </div>
         </section> 
