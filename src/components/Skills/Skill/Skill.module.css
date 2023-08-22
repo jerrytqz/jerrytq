@@ -19,10 +19,10 @@
     display: none;
 }
 
-.Container img:hover + .Info > .Name {
+/* .Container img:hover + .Info > .Name {
     display: none;
 }
 
 .Container img:hover + .Info > .Proficiency {
     display: block;
-}
+} */
