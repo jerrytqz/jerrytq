@@ -9,11 +9,6 @@
     display: flex;
 }
 
-.Image {
-    object-fit: cover;
-    width: 100%;
-}
-
 .ArrowLeft, .ArrowRight {
     background-color: black;
     opacity: 0;
@@ -81,9 +76,23 @@
     }
 }
 
+.ZoomImage {
+    width: 700px;
+    height: 700px;
+    display: none;
+}
+
+.Image {
+    object-fit: cover;
+    width: 100%;
+}
+
 @media only screen and (min-width: 1200px) {
+    .ZoomImage {
+        display: block;  
+    }
+
     .Image {
-        width: 700px;
-        height: 700px;
+        display: none;
     }
 }

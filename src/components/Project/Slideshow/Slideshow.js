@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ZoomImage from '../../ZoomImage/ZoomImage';
 
 import classes from './Slideshow.module.css'; 
 
@@ -10,6 +11,7 @@ const Slideshow = (props) => {
             <div className={classes.Top}>
                 <span className={classes.ArrowLeft} onClick={() => setSlideIndex(prevIndex => prevIndex-1 < 0 ? props.imageLinks.length-1 : prevIndex-1)}>&#10094;</span>
                 <img className={classes.Image} src={props.imageLinks[slideIndex].url} alt={props.imageLinks[slideIndex].alt} draggable={false}/>
+                <ZoomImage className={classes.ZoomImage} image={props.imageLinks[slideIndex].url}/>
                 <span className={classes.ArrowRight} onClick={() => setSlideIndex(prevIndex => prevIndex+1 > props.imageLinks.length-1 ? 0 : prevIndex+1)}>&#10095;</span>
             </div>
             <div className={classes.Counter}>
