@@ -41,6 +41,9 @@
 .LinkToolbar {
     text-decoration: none;
     color: #717171;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .LinkToolbar + .LinkToolbar {
@@ -56,6 +59,8 @@
     flex-direction: column;
     border-left: 1px solid gainsboro;
     padding-left: 16px;
+    width: 300px;
+    overflow: hidden;
 }
 
 .Show {

@@ -44,30 +44,27 @@ const DropdownArea = (props) => {
         )
       ) : props.toolbar ? (
         cols.map((col) => {
-            start = end;
-            end = start + linksPerCol + (col < remainder ? 1 : 0);
-            return (
-                <div className={classes.Col} key={props.links[col].name}>
-                {props.links
-                  .slice(start, end)
-                  .map((link) => (
-                    <NavLink
-                      key={link.name}
-                      to={`${props.baseLink}/${link.slug}`}
-                      className={({ isActive }) =>
-                        [
-                          props.toolbar ? classes.LinkToolbar : classes.Link,
-                          isActive ? classes.active : '',
-                        ].join(' ')
-                      }
-                    >
-                      {link.name}
-                    </NavLink>
-                  ))}
-              </div>
-            )
-
-})
+          start = end;
+          end = start + linksPerCol + (col < remainder ? 1 : 0);
+          return (
+            <div className={classes.Col} key={props.links[col].name}>
+              {props.links.slice(start, end).map((link) => (
+                <NavLink
+                  key={link.name}
+                  to={`${props.baseLink}/${link.slug}`}
+                  className={({ isActive }) =>
+                    [
+                      props.toolbar ? classes.LinkToolbar : classes.Link,
+                      isActive ? classes.active : '',
+                    ].join(' ')
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              ))}
+            </div>
+          );
+        })
       ) : (
         props.links.map((link) => (
           <NavLink
