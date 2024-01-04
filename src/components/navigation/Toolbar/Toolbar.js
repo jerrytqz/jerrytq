@@ -8,15 +8,15 @@ import Button from '../../../shared/userInterfaces/Button/Button';
 const Toolbar = (props) => {
     return (
         <header className={classes.Container}>
+            <Logo/>
+            <nav className={classes.Min768Block}>
+                <NavigationItems toolbar/>
+            </nav>
             <Button buttonClass={classes.SidebarButton} onClick={props.onSidebarOpen}>
                 <span className={classes.HamburgerLine}/>
                 <span className={classes.HamburgerLine}/>
                 <span className={classes.HamburgerLine}/>
             </Button>
-            <Logo/>
-            <nav className={classes.Min768Block}>
-                <NavigationItems toolbar/>
-            </nav>
         </header>
     );
 };

@@ -6,11 +6,11 @@ import classes from './Overview.module.css';
 const OVERVIEW = [
     {
         title: 'About Me',
-        body: `I am currently a Software Engineering student at the University of Waterloo. For as far 
-        back as I can remember, I have loved STEM, especially math and physics. In middle school, I came 
-        across Java, my first programming language, and immediately discovered a passion for making software 
-        as well. Since then, I have taught myself numerous new technologies and worked on several projects 
-        in my free time. As a quick and avid learner, I am always open to new opportunities and experiences!`
+        body: `I am currently a Software Engineering student at the University of Waterloo. 
+        I taught myself to code in middle school with Java and quickly developed a passion for 
+        writing software. Since then, I have picked up numerous new technologies, almost all through 
+        self-education. In my free time, I enjoy working on various programming projects that I have 
+        developed over the years. I love learning and am always open to opportunities and experiences!`
     }
 ]
 
