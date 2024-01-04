@@ -1,22 +1,22 @@
 .Container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Info {
-    font-size: 18px;
-    font-weight: 300;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .Name {
-    color: black;
-    display: block;
+  color: black;
+  display: block;
 }
 
 .Proficiency {
-    color: black;
-    display: none;
+  color: black;
+  display: none;
 }
 
 /* .Container img:hover + .Info > .Name {

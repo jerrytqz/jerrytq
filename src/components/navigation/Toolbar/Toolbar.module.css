@@ -1,42 +1,43 @@
 .Container {
-    height: 65px;
-    width: 100%;
-    z-index: 100; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-    border-bottom: 1px solid gainsboro;
+  height: 65px;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid gainsboro;
 }
 
 .Min768Block {
-    display: none;
+  display: none;
 }
 
 .SidebarButton {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .HamburgerLine {
-    height: 2px;
-    width: 16px;
-    background-color: white;
+  height: 2px;
+  width: 16px;
+  background-color: white;
 }
 
-.HamburgerLine + .HamburgerLine {
-    margin-top: 4px;
+.HamburgerLine+.HamburgerLine {
+  margin-top: 4px;
 }
 
 @media only screen and (min-width: 768px) {
-    .Min768Block {
-        display: block;
-    }
-    .SidebarButton {
-        display: none;
-    }
+  .Min768Block {
+    display: block;
+  }
+
+  .SidebarButton {
+    display: none;
+  }
 }

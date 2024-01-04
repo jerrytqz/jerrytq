@@ -1,20 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'; 
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from 'react-router-dom';
 
 import './index.css';
 import App from './App';
 import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralError';
 
-const router = (createBrowserRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/*" element={<App/>} errorElement={<GeneralError/>}/>
+    <Route path="/*" element={<App />} errorElement={<GeneralError />} />
   )
-));
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
   document.getElementById('root')
 );

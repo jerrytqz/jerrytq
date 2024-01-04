@@ -1,77 +1,77 @@
 .Container {
-    padding: 50px 0;
+  padding: 50px 0;
 }
 
 .Header {
-    margin: auto;
-    width: 80%;
-    max-width: 1000px;
+  margin: auto;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .Title {
-    font-size: 38px; 
-    font-weight: 800; 
+  font-size: 38px;
+  font-weight: 800;
 }
 
 .Table {
-    border-collapse: collapse;
-    margin: 8px auto 0 auto;
-    width: 80%;
-    max-width: 1000px;
+  border-collapse: collapse;
+  margin: 8px auto 0 auto;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .TableHeader {
-    background-color: #1e4b5a;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-    padding: 16px;
-    border: 1px solid gainsboro;
+  background-color: #1e4b5a;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  padding: 16px;
+  border: 1px solid gainsboro;
 }
 
 .TermNameSelect {
-    margin-left: 6px;
-    border-radius: 12px;
-    padding: 2px;
+  margin-left: 6px;
+  border-radius: 12px;
+  padding: 2px;
 }
 
 .TermNameSelectWrapper {
-    max-width: 1000px;
-    width: 80%;
-    margin: 16px auto 0 auto;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+  max-width: 1000px;
+  width: 80%;
+  margin: 16px auto 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 
 .Min768TableCell {
-    display: none;
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .Min768None {
-        display: none;
-    }
+  .Min768None {
+    display: none;
+  }
 
-    .Min768TableCell {
-        display: table-cell;
-    }
+  .Min768TableCell {
+    display: table-cell;
+  }
 
-    .Table {
-        margin: 16px auto 0 auto;
-    }
+  .Table {
+    margin: 16px auto 0 auto;
+  }
 
-    .TableHeader {
-        font-size: 18px;
-    }
+  .TableHeader {
+    font-size: 18px;
+  }
 
-    .TermNameSelect {
-        margin-left: 8px;
-    }
+  .TermNameSelect {
+    margin-left: 8px;
+  }
 
-    .TermNameSelectWrapper {
-        max-width: none;
-        width: 100%;
-        margin: 0;
-    }
+  .TermNameSelectWrapper {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
 }

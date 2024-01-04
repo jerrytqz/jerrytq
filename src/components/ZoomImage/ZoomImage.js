@@ -44,8 +44,7 @@ const ZoomImage = (props) => {
           zoomState === ZOOM_DEFAULT ? 'center' : zoomPosition,
         cursor: zoomState === ZOOM_DEFAULT ? 'zoom-in' : 'zoom-out',
       }}
-    >
-    </div>
+    ></div>
   );
 };
 

@@ -1,113 +1,113 @@
 .ArrowDown {
-    width: 0; 
-    height: 0; 
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid #717171;
-    margin-top: 2px;
-    margin-left: 4px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #717171;
+  margin-top: 2px;
+  margin-left: 4px;
 }
 
 .ArrowUp {
-    width: 0; 
-    height: 0; 
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #717171;
-    margin-top: 2px;
-    margin-left: 4px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #717171;
+  margin-top: 2px;
+  margin-left: 4px;
 }
 
 .Container {
-    width: 100%;
-    margin: 0;
+  width: 100%;
+  margin: 0;
 }
 
 .Button {
-    user-select: none;
-    color: #717171;
-    padding: 16px 20px;
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  user-select: none;
+  color: #717171;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .Button.clicked {
-    color: black;
+  color: black;
 }
 
-.Button.clicked > .ArrowUp {
-    border-bottom-color: black;
+.Button.clicked>.ArrowUp {
+  border-bottom-color: black;
 }
 
 .Button.active {
-    color: black;
-    background-color: #eeeeee;
+  color: black;
+  background-color: #eeeeee;
 }
 
-.Button.active > .ArrowDown {
-    border-top-color: black;
+.Button.active>.ArrowDown {
+  border-top-color: black;
 }
 
 .ContainerToolbar {
-    margin: 0;
+  margin: 0;
 }
 
 .ButtonToolbar {
-    user-select: none;
-    color: #717171;
-    height: 100%;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
+  user-select: none;
+  color: #717171;
+  height: 100%;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
 }
 
 .ButtonToolbar.clicked {
-    color: black;
+  color: black;
 }
 
-.ButtonToolbar.clicked > .ArrowUp {
-    border-bottom-color: black;
+.ButtonToolbar.clicked>.ArrowUp {
+  border-bottom-color: black;
 }
 
 .ButtonToolbar.active {
-    color: black;
-    background-color: #eeeeee;
+  color: black;
+  background-color: #eeeeee;
 }
 
-.ButtonToolbar.active > .ArrowDown {
-    border-top-color: black;
+.ButtonToolbar.active>.ArrowDown {
+  border-top-color: black;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
-    .Button:hover {
-        color: black;
-        cursor: pointer;
-        transition: 0.25s;
-    } 
-    
-    .Button:hover > .ArrowDown {
-        border-top-color: black;
-        transition: 0.25s;
-    }
+  .Button:hover {
+    color: black;
+    cursor: pointer;
+    transition: 0.25s;
+  }
 
-    .Button:hover > .ArrowUp {
-        transition: 0.25s;
-    }
+  .Button:hover>.ArrowDown {
+    border-top-color: black;
+    transition: 0.25s;
+  }
 
-    .ButtonToolbar:hover {
-        color: black;
-        cursor: pointer;
-        transition: 0.25s;
-    }
-    
-    .ButtonToolbar:hover > .ArrowDown {
-        border-top-color: black;
-        transition: 0.25s;
-    }
+  .Button:hover>.ArrowUp {
+    transition: 0.25s;
+  }
 
-    .ButtonToolbar:hover > .ArrowUp {
-        transition: 0.25s;
-    }
+  .ButtonToolbar:hover {
+    color: black;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .ButtonToolbar:hover>.ArrowDown {
+    border-top-color: black;
+    transition: 0.25s;
+  }
+
+  .ButtonToolbar:hover>.ArrowUp {
+    transition: 0.25s;
+  }
 }

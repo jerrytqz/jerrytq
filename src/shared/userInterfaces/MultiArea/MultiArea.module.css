@@ -1,34 +1,34 @@
 .Navigation {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .Title {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 16px;
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 0 1px 0 gainsboro;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 0 gainsboro;
 }
 
 .Body {
-    margin-top: 32px;
+  margin-top: 32px;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
-    .Title:hover {
-        box-shadow: 0 1px 0 #393ae7;
-    }
+  .Title:hover {
+    box-shadow: 0 1px 0 #393ae7;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .Navigation {
-        flex-direction: row;
-        box-shadow: 0 1px 0 gainsboro;
-    }
+  .Navigation {
+    flex-direction: row;
+    box-shadow: 0 1px 0 gainsboro;
+  }
 
-    .Title {
-        box-shadow: none;
-    }
+  .Title {
+    box-shadow: none;
+  }
 }

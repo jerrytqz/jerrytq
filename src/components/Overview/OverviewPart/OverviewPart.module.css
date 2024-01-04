@@ -1,16 +1,16 @@
 .Container {
-    margin: auto;
-    width: 80%;
-    max-width: 1000px;
+  margin: auto;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .Title {
-    font-size: 38px; 
-    font-weight: 800; 
+  font-size: 38px;
+  font-weight: 800;
 }
 
 .Body {
-    font-size: 16px;
-    line-height: 28px; 
-    text-align: justify;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: justify;
 }

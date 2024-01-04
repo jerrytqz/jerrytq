@@ -1,59 +1,61 @@
 .Container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Bubble {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background: #4fc3dc;
-    margin: 0 4px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 15px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
-    animation: float 10s linear infinite;
-    animation-duration: calc(125s / var(--i));
-    animation-delay: calc(30s / var(--j));
-    top: 115%;
-    transform: scale(0);
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 15px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: float 10s linear infinite;
+  animation-duration: calc(125s / var(--i));
+  animation-delay: calc(30s / var(--j));
+  top: 115%;
+  transform: scale(0);
 }
 
 .Bubble:nth-child(2n) {
-    background: #ff2d75;
-    box-shadow: 0 0 0 12px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+  background: #ff2d75;
+  box-shadow: 0 0 0 12px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
 }
 
 .Bubble:nth-child(3n) {
-    background: #2dff2d;
-    box-shadow: 0 0 0 10px #2dff2d44, 0 0 50px #2dff2d, 0 0 100px #2dff2d;
+  background: #2dff2d;
+  box-shadow: 0 0 0 10px #2dff2d44, 0 0 50px #2dff2d, 0 0 100px #2dff2d;
 }
 
 .Bubble:nth-child(4n) {
-    animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
 .Bubble:nth-child(5n) {
-    animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 .Bubble:nth-child(6n) {
-    animation-delay: 4.5s;
+  animation-delay: 4.5s;
 }
 
 @keyframes float {
-    15% {
-        top: 115%;
-        transform: scale(0);
-    }
-    90% {
-        top: -10%;
-        transform: scale(1);
-    }
-    100% {
-        top: -20%;
-        transform: scale(1);
-    }
+  15% {
+    top: 115%;
+    transform: scale(0);
+  }
+
+  90% {
+    top: -10%;
+    transform: scale(1);
+  }
+
+  100% {
+    top: -20%;
+    transform: scale(1);
+  }
 }

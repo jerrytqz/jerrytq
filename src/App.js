@@ -1,8 +1,8 @@
-import React, { Component } from 'react'; 
-import { Routes, Route, ScrollRestoration } from 'react-router-dom'; 
+import React, { Component } from 'react';
+import { Routes, Route, ScrollRestoration } from 'react-router-dom';
 import { inject } from '@vercel/analytics';
 
-import Layout from './Layout'; 
+import Layout from './Layout';
 import Home from './containers/Home/Home';
 import Project from './components/Project/Project';
 import Contact from './containers/Contact/Contact';
@@ -20,14 +20,32 @@ class App extends Component {
         <Layout>
           <ErrorBoundary>
             <Routes>
-              <Route path="/" element={<Home/>} errorElement={<GeneralError/>}/>
-              <Route path="/projects/:slug" element={<Project/>} errorElement={<GeneralError/>}/>
-              <Route path="/contact" element={<Contact/>} errorElement={<GeneralError/>}/>
-              <Route path="*" element={<NotFoundError containerStyle={{marginTop: '64px'}}/>} errorElement={<GeneralError/>}/> 
+              <Route
+                path="/"
+                element={<Home />}
+                errorElement={<GeneralError />}
+              />
+              <Route
+                path="/projects/:slug"
+                element={<Project />}
+                errorElement={<GeneralError />}
+              />
+              <Route
+                path="/contact"
+                element={<Contact />}
+                errorElement={<GeneralError />}
+              />
+              <Route
+                path="*"
+                element={
+                  <NotFoundError containerStyle={{ marginTop: '64px' }} />
+                }
+                errorElement={<GeneralError />}
+              />
             </Routes>
           </ErrorBoundary>
         </Layout>
-        <ScrollRestoration/>
+        <ScrollRestoration />
       </>
     );
   }
