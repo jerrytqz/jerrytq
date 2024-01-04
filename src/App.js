@@ -12,7 +12,9 @@ import NotFoundError from './shared/userInterfaces/errors/NotFoundError/NotFound
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 
 // Analytics
-inject();
+if (process.env.NODE_ENV === 'production') {
+  inject();
+}
 class App extends Component {
   render() {
     return (

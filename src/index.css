@@ -42,6 +42,6 @@ p {
   color: #5a5a5a;
 }
 
-button, select {
+button, select, textarea, input {
   font-family: inherit;
 }
