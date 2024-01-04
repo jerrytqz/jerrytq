@@ -5,11 +5,16 @@ import FetchError from '../../../../../shared/userInterfaces/errors/FetchError/F
 
 import classes from './DropdownArea.module.css';
 
-const COLS = 4;
+const NUM_COLS = 4;
 
 const DropdownArea = (props) => {
+  const linksPerCol = Math.floor(props.links.length / NUM_COLS);
+  const remainder = props.links.length % NUM_COLS;
   const cols = [];
-  for (let i = 0; i < COLS; i++) {
+  let start = 0;
+  let end = 0;
+
+  for (let i = 0; i < NUM_COLS; i++) {
     cols.push(i);
   }
 
@@ -38,28 +43,31 @@ const DropdownArea = (props) => {
           />
         )
       ) : props.toolbar ? (
-        cols.map((col) => (
-          <div
-            className={classes.Col}
-            key={props.links[col].name}
-          >
-            {props.links
-              .map((link, index) => (index % COLS === col &&
-                <NavLink
-                  key={link.name}
-                  to={`${props.baseLink}/${link.slug}`}
-                  className={({ isActive }) =>
-                    [
-                      props.toolbar ? classes.LinkToolbar : classes.Link,
-                      isActive ? classes.active : '',
-                    ].join(' ')
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-          </div>
-        ))
+        cols.map((col) => {
+            start = end;
+            end = start + linksPerCol + (col < remainder ? 1 : 0);
+            return (
+                <div className={classes.Col} key={props.links[col].name}>
+                {props.links
+                  .slice(start, end)
+                  .map((link) => (
+                    <NavLink
+                      key={link.name}
+                      to={`${props.baseLink}/${link.slug}`}
+                      className={({ isActive }) =>
+                        [
+                          props.toolbar ? classes.LinkToolbar : classes.Link,
+                          isActive ? classes.active : '',
+                        ].join(' ')
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  ))}
+              </div>
+            )
+
+})
       ) : (
         props.links.map((link) => (
           <NavLink
