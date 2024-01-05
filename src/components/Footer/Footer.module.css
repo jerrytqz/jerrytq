@@ -1,7 +1,7 @@
 .Container {
   width: 100%;
   box-sizing: border-box;
-  padding: 0 20px 16px 20px;
+  padding: 0 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,14 +13,19 @@
 .SocialMediaIcons {
   display: flex;
   align-items: center;
+  margin: 16px 0;
+}
+
+.SocialMediaIcon+.SocialMediaIcon {
+  margin-left: 22px;
 }
 
 .SocialMediaIcon {
-  transform: scale(0.85);
+  transform: scale(1.4);
 }
 
 .SocialMediaIcon:hover {
-  transform: scale(1);
+  transform: scale(1.55);
 }
 
 .CopyrightText {

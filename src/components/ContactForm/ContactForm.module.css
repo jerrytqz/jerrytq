@@ -1,55 +1,42 @@
 .Container, .SubmitMsgContainer {
-  width: 80%;
-  max-width: 1000px;
-  margin: 64px auto;
-  padding: 32px 16px;
-  border: 1px solid gainsboro;
-  box-shadow: 0 2px 3px #ccc;
-}
-
-.Form fieldset {
-  margin: 0;
-  padding: 0;
-  border: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gainsboro;
+  margin: 64px auto;
+  border-radius: 12px;
+  width: 60%;
+  padding: 32px;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
-.Form fieldset>input {
-  flex-grow: 1;
-}
-
-.Form fieldset>ul {
-  flex-basis: 100%;
+.Description {
+  font-size: 18px;
+  max-width: 290px;
+  text-align: center;
+  margin: 0 0 32px;
 }
 
 .Form>div {
   display: flex;
   flex-direction: column;
-  margin-top: 22px;
+  margin-top: 8px;
+  box-sizing: border-box;
 }
 
 .Form>div:first-child {
   margin-top: 0;
 }
 
-.Form label, legend {
+.Form label {
   width: fit-content;
   margin-bottom: 4px;
-  font-size: 18px;
   padding: 0;
-}
-
-.Form textarea, .Form input {
-  padding: 8px;
-  font-size: 18px;
-  color: black;
 }
 
 .Form textarea {
   resize: vertical;
+  height: 64px;
 }
 
 .Form ul {
@@ -61,47 +48,70 @@
 }
 
 .SubmitButton {
-  width: 100%;
-  margin-top: 32px;
-  padding: 16px;
-  font-size: 18px;
+  margin-top: 16px;
+  padding: 10px 14px;
+  font-size: 16px;
+}
+
+.SubmitMsg {
+  flex-direction: column;
 }
 
 .SubmitMsgTitle {
-  text-align: center;
+  margin-top: 8px;
   font-size: 50px;
   font-weight: 800;
+  color: green;
+  text-align: center;
 }
 
 .SubmitMsgDescription {
+  font-size: 16px;
+  margin-top: 8px;
+  color: green;
   text-align: center;
-  font-size: 16x;
 }
 
-@media only screen and (min-width: 600px) {
-  .Container, .SubmitMsgContainer {
-    padding: 32px;
-  }
+.EmailLink {
+  text-decoration: none;
+  color: #393ae7;
+}
 
-  .Form fieldset {
-    flex-direction: row;
-  }
+.CheckMark {
+  color: green;
+}
 
-  .SubmitMsgTitle {
-    font-size: 64px;
+@media (any-hover: hover) and (pointer: fine) {
+  .EmailLink:hover {
+    text-decoration: underline;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .Container, .SubmitMsgContainer {
     padding: 64px;
+    max-width: 800px;
+    flex-direction: row;
+  }
+
+  .Description {
+    margin: 0 48px 0 0;
+    text-align: left;
+  }
+
+  .SubmitMsg {
+    margin-left: 32px;
+    white-space: nowrap;
   }
 
   .SubmitMsgTitle {
-    font-size: 96px;
+    margin-top: 0;
+    font-size: 64px;
+    text-align: left;
   }
 
   .SubmitMsgDescription {
     font-size: 20px;
+    text-align: left;
   }
 }

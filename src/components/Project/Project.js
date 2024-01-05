@@ -9,10 +9,12 @@ import { BACKEND_BASE_DIR } from '../../shared/constants';
 import Button from '../../shared/userInterfaces/Button/Button';
 import Slideshow from './Slideshow/Slideshow';
 
-import creditsImage from '../../assets/images/projects/credits.png';
-import dateImage from '../../assets/images/projects/date.png';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
 import Technology from '../Technology/Technology';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 
 const Project = () => {
   const { slug } = useParams();
@@ -66,21 +68,11 @@ const Project = () => {
         <h2 className={classes.Name}>{project.name}</h2>
         <div className={classes.CreditsDate}>
           <p className={classes.Credits}>
-            <img
-              src={creditsImage}
-              alt="Credits"
-              className={classes.CreditsImage}
-              draggable={false}
-            />
+            <FontAwesomeIcon icon={faUser} className={classes.Icon} />
             {project.projectCredits.join(', ')}
           </p>
           <p className={classes.Date}>
-            <img
-              src={dateImage}
-              alt="Date"
-              className={classes.DateImage}
-              draggable={false}
-            />
+            <FontAwesomeIcon icon={faCalendar} className={classes.Icon} />
             {project.startDate}
           </p>
         </div>

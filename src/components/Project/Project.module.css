@@ -91,13 +91,13 @@
 .Technologies {
   display: grid;
   grid-template-columns: repeat(auto-fit, 64px);
-  grid-gap: 32px 32px;
+  grid-gap: 32px;
 }
 
 .Links {
   display: grid;
   grid-template-columns: repeat(auto-fit, 50px);
-  grid-gap: 32px 32px;
+  grid-gap: 32px;
 }
 
 .SocialMediaIcon {
@@ -106,6 +106,10 @@
 
 .SocialMediaIcon:hover {
   transform: scale(1.85);
+}
+
+.Icon {
+  margin-right: 4px;
 }
 
 @media only screen and (min-width: 768px) {

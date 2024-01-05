@@ -8,6 +8,9 @@ import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSp
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import Button from '../../shared/userInterfaces/Button/Button';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+
 const ContactForm = () => {
   const [form, setForm] = useState(null);
   const [fetchLoading, setFetchLoading] = useState(true);
@@ -64,9 +67,25 @@ const ContactForm = () => {
     <FetchError />
   ) : (
     <section className={classes.Container}>
+      <p className={classes.Description}>
+        Welcome! I'm thrilled to connect with you. Whether you have inquiries,
+        suggestions, comments, or simply want to say hello, this contact form is
+        the perfect gateway.
+        <br />
+        <br />
+        If you prefer, I'm also available through{' '}
+        <a className={classes.EmailLink} href="mailto:contact@jerrytq.com">
+          email
+        </a>
+        .
+        <br />
+        <br />
+        I'm eagerly looking forward to hearing from you. Let's start a
+        conversation!
+      </p>
       <form className={classes.Form} onSubmit={(event) => submitHandler(event)}>
         {submitLoading ? (
-          <LoadingSpinner style={{ fontSize: '12px', margin: '200px auto' }} />
+          <LoadingSpinner style={{ fontSize: '11px' }} />
         ) : (
           <>
             {form}
@@ -80,10 +99,17 @@ const ContactForm = () => {
   if (submitSuccess)
     result = (
       <section className={classes.SubmitMsgContainer}>
-        <h2 className={classes.SubmitMsgTitle}>Thank you!</h2>
-        <p className={classes.SubmitMsgDescription}>
-          Your message has been received.
-        </p>
+        <FontAwesomeIcon
+          icon={faCircleCheck}
+          size="7x"
+          className={classes.CheckMark}
+        />
+        <div className={classes.SubmitMsg}>
+          <h2 className={classes.SubmitMsgTitle}>Thank you!</h2>
+          <p className={classes.SubmitMsgDescription}>
+            Your message has been received.
+          </p>
+        </div>
       </section>
     );
 
