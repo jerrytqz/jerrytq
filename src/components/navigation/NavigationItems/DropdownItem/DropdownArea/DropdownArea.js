@@ -24,6 +24,11 @@ const DropdownArea = (props) => {
         props.toolbar ? classes.ContainerToolbar : classes.Container,
         props.show ? classes.Show : '',
       ].join(' ')}
+      style={
+        !props.toolbar && !props.fetchLoading && !props.fetchError
+          ? { paddingLeft: '32px' }
+          : {}
+      }
     >
       {props.fetchLoading ? (
         <LoadingSpinner
@@ -37,7 +42,7 @@ const DropdownArea = (props) => {
           <FetchError containerStyle={{ margin: 'auto' }} />
         ) : (
           <FetchError
-            containerStyle={{ padding: '0', marginLeft: '-12px' }}
+            containerStyle={{ padding: '0' }}
             titleStyle={{ fontSize: '22px' }}
             descriptionStyle={{ fontSize: '16px' }}
           />

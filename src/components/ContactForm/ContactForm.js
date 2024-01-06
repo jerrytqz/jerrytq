@@ -62,39 +62,42 @@ const ContactForm = () => {
   };
 
   let result = fetchLoading ? (
-    <LoadingSpinner style={{ fontSize: '12px', margin: '64px auto 0 auto' }} />
+    <LoadingSpinner
+      class={classes.LoadingSpinner}
+      style={{ margin: '96px auto' }}
+    />
   ) : fetchError ? (
     <FetchError />
   ) : (
     <section className={classes.Container}>
-      <p className={classes.Description}>
-        Welcome! I'm thrilled to connect with you. Whether you have inquiries,
-        suggestions, comments, or simply want to say hello, this contact form is
-        the perfect gateway.
-        <br />
-        <br />
-        If you prefer, I'm also available through{' '}
-        <a className={classes.EmailLink} href="mailto:contact@jerrytq.com">
-          email
-        </a>
-        .
-        <br />
-        <br />
-        I'm eagerly looking forward to hearing from you. Let's start a
-        conversation!
-      </p>
       {submitLoading ? (
-        <div>
-          <LoadingSpinner class={classes.LoadingSpinner} />
-        </div>
+        <LoadingSpinner class={classes.LoadingSpinner} />
       ) : (
-        <form
-          className={classes.Form}
-          onSubmit={(event) => submitHandler(event)}
-        >
-          {form}
-          <Button buttonClass={classes.SubmitButton}>Submit</Button>
-        </form>
+        <>
+          <p className={classes.Description}>
+            Welcome! I'm thrilled to connect with you. Whether you have
+            inquiries, suggestions, comments, or simply want to say hello, this
+            contact form is the perfect gateway.
+            <br />
+            <br />
+            If you prefer, I'm also available through{' '}
+            <a className={classes.EmailLink} href="mailto:contact@jerrytq.com">
+              email
+            </a>
+            .
+            <br />
+            <br />
+            I'm eagerly looking forward to hearing from you. Let's start a
+            conversation!
+          </p>
+          <form
+            className={classes.Form}
+            onSubmit={(event) => submitHandler(event)}
+          >
+            {form}
+            <Button buttonClass={classes.SubmitButton}>Submit</Button>
+          </form>
+        </>
       )}
     </section>
   );

@@ -113,6 +113,10 @@
   margin-right: 4px;
 }
 
+.LoadingSpinner {
+  font-size: 8px;
+}
+
 @media only screen and (min-width: 768px) {
   .Container {
     max-width: 800px;
@@ -136,6 +140,10 @@
 
   .Date {
     margin-top: 0;
+  }
+
+  .LoadingSpinner {
+    font-size: 12px;
   }
 }
 
@@ -181,5 +189,9 @@
 
   .WebsiteButtonContainer {
     margin-top: auto;
+  }
+
+  .LoadingSpinner {
+    font-size: 12px;
   }
 }

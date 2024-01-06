@@ -54,7 +54,7 @@ const Project = () => {
         transform: 'translate(-50%, -50%)',
       }}
     >
-      <LoadingSpinner style={{ fontSize: '11px' }} />
+      <LoadingSpinner class={classes.LoadingSpinner} />
     </div>
   ) : fetchError ? (
     <FetchError

@@ -110,7 +110,7 @@ const Courses = () => {
       </table>
       {fetchLoading ? (
         <LoadingSpinner
-          style={{ fontSize: '12px', margin: '64px auto 0 auto' }}
+          style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
         />
       ) : null}
       {fetchError ? (
