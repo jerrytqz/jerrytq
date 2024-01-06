@@ -83,16 +83,19 @@ const ContactForm = () => {
         I'm eagerly looking forward to hearing from you. Let's start a
         conversation!
       </p>
-      <form className={classes.Form} onSubmit={(event) => submitHandler(event)}>
-        {submitLoading ? (
+      {submitLoading ? (
+        <div>
           <LoadingSpinner class={classes.LoadingSpinner} />
-        ) : (
-          <>
-            {form}
-            <Button buttonClass={classes.SubmitButton}>Submit</Button>
-          </>
-        )}
-      </form>
+        </div>
+      ) : (
+        <form
+          className={classes.Form}
+          onSubmit={(event) => submitHandler(event)}
+        >
+          {form}
+          <Button buttonClass={classes.SubmitButton}>Submit</Button>
+        </form>
+      )}
     </section>
   );
 
