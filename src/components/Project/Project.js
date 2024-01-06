@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { SocialIcon } from 'react-social-icons';
 
 import classes from './Project.module.css';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
@@ -15,6 +14,7 @@ import Technology from '../Technology/Technology';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Project = () => {
   const { slug } = useParams();
@@ -123,12 +123,12 @@ const Project = () => {
                   Object.keys(project.projectLinks).length >= 1) ? (
                   <div className={classes.Links}>
                     {project.projectLinks.GIT && (
-                      <SocialIcon
+                      <a
                         className={classes.SocialMediaIcon}
-                        fgColor="#24292e"
-                        bgColor="transparent"
-                        url={project.projectLinks.GIT}
-                      />
+                        href={project.projectLinks.GIT}
+                      >
+                        <FontAwesomeIcon icon={faGithub} size="3x" />
+                      </a>
                     )}
                   </div>
                 ) : (
