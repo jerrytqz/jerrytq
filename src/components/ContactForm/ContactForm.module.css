@@ -81,6 +81,10 @@
   color: green;
 }
 
+.LoadingSpinner {
+  font-size: 12px;
+}
+
 @media (any-hover: hover) and (pointer: fine) {
   .EmailLink:hover {
     text-decoration: underline;
@@ -113,5 +117,9 @@
   .SubmitMsgDescription {
     font-size: 20px;
     text-align: left;
+  }
+
+  .LoadingSpinner {
+    font-size: 16px;
   }
 }

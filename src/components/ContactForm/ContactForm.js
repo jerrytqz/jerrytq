@@ -85,7 +85,7 @@ const ContactForm = () => {
       </p>
       <form className={classes.Form} onSubmit={(event) => submitHandler(event)}>
         {submitLoading ? (
-          <LoadingSpinner style={{ fontSize: '16px' }} />
+          <LoadingSpinner class={classes.LoadingSpinner} />
         ) : (
           <>
             {form}
