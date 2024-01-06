@@ -11,7 +11,6 @@ import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralErr
 import NotFoundError from './shared/userInterfaces/errors/NotFoundError/NotFoundError';
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 
-// Analytics
 inject();
 class App extends Component {
   render() {
