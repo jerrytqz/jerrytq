@@ -34,6 +34,11 @@
   padding: 0;
 }
 
+.Form input, textarea {
+  appearance: none;
+  width: 100%;
+}
+
 .Form textarea {
   resize: vertical;
   height: 64px;

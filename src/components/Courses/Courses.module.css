@@ -31,7 +31,7 @@
 
 .TermNameSelect {
   margin-left: 6px;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2px;
 }
 
@@ -67,6 +67,11 @@
 
   .TermNameSelect {
     margin-left: 8px;
+    border: none;
+  }
+
+  .TermNameSelect:focus {
+    box-shadow: 0 0 4px 0.8px white;
   }
 
   .TermNameSelectWrapper {

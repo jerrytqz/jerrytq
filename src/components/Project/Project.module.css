@@ -61,6 +61,7 @@
   margin-top: 30px;
   padding: 20px;
   border: 1px solid gainsboro;
+  border-radius: 8px;
 }
 
 .Description {
@@ -86,6 +87,7 @@
   margin-top: 30px;
   padding: 20px;
   border: 1px solid gainsboro;
+  border-radius: 8px;
 }
 
 .Technologies {

@@ -40,14 +40,13 @@ p {
   color: #5a5a5a;
 }
 
-button, select, textarea, input {
+button {
   font-family: inherit;
 }
 
-textarea, input {
-  appearance: none;
+select, textarea, input {
+  font-family: inherit;
   display: block;
-  width: 100%;
   padding: 7px 14px;
   font-size: 15px;
   font-weight: 400;
@@ -60,7 +59,7 @@ textarea, input {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-textarea:focus, input:focus {
+select:focus, textarea:focus, input:focus {
   border-color: rgb(57 58 231 / 30%);
   outline: 0;
   box-shadow: 0 0 4px 0.8px rgb(57 58 231 / 35%);

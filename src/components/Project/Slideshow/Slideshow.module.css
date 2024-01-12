@@ -2,6 +2,7 @@
   border: 1px solid gainsboro;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
 }
 
 .Top {
@@ -79,12 +80,14 @@
 .ZoomImage {
   width: 700px;
   height: 700px;
+  border-radius: 8px 8px 0 0;
   display: none;
 }
 
 .Image {
   object-fit: cover;
   width: 100%;
+  border-radius: 8px 8px 0 0;
 }
 
 @media only screen and (min-width: 1200px) {
