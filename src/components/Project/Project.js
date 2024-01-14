@@ -68,11 +68,19 @@ const Project = () => {
         <h2 className={classes.Name}>{project.name}</h2>
         <div className={classes.CreditsDate}>
           <p className={classes.Credits}>
-            <FontAwesomeIcon icon={faUser} className={classes.Icon} />
+            <FontAwesomeIcon
+              icon={faUser}
+              className={classes.Icon}
+              fixedWidth
+            />
             {project.projectCredits.join(', ')}
           </p>
           <p className={classes.Date}>
-            <FontAwesomeIcon icon={faCalendar} className={classes.Icon} />
+            <FontAwesomeIcon
+              icon={faCalendar}
+              className={classes.Icon}
+              fixedWidth
+            />
             {project.startDate}
           </p>
         </div>
@@ -127,7 +135,7 @@ const Project = () => {
                         className={classes.SocialMediaIcon}
                         href={project.projectLinks.GIT}
                       >
-                        <FontAwesomeIcon icon={faGithub} size="3x" />
+                        <FontAwesomeIcon icon={faGithub} size="3x" fixedWidth />
                       </a>
                     )}
                   </div>
