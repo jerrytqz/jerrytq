@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ZoomImage from '../../ZoomImage/ZoomImage';
+import ZoomImage from '../../../shared/userInterfaces/ZoomImage/ZoomImage';
 
 import classes from './Slideshow.module.css';
 
@@ -40,7 +40,7 @@ const Slideshow = (props) => {
           &#10095;
         </span>
       </div>
-      <div className={classes.Counter}>
+      <div className={classes.Bottom}>
         {props.imageLinks.map((link, index) => (
           <span
             key={link.alt}

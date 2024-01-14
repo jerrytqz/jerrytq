@@ -5,7 +5,7 @@ const MultiArea = (props) => {
   const [areaIndex, setAreaIndex] = useState(0);
 
   return (
-    <div className={props.containerClass}>
+    <div className={props.className}>
       <div className={classes.Navigation}>
         {props.areas.map((area, index) => (
           <div

@@ -54,7 +54,7 @@ const Project = () => {
         transform: 'translate(-50%, -50%)',
       }}
     >
-      <LoadingSpinner class={classes.LoadingSpinner} />
+      <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
   ) : fetchError ? (
     <FetchError
@@ -89,7 +89,7 @@ const Project = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <Button buttonClass={classes.WebsiteButton}>
+              <Button className={classes.WebsiteButton}>
                 ✨ See it live! ✨
               </Button>
             </a>

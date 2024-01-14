@@ -63,7 +63,7 @@ const ContactForm = () => {
 
   let result = fetchLoading ? (
     <LoadingSpinner
-      class={classes.LoadingSpinner}
+      className={classes.LoadingSpinner}
       style={{ margin: '96px auto' }}
     />
   ) : fetchError ? (
@@ -71,7 +71,7 @@ const ContactForm = () => {
   ) : (
     <section className={classes.Container}>
       {submitLoading ? (
-        <LoadingSpinner class={classes.LoadingSpinner} />
+        <LoadingSpinner className={classes.LoadingSpinner} />
       ) : (
         <>
           <p className={classes.Description}>
@@ -95,7 +95,7 @@ const ContactForm = () => {
             onSubmit={(event) => submitHandler(event)}
           >
             {form}
-            <Button buttonClass={classes.SubmitButton}>Submit</Button>
+            <Button className={classes.SubmitButton}>Submit</Button>
           </form>
         </>
       )}

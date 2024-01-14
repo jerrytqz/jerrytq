@@ -12,7 +12,7 @@ const Sidebar = (props) => (
     >
       <header className={classes.Header}>
         <Button
-          buttonClass={classes.SidebarButton}
+          className={classes.SidebarButton}
           onClick={props.onSidebarClose}
         >
           <span className={classes.HamburgerLine} />

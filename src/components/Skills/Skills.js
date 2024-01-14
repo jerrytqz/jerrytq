@@ -40,7 +40,7 @@ const Skills = () => {
         <hr />
       </header>
       <MultiArea
-        containerClass={classes.MultiArea}
+        className={classes.MultiArea}
         areas={[
           {
             title: 'Languages',

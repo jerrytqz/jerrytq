@@ -5,7 +5,7 @@ const LoadingSpinner = (props) => {
   return (
     <div
       style={props.style}
-      className={[classes.LoadingSpinner, props.class ? props.class : ''].join(
+      className={[classes.LoadingSpinner, props.className ? props.className : ''].join(
         ' '
       )}
     />

@@ -1,8 +1,6 @@
 .Container {
-  border: 1px solid gainsboro;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
 }
 
 .Top {
@@ -32,13 +30,12 @@
   right: 0;
 }
 
-.Counter {
+.Bottom {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  margin-top: 12px;
   gap: 8px;
-  border-top: 1px solid gainsboro;
-  padding: 12px;
 }
 
 .Dot {
@@ -80,17 +77,26 @@
 .ZoomImage {
   width: 700px;
   height: 700px;
-  border-radius: 8px 8px 0 0;
   display: none;
+  border: 1px solid gainsboro;
+  border-radius: 8px;
 }
 
 .Image {
   object-fit: cover;
   width: 100%;
-  border-radius: 8px 8px 0 0;
+  border: 1px solid gainsboro;
+  border-radius: 8px;
 }
 
 @media only screen and (min-width: 1200px) {
+  .Image {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (any-hover: hover) and (pointer: fine) {
   .ZoomImage {
     display: block;
   }

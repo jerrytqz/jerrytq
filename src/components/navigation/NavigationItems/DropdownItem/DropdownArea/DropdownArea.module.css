@@ -12,10 +12,11 @@
 .Link {
   text-decoration: none;
   color: #717171;
+  width: 100%;
 }
 
 .Link+.Link {
-  margin-top: 6px;
+  padding-top: 6px;
 }
 
 .Link.active {
@@ -46,7 +47,7 @@
 }
 
 .LinkToolbar+.LinkToolbar {
-  margin-top: 4px;
+  padding-top: 4px;
 }
 
 .LinkToolbar.active {

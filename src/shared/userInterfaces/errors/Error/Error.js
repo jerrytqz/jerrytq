@@ -16,7 +16,7 @@ const Error = (props) => {
         {props.description}
       </p>
       {props.homeButton ? (
-        <Button onClick={() => history('/')} buttonClass={classes.HomeButton}>
+        <Button onClick={() => history('/')} className={classes.HomeButton}>
           🏠 Home
         </Button>
       ) : null}
