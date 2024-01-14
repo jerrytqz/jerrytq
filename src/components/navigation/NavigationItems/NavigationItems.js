@@ -4,6 +4,11 @@ import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem.js';
 import DropdownItem from './DropdownItem/DropdownItem.js';
 import { BACKEND_BASE_DIR } from '../../../shared/constants';
+import {
+  faCommentDots,
+  faHome,
+  faScrewdriverWrench,
+} from '@fortawesome/free-solid-svg-icons';
 
 const NavigationItems = (props) => {
   const [fetchLoading, setFetchLoading] = useState(true);
@@ -33,7 +38,7 @@ const NavigationItems = (props) => {
     <ul
       className={props.toolbar ? classes.ContainerToolbar : classes.Container}
     >
-      <NavigationItem link="/" end toolbar={props.toolbar}>
+      <NavigationItem link="/" end toolbar={props.toolbar} icon={faHome}>
         Home
       </NavigationItem>
       <DropdownItem
@@ -41,10 +46,15 @@ const NavigationItems = (props) => {
         links={projectNames}
         name="Projects"
         toolbar={props.toolbar}
+        icon={faScrewdriverWrench}
         fetchLoading={fetchLoading}
         fetchError={fetchError}
       />
-      <NavigationItem link="/contact" toolbar={props.toolbar}>
+      <NavigationItem
+        link="/contact"
+        toolbar={props.toolbar}
+        icon={faCommentDots}
+      >
         Contact
       </NavigationItem>
     </ul>

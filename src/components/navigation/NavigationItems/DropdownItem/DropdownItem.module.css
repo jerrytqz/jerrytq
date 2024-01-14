@@ -80,6 +80,10 @@
   border-top-color: black;
 }
 
+.Icon {
+  margin-right: 8px;
+}
+
 @media (any-hover: hover) and (pointer: fine) {
   .Button:hover {
     color: black;

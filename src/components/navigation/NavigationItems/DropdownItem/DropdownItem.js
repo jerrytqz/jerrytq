@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import classes from './DropdownItem.module.css';
 import DropdownArea from './DropdownArea/DropdownArea';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const DropdownItem = (props) => {
   const dropdownItem = useRef(null);
@@ -46,6 +47,9 @@ const DropdownItem = (props) => {
         ].join(' ')}
         onClick={() => setShowDropdown((prev) => !prev)}
       >
+        {!props.toolbar && (
+          <FontAwesomeIcon icon={props.icon} className={classes.Icon} />
+        )}
         {props.name}
         {showDropdown ? (
           <span className={classes.ArrowUp} />
