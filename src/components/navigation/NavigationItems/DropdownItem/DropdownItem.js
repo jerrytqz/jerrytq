@@ -48,7 +48,11 @@ const DropdownItem = (props) => {
         onClick={() => setShowDropdown((prev) => !prev)}
       >
         {!props.toolbar && (
-          <FontAwesomeIcon icon={props.icon} className={classes.Icon} />
+          <FontAwesomeIcon
+            icon={props.icon}
+            className={classes.Icon}
+            fixedWidth
+          />
         )}
         {props.name}
         {showDropdown ? (

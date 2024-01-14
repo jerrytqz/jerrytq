@@ -18,25 +18,25 @@ const Footer = () => {
           className={classes.SocialMediaIcon}
           href="https://linkedin.com/in/jerrytq"
         >
-          <FontAwesomeIcon icon={faLinkedin} inverse />
+          <FontAwesomeIcon icon={faLinkedin} inverse fixedWidth />
         </a>
         <a
           className={classes.SocialMediaIcon}
           href="https://github.com/jerrytqz"
         >
-          <FontAwesomeIcon icon={faGithub} inverse />
+          <FontAwesomeIcon icon={faGithub} inverse fixedWidth />
         </a>
         <a
           className={classes.SocialMediaIcon}
           href="https://instagram.com/jerrytqz"
         >
-          <FontAwesomeIcon icon={faInstagram} inverse />
+          <FontAwesomeIcon icon={faInstagram} inverse fixedWidth />
         </a>
         <a
           className={classes.SocialMediaIcon}
           href="mailto:contact@jerrytq.com"
         >
-          <FontAwesomeIcon icon={faEnvelope} inverse />
+          <FontAwesomeIcon icon={faEnvelope} inverse fixedWidth />
         </a>
       </div>
       <p className={classes.CopyrightText}>© 2022 Jerry Zheng</p>

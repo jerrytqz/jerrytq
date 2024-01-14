@@ -20,7 +20,11 @@ const NavigationItem = (props) => {
         }
       >
         {!props.toolbar && (
-          <FontAwesomeIcon icon={props.icon} className={classes.Icon} />
+          <FontAwesomeIcon
+            icon={props.icon}
+            className={classes.Icon}
+            fixedWidth
+          />
         )}
         {props.children}
       </NavLink>
