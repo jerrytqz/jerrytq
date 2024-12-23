@@ -6,7 +6,7 @@ import { BACKEND_BASE_DIR } from '../../shared/constants';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 
-const TERM_NAMES = ['1A', '1B', '2A', '2B'];
+const TERM_NAMES = ['1A', '1B', 'WT1', '2A', 'WT2', '2B', 'WT3', '3A'];
 
 const Courses = () => {
   const [termName, setTermName] = useState(TERM_NAMES[TERM_NAMES.length - 1]);
