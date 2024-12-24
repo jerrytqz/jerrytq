@@ -28,3 +28,13 @@
 .Title, .Company, .DateRange, .Location {
   margin: 0;
 }
+
+.DateRange, .Location {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .DateRange, .Location {
+    display: block;
+  }
+}
