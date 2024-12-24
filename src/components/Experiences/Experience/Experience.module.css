@@ -1,0 +1,30 @@
+.Container {
+  display: flex;
+  gap: 16px;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 24px;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+.Image {
+  height: 72px;
+  width: 72px;
+}
+
+.InfoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Title, .Company, .DateRange, .Location {
+  margin: 0;
+}
