@@ -1,5 +1,5 @@
 .Container {
-  background-color: #393ae7;
+  background-color: var(--color-secondary);
   border: none;
   color: white;
   text-decoration: none;
@@ -10,7 +10,7 @@
 .Button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-  background-color: #393ae7;
+  background-color: var(--color-secondary);
 }
 
 @media (any-hover: hover) and (pointer: fine) {

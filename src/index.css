@@ -25,6 +25,12 @@ body, html {
   display: flex;
   flex-flow: column;
   min-height: 100%;
+
+  --color-primary: #14323c;
+  --color-secondary: #393ae7;
+  --color-accent: #f7f7f7;
+  --color-text: #5a5a5a;
+  --color-border: gainsboro;
 }
 
 code {
@@ -37,7 +43,7 @@ h1, h2, h3, h4 {
 }
 
 p {
-  color: #5a5a5a;
+  color: var(--color-text);
 }
 
 button {
@@ -54,7 +60,7 @@ select, textarea, input {
   background-color: #fff;
   box-sizing: border-box;
   background-clip: padding-box;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }

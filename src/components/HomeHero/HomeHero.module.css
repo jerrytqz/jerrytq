@@ -1,7 +1,7 @@
 .Container {
   position: relative;
   overflow: hidden;
-  background-color: #14323c;
+  background-color: var(--color-primary);
   padding: 60px;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@
 .StatusContainer {
   position: absolute;
   left: calc(50% + 115px);
-  background-color: #14323c;
+  background-color: var(--color-primary);
   min-height: 30px;
   min-width: 30px;
   box-shadow: 0px 0px 5px black;

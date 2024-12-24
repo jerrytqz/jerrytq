@@ -44,7 +44,11 @@ const Slideshow = (props) => {
         {props.imageLinks.map((link, index) => (
           <span
             key={link.alt}
-            style={index === slideIndex ? { backgroundColor: '#393ae7' } : null}
+            style={
+              index === slideIndex
+                ? { backgroundColor: 'var(--color-secondary)' }
+                : null
+            }
             className={classes.Dot}
             onClick={() => setSlideIndex(index)}
           />

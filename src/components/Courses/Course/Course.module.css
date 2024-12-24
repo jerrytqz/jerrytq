@@ -1,7 +1,7 @@
 .Data {
   font-size: 16px;
   padding: 16px;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--color-border);
 }
 
 .Min768TableCell {

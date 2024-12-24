@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--color-border);
   margin: 64px auto;
   border-radius: 12px;
   width: 60%;
@@ -79,7 +79,7 @@
 
 .EmailLink {
   text-decoration: none;
-  color: #393ae7;
+  color: var(--color-secondary);
 }
 
 .CheckMark {

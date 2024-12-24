@@ -1,6 +1,6 @@
 .Container {
   padding: 60px 30px;
-  background-color: #14323c;
+  background-color: var(--color-primary);
 }
 
 .Header {

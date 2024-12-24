@@ -78,14 +78,14 @@
   width: 700px;
   height: 700px;
   display: none;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
 }
 
 .Image {
   object-fit: cover;
   width: 100%;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
 }
 
