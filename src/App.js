@@ -5,7 +5,7 @@ import { inject } from '@vercel/analytics';
 import Layout from './Layout';
 import Home from './containers/Home/Home';
 import Project from './components/Project/Project';
-import Projects from './containers/Projects/Projects';
+import ProjectCards from './containers/ProjectCards/ProjectCards';
 import Contact from './containers/Contact/Contact';
 
 import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralError';
@@ -32,7 +32,7 @@ class App extends Component {
               />
               <Route
                 path="/projects"
-                element={<Projects />}
+                element={<ProjectCards />}
                 errorElement={<GeneralError />}
               />
               <Route

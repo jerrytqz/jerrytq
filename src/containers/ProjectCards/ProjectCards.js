@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import classes from './Projects.module.css';
+import classes from './ProjectCards.module.css';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 
-const Projects = () => {
-  const [projects, setProjects] = useState({});
+const ProjectCards = () => {
+  const [projectCards, setProjectCards] = useState({});
   const [fetchLoading, setFetchLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
   const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
@@ -23,7 +23,7 @@ const Projects = () => {
         else return response.json();
       })
       .then((result) => {
-        setProjects(result.projectCards);
+        setProjectCards(result.projectCards);
         setFetchLoading(false);
       })
       .catch(() => {
@@ -33,26 +33,32 @@ const Projects = () => {
   }, []);
 
   return fetchLoading ? (
-    <LoadingSpinner
-      className={classes.LoadingSpinner}
-      style={{ margin: '96px auto' }}
-    />
+    <div
+      style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+      }}
+    >
+      <LoadingSpinner className={classes.LoadingSpinner} />
+    </div>
   ) : fetchError ? (
     <FetchError description={fetchErrorMsg} />
   ) : (
     <div className={classes.Container}>
-      {projects.map((project) => (
+      {projectCards.map((projectCard) => (
         <ProjectCard
-          key={project.slug}
-          imageUrl={project.imageLink.url}
-          imageAlt={project.imageLink.alt}
-          name={project.name}
-          slug={project.slug}
-          shortDescription={project.shortDescription}
+          key={projectCard.slug}
+          imageUrl={projectCard.imageLink.url}
+          imageAlt={projectCard.imageLink.alt}
+          name={projectCard.name}
+          slug={projectCard.slug}
+          shortDescription={projectCard.shortDescription}
         />
       ))}
     </div>
   );
 };
 
-export default Projects;
+export default ProjectCards;
