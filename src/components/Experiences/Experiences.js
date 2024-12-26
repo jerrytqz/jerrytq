@@ -47,6 +47,7 @@ const Experiences = () => {
       ) : (
         experiences.map((experience) => (
           <Experience
+            key={experience.company + experience.startDate}
             imageUrl={experience.imageLink.url}
             imageAlt={experience.imageLink.alt}
             title={experience.title}
