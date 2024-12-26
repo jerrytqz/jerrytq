@@ -32,26 +32,25 @@ const Projects = () => {
       });
   }, []);
 
-  return (
+  return fetchLoading ? (
+    <LoadingSpinner
+      className={classes.LoadingSpinner}
+      style={{ margin: '96px auto' }}
+    />
+  ) : fetchError ? (
+    <FetchError description={fetchErrorMsg} />
+  ) : (
     <div className={classes.Container}>
-      {fetchLoading ? (
-        <LoadingSpinner
-          style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.slug}
+          imageUrl={project.imageLink.url}
+          imageAlt={project.imageLink.alt}
+          name={project.name}
+          slug={project.slug}
+          shortDescription={project.shortDescription}
         />
-      ) : fetchError ? (
-        <FetchError description={fetchErrorMsg} />
-      ) : (
-        projects.map((project) => (
-          <ProjectCard
-            key={project.slug}
-            imageUrl={project.imageLink.url}
-            imageAlt={project.imageLink.alt}
-            name={project.name}
-            slug={project.slug}
-            shortDescription={project.shortDescription}
-          />
-        ))
-      )}
+      ))}
     </div>
   );
 };
