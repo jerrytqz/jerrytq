@@ -15,7 +15,7 @@ const MultiArea = (props) => {
               index === areaIndex
                 ? {
                     boxShadow: '0 1px 0 var(--color-secondary)',
-                    backgroundColor: '#eeeeee',
+                    backgroundColor: 'var(--color-accent-dark)',
                     zIndex: props.areas.length - index,
                   }
                 : { zIndex: props.areas.length - index }

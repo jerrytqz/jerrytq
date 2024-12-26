@@ -43,7 +43,7 @@
 
 .Button.active {
   color: black;
-  background-color: #eeeeee;
+  background-color: var(--color-accent-dark);
 }
 
 .Button.active>.ArrowDown {
@@ -73,7 +73,7 @@
 
 .ButtonToolbar.active {
   color: black;
-  background-color: #eeeeee;
+  background-color: var(--color-accent-dark);
 }
 
 .ButtonToolbar.active>.ArrowDown {

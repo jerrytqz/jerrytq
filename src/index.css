@@ -29,6 +29,7 @@ body, html {
   --color-primary: #14323c;
   --color-secondary: #393ae7;
   --color-accent: #f7f7f7;
+  --color-accent-dark: #eeeeee;
   --color-text: #5a5a5a;
   --color-border: gainsboro;
 }

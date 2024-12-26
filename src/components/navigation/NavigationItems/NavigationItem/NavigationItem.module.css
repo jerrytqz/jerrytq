@@ -15,7 +15,7 @@
 
 .Link.active {
   color: black;
-  background-color: #eeeeee;
+  background-color: var(--color-accent-dark);
 }
 
 .ContainerToolbar {
@@ -31,7 +31,7 @@
 
 .LinkToolbar.active {
   color: black;
-  background-color: #eeeeee;
+  background-color: var(--color-accent-dark);
 }
 
 .Icon {
