@@ -25,7 +25,9 @@ const NavigationItems = (props) => {
         else return response.json();
       })
       .then((result) => {
-        setProjectNames(result.projectNames);
+        setProjectNames(
+          result.projectNames.concat({ name: 'All Projects >>', slug: '' })
+        );
         setFetchLoading(false);
       })
       .catch(() => {

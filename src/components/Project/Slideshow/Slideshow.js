@@ -21,13 +21,19 @@ const Slideshow = (props) => {
         </span>
         <img
           className={classes.Image}
-          src={props.imageLinks[slideIndex].url}
-          alt={props.imageLinks[slideIndex].alt}
+          src={
+            props.imageLinks.length > 0 ? props.imageLinks[slideIndex].url : ''
+          }
+          alt={
+            props.imageLinks.length > 0 ? props.imageLinks[slideIndex].alt : ''
+          }
           draggable={false}
         />
         <ZoomImage
           className={classes.ZoomImage}
-          image={props.imageLinks[slideIndex].url}
+          image={
+            props.imageLinks.length > 0 ? props.imageLinks[slideIndex].url : ''
+          }
         />
         <span
           className={classes.ArrowRight}

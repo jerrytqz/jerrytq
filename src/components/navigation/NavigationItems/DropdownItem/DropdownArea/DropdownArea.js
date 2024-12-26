@@ -56,13 +56,18 @@ const DropdownArea = (props) => {
               {props.links.slice(start, end).map((link) => (
                 <NavLink
                   key={link.name}
-                  to={`${props.baseLink}/${link.slug}`}
+                  to={
+                    link.slug
+                      ? `${props.baseLink}/${link.slug}`
+                      : `${props.baseLink}`
+                  }
                   className={({ isActive }) =>
                     [
                       props.toolbar ? classes.LinkToolbar : classes.Link,
                       isActive ? classes.active : '',
                     ].join(' ')
                   }
+                  end
                 >
                   {link.name}
                 </NavLink>
@@ -74,13 +79,16 @@ const DropdownArea = (props) => {
         props.links.map((link) => (
           <NavLink
             key={link.name}
-            to={`${props.baseLink}/${link.slug}`}
+            to={
+              link.slug ? `${props.baseLink}/${link.slug}` : `${props.baseLink}`
+            }
             className={({ isActive }) =>
               [
                 props.toolbar ? classes.LinkToolbar : classes.Link,
                 isActive ? classes.active : '',
               ].join(' ')
             }
+            end
           >
             {link.name}
           </NavLink>
