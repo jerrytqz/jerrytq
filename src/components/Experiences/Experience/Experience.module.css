@@ -25,8 +25,13 @@
   width: 100%;
 }
 
-.Title, .Company, .DateRange, .Location {
+.Title {
   margin: 0;
+}
+
+.Company, .DateRange, .Location {
+  margin: 0;
+  font-size: 18px;
 }
 
 .DateRange, .Location {
