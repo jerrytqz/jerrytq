@@ -10,22 +10,14 @@
   box-shadow: 0 0 8px var(--color-border);
   width: 256px;
   background: white;
+  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
   .Container:hover {
     cursor: pointer;
-    animation: enlarge 0.3s ease-in-out forwards;
-  }
-}
-
-@keyframes enlarge {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
     transform: scale(1.05);
+    border: 1px solid var(--color-secondary);
   }
 }
 
