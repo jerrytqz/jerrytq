@@ -11,6 +11,7 @@ const Button = (props) => {
       onClick={props.onClick}
       disabled={props.disabled}
       style={props.style}
+      aria-label={props.ariaLabel}
     >
       {props.children}
     </button>

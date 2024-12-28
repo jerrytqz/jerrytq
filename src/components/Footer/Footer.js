@@ -17,24 +17,28 @@ const Footer = () => {
         <a
           className={classes.SocialMediaIcon}
           href="https://linkedin.com/in/jerrytq"
+          aria-label="LinkedIn profile"
         >
           <FontAwesomeIcon icon={faLinkedin} inverse fixedWidth />
         </a>
         <a
           className={classes.SocialMediaIcon}
           href="https://github.com/jerrytqz"
+          aria-label="GitHub profile"
         >
           <FontAwesomeIcon icon={faGithub} inverse fixedWidth />
         </a>
         <a
           className={classes.SocialMediaIcon}
           href="https://instagram.com/jerrytqz"
+          aria-label="Instagram profile"
         >
           <FontAwesomeIcon icon={faInstagram} inverse fixedWidth />
         </a>
         <a
           className={classes.SocialMediaIcon}
           href="mailto:contact@jerrytq.com"
+          aria-label="Email"
         >
           <FontAwesomeIcon icon={faEnvelope} inverse fixedWidth />
         </a>

@@ -14,6 +14,7 @@ const Sidebar = (props) => (
         <Button
           className={classes.SidebarButton}
           onClick={props.onSidebarClose}
+          ariaLabel="Close sidebar"
         >
           <span className={classes.HamburgerLine} />
           <span className={classes.HamburgerLine} />

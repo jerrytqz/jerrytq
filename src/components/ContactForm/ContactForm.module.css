@@ -80,6 +80,9 @@
 .EmailLink {
   text-decoration: none;
   color: var(--color-secondary);
+  padding: 2px 6px;
+  background-color: var(--color-accent-dark);
+  border-radius: 4px;
 }
 
 .CheckMark {

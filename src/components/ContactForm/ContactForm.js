@@ -87,8 +87,7 @@ const ContactForm = () => {
             .
             <br />
             <br />
-            I'm eagerly looking forward to hearing from you. Let's start a
-            conversation!
+            I'm looking forward to hearing from you. Let's start a conversation!
           </p>
           <form
             className={classes.Form}

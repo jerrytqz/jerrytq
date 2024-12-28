@@ -21,6 +21,7 @@
   font-weight: bold;
   transition: 0.2s ease;
   user-select: none;
+  border-radius: 0;
 }
 
 .ArrowRight {
@@ -57,6 +58,7 @@
 
   .ArrowLeft:hover, .ArrowRight:hover {
     opacity: 0.6 !important;
+    background-color: black;
   }
 
   .Top:hover .ArrowLeft, .Top:hover .ArrowRight {
