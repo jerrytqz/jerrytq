@@ -32,8 +32,11 @@ const Slideshow = (props) => {
         />
         <ZoomImage
           className={classes.ZoomImage}
-          image={
+          imageUrl={
             props.imageLinks.length > 0 ? props.imageLinks[slideIndex].url : ''
+          }
+          imageAlt={
+            props.imageLinks.length > 0 ? props.imageLinks[slideIndex].alt : ''
           }
         />
         <button

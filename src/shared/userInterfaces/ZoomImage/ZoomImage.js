@@ -38,13 +38,15 @@ const ZoomImage = (props) => {
       onMouseMove={mouseMoveHandler}
       className={props.className}
       style={{
-        backgroundImage: `url(${props.image})`,
+        backgroundImage: `url(${props.imageUrl})`,
         backgroundSize: zoomState === ZOOM_DEFAULT ? 'cover' : '200%',
         backgroundPosition:
           zoomState === ZOOM_DEFAULT ? 'center' : zoomPosition,
         cursor: zoomState === ZOOM_DEFAULT ? 'zoom-in' : 'zoom-out',
       }}
-    ></div>
+      aria-label={props.imageAlt}
+      role="img"
+    />
   );
 };
 
