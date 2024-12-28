@@ -16,16 +16,3 @@
   margin-top: 42px;
   font-weight: normal;
 }
-
-.Email {
-  padding: 12px;
-  background-color: #e5e5e5;
-  border-radius: 16px;
-  line-height: 72px;
-  text-decoration: none;
-}
-
-.Email:hover {
-  color: #5c5ce0;
-  transition: 0.3s ease;
-}

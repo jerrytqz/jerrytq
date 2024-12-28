@@ -11,7 +11,7 @@
 
 .Link {
   text-decoration: none;
-  color: #717171;
+  color: var(--color-text);
   width: 100%;
 }
 
@@ -40,7 +40,7 @@
 
 .LinkToolbar {
   text-decoration: none;
-  color: #717171;
+  color: var(--color-text);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

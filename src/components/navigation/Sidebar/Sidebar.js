@@ -8,7 +8,9 @@ import Button from '../../../shared/userInterfaces/Button/Button';
 const Sidebar = (props) => (
   <>
     <div
-      className={[classes.Container, props.show ? classes.Show : ''].join(' ')}
+      className={[classes.Container, props.show ? classes.Show : '']
+        .join(' ')
+        .trim()}
     >
       <header className={classes.Header}>
         <Button

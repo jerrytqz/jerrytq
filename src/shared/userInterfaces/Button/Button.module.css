@@ -4,19 +4,11 @@
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  outline: none;
-}
-
-.Button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  background-color: var(--color-secondary);
 }
 
 @media (any-hover: hover) and (pointer: fine) {
   .Container:hover {
-    background-color: #5355d4;
+    background-color: var(--color-hover);
     cursor: pointer;
-    outline: none;
   }
 }

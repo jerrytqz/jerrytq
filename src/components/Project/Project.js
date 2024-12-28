@@ -5,7 +5,6 @@ import classes from './Project.module.css';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
-import Button from '../../shared/userInterfaces/Button/Button';
 import Slideshow from './Slideshow/Slideshow';
 
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
@@ -92,14 +91,12 @@ const Project = () => {
           <p className={classes.Description}>{project.description}</p>
           {project.projectLinks.WEB ? (
             <a
-              className={classes.WebsiteButtonContainer}
+              className={classes.WebsiteButton}
               href={project.projectLinks.WEB}
               target="_blank"
               rel="noreferrer"
             >
-              <Button className={classes.WebsiteButton}>
-                ✨ See it live! ✨
-              </Button>
+              ✨ See it live! ✨
             </a>
           ) : null}
         </div>

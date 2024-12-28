@@ -23,7 +23,9 @@ const DropdownArea = (props) => {
       className={[
         props.toolbar ? classes.ContainerToolbar : classes.Container,
         props.show ? classes.Show : '',
-      ].join(' ')}
+      ]
+        .join(' ')
+        .trim()}
       style={
         !props.toolbar && !props.fetchLoading && !props.fetchError
           ? { paddingLeft: '32px' }

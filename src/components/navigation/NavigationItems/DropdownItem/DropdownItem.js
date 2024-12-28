@@ -39,12 +39,14 @@ const DropdownItem = (props) => {
       ref={dropdownItem}
       className={props.toolbar ? classes.ContainerToolbar : classes.Container}
     >
-      <div
+      <button
         className={[
           props.toolbar ? classes.ButtonToolbar : classes.Button,
           showDropdown ? classes.clicked : '',
           location.pathname.startsWith(props.baseLink) ? classes.active : '',
-        ].join(' ')}
+        ]
+          .join(' ')
+          .trim()}
         onClick={() => setShowDropdown((prev) => !prev)}
       >
         {!props.toolbar && (
@@ -60,7 +62,7 @@ const DropdownItem = (props) => {
         ) : (
           <span className={classes.ArrowDown} />
         )}
-      </div>
+      </button>
       <DropdownArea
         baseLink={props.baseLink}
         links={props.links}

@@ -32,6 +32,9 @@ body, html {
   --color-accent-dark: #eeeeee;
   --color-text: #5a5a5a;
   --color-border: gainsboro;
+  --color-hover: #5355d4;
+  --color-success: green;
+  --color-failure: red;
 }
 
 code {

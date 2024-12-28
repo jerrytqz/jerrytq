@@ -8,7 +8,9 @@ const LoadingSpinner = (props) => {
       className={[
         classes.LoadingSpinner,
         props.className ? props.className : '',
-      ].join(' ')}
+      ]
+        .join(' ')
+        .trim()}
     />
   );
 };

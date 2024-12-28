@@ -22,6 +22,7 @@
   transition: 0.2s ease;
   user-select: none;
   border-radius: 0;
+  border: none;
 }
 
 .ArrowRight {
@@ -45,6 +46,7 @@
   width: 14px;
   background-color: #bbb;
   border-radius: 50%;
+  border: none;
   display: inline-block;
   transition: 0.1s ease;
 }

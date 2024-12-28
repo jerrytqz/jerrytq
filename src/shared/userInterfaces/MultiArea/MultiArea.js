@@ -8,7 +8,7 @@ const MultiArea = (props) => {
     <div className={props.className}>
       <div className={classes.Navigation}>
         {props.areas.map((area, index) => (
-          <div
+          <button
             key={area.title}
             className={classes.Title}
             style={
@@ -23,7 +23,7 @@ const MultiArea = (props) => {
             onClick={() => setAreaIndex(index)}
           >
             {area.title}
-          </div>
+          </button>
         ))}
       </div>
       <div className={classes.Body}>
