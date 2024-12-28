@@ -131,6 +131,7 @@ const Project = () => {
                       <a
                         className={classes.SocialMediaIcon}
                         href={project.projectLinks.GIT}
+                        aria-label="GitHub repository"
                       >
                         <FontAwesomeIcon icon={faGithub} size="3x" fixedWidth />
                       </a>

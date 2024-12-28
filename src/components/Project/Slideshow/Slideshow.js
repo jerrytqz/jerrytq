@@ -16,7 +16,7 @@ const Slideshow = (props) => {
               prevIndex - 1 < 0 ? props.imageLinks.length - 1 : prevIndex - 1
             )
           }
-          ariaLabel="Go back"
+          aria-label="Go back"
         >
           &#10094;
         </button>
@@ -43,7 +43,7 @@ const Slideshow = (props) => {
               prevIndex + 1 > props.imageLinks.length - 1 ? 0 : prevIndex + 1
             )
           }
-          ariaLabel="Go forward"
+          aria-label="Go forward"
         >
           &#10095;
         </button>
