@@ -12,7 +12,7 @@ const COMMANDS = [
   'print("I love programming!")',
   'std::cout << "I like watching anime!";',
   'printf("I also like playing video games!");',
-  "console.log('Chocolate is my favourite food!');",
+  "console.log('Chocolate is my favorite food!');",
 ];
 
 const HomeHero = () => {
