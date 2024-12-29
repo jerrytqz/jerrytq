@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import classes from './MultiArea.module.css';
 
 const MultiArea = (props) => {

@@ -1,20 +1,18 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import classes from './Project.module.css';
-import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
-import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
-import Slideshow from './Slideshow/Slideshow';
-
-import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
-import Technology from '../Technology/Technology';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
+import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
+import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
+import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
+import Technology from '../Technology/Technology';
+import classes from './Project.module.css';
+import Slideshow from './Slideshow/Slideshow';
 
 const Project = () => {
   const { slug } = useParams();

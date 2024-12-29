@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import Course from './Course/Course';
-import classes from './Courses.module.css';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
+import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
-import Divider from '../../shared/userInterfaces/Divider/Divider';
+import Course from './Course/Course';
+import classes from './Courses.module.css';
 
 const TERM_NAMES = ['1A', '1B', 'WT1', '2A', 'WT2', '2B', 'WT3', '3A'];
 
@@ -48,7 +48,7 @@ const Courses = () => {
       </header>
       <label
         className={[classes.TermNameSelectWrapper, classes.Min768None].join(
-          ' '
+          ' ',
         )}
       >
         Term
@@ -71,7 +71,7 @@ const Courses = () => {
           <tr>
             <th
               className={[classes.TableHeader, classes.Min768TableCell].join(
-                ' '
+                ' ',
               )}
             >
               <label className={classes.TermNameSelectWrapper}>

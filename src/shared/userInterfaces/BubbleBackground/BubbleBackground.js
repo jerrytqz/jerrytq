@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import classes from './BubbleBackground.module.css';
 
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import classes from './BubbleBackground.module.css';
 
 const BubbleBackground = () => {
   const ANIMATION_DELAY = useRef(Math.random() * -10);
@@ -19,7 +19,7 @@ const BubbleBackground = () => {
         { key: 6, val: 11 },
         { key: 7, val: 12 },
         { key: 8, val: 24 },
-      ]
+      ],
     );
   if (width >= 992)
     options.push(
@@ -31,7 +31,7 @@ const BubbleBackground = () => {
         { key: 13, val: 20 },
         { key: 14, val: 15 },
         { key: 15, val: 25 },
-      ]
+      ],
     );
   if (width >= 1200)
     options.push(
@@ -44,7 +44,7 @@ const BubbleBackground = () => {
         { key: 21, val: 17 },
         { key: 22, val: 13 },
         { key: 23, val: 28 },
-      ]
+      ],
     );
 
   const bubbles = [];
@@ -54,7 +54,7 @@ const BubbleBackground = () => {
         key={options[i].key}
         style={{ '--i': options[i].val, '--j': ANIMATION_DELAY.current }}
         className={classes.Bubble}
-      />
+      />,
     );
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import OverviewPart from './OverviewPart/OverviewPart';
 import classes from './Overview.module.css';
+import OverviewPart from './OverviewPart/OverviewPart';
 
 const OVERVIEW = [
   {

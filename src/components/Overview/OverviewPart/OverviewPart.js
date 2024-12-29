@@ -1,7 +1,7 @@
 import React from 'react';
 
-import classes from './OverviewPart.module.css';
 import Divider from '../../../shared/userInterfaces/Divider/Divider';
+import classes from './OverviewPart.module.css';
 
 const OverviewPart = (props) => {
   return (

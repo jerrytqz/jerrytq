@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import classes from './Error.module.css';
 
 import Button from '../../Button/Button';
+import classes from './Error.module.css';
 
 const Error = (props) => {
   const history = useNavigate();

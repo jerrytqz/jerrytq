@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import { Routes, Route, ScrollRestoration } from 'react-router-dom';
 import { inject } from '@vercel/analytics';
+import React, { Component } from 'react';
+import { Route, Routes, ScrollRestoration } from 'react-router-dom';
 
 import Layout from './Layout';
-import Home from './containers/Home/Home';
 import Project from './components/Project/Project';
-import ProjectCards from './containers/ProjectCards/ProjectCards';
 import Contact from './containers/Contact/Contact';
-
+import Home from './containers/Home/Home';
+import ProjectCards from './containers/ProjectCards/ProjectCards';
+import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralError';
 import NotFoundError from './shared/userInterfaces/errors/NotFoundError/NotFoundError';
-import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 
 inject();
 class App extends Component {

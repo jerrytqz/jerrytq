@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 import LoadingSpinner from '../../../../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../../../../shared/userInterfaces/errors/FetchError/FetchError';
-
 import classes from './DropdownArea.module.css';
 
 const NUM_COLS = 4;

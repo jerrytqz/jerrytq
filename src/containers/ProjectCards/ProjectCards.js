@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import classes from './ProjectCards.module.css';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import { BACKEND_BASE_DIR } from '../../shared/constants';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import classes from './ProjectCards.module.css';
 
 const ProjectCards = () => {
   const [projectCards, setProjectCards] = useState({});

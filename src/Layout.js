@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import Toolbar from './components/navigation/Toolbar/Toolbar';
-import Sidebar from './components/navigation/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
+import Sidebar from './components/navigation/Sidebar/Sidebar';
+import Toolbar from './components/navigation/Toolbar/Toolbar';
 
 const Layout = (props) => {
   const location = useLocation();

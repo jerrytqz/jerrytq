@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
 
-import classes from './Skills.module.css';
-import Skill from './Skill/Skill';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
-import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
-import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
+import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
+import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
+import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
+import Skill from './Skill/Skill';
+import classes from './Skills.module.css';
 
 const Skills = () => {
   const [skills, setSkills] = useState({});

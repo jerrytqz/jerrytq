@@ -12,10 +12,10 @@ const ZoomImage = (props) => {
   const computePosition = (event) => {
     const rectangle = event.target.getBoundingClientRect();
     const xPercent = clamp(
-      ((event.clientX - rectangle.left) / event.target.clientWidth) * 100
+      ((event.clientX - rectangle.left) / event.target.clientWidth) * 100,
     ).toFixed(1);
     const yPercent = clamp(
-      ((event.clientY - rectangle.top) / event.target.clientHeight) * 100
+      ((event.clientY - rectangle.top) / event.target.clientHeight) * 100,
     ).toFixed(1);
     setZoomPosition(`${xPercent}% ${yPercent}%`);
   };

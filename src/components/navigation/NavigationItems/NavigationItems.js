@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-
-import classes from './NavigationItems.module.css';
-import NavigationItem from './NavigationItem/NavigationItem.js';
-import DropdownItem from './DropdownItem/DropdownItem.js';
-import { BACKEND_BASE_DIR } from '../../../shared/constants';
 import {
   faCommentDots,
   faHome,
   faScrewdriverWrench,
 } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from 'react';
+
+import { BACKEND_BASE_DIR } from '../../../shared/constants';
+import DropdownItem from './DropdownItem/DropdownItem.js';
+import NavigationItem from './NavigationItem/NavigationItem.js';
+import classes from './NavigationItems.module.css';
 
 const NavigationItems = (props) => {
   const [fetchLoading, setFetchLoading] = useState(true);
@@ -26,7 +26,7 @@ const NavigationItems = (props) => {
       })
       .then((result) => {
         setProjectNames(
-          result.projectNames.concat({ name: 'All Projects >>', slug: '' })
+          result.projectNames.concat({ name: 'All Projects >>', slug: '' }),
         );
         setFetchLoading(false);
       })

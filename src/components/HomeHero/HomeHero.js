@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import { ASSETS_BASE_DIR } from '../../shared/constants';
 import BubbleBackground from '../../shared/userInterfaces/BubbleBackground/BubbleBackground';
 import classes from './HomeHero.module.css';
-import { ASSETS_BASE_DIR } from '../../shared/constants';
 
 const WRITE_DELAY = 50;
 const DELETE_DELAY = 50;
@@ -40,7 +40,7 @@ const HomeHero = () => {
         setTypingBarBlink(true);
         startDeleteTimeout = setTimeout(
           () => typeDeleter(i, j),
-          START_DELETE_DELAY
+          START_DELETE_DELAY,
         );
       }
     };

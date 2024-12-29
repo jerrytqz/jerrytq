@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import classes from './Slideshow.module.css';
 import ZoomImage from '../../../shared/userInterfaces/ZoomImage/ZoomImage';
+import classes from './Slideshow.module.css';
 
 const Slideshow = (props) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -13,7 +13,7 @@ const Slideshow = (props) => {
           className={classes.ArrowLeft}
           onClick={() =>
             setSlideIndex((prevIndex) =>
-              prevIndex - 1 < 0 ? props.imageLinks.length - 1 : prevIndex - 1
+              prevIndex - 1 < 0 ? props.imageLinks.length - 1 : prevIndex - 1,
             )
           }
           aria-label="Go to previous image"
@@ -43,7 +43,7 @@ const Slideshow = (props) => {
           className={classes.ArrowRight}
           onClick={() =>
             setSlideIndex((prevIndex) =>
-              prevIndex + 1 > props.imageLinks.length - 1 ? 0 : prevIndex + 1
+              prevIndex + 1 > props.imageLinks.length - 1 ? 0 : prevIndex + 1,
             )
           }
           aria-label="Go to next image"

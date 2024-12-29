@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import classes from './Logo.module.css';
-
 import { ASSETS_BASE_DIR } from '../../shared/constants';
+import classes from './Logo.module.css';
 
 const Logo = () => (
   <div>

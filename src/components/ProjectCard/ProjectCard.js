@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import classes from './ProjectCard.module.css';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
+import classes from './ProjectCard.module.css';
 
 const ProjectCard = (props) => {
   return (

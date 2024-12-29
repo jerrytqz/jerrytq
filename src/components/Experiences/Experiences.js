@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import classes from './Experiences.module.css';
-import Experience from './Experience/Experience';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
+import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
-import Divider from '../../shared/userInterfaces/Divider/Divider';
+import Experience from './Experience/Experience';
+import classes from './Experiences.module.css';
 
 const Experiences = () => {
   const [experiences, setExperiences] = useState({});

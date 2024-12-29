@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import classes from './DropdownItem.module.css';
 import DropdownArea from './DropdownArea/DropdownArea';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classes from './DropdownItem.module.css';
 
 const DropdownItem = (props) => {
   const dropdownItem = useRef(null);

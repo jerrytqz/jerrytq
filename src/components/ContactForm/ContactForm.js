@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import parse from 'html-react-parser';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DOMPurify from 'dompurify';
+import parse from 'html-react-parser';
+import React, { useEffect, useState } from 'react';
 
-import classes from './ContactForm.module.css';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
+import Button from '../../shared/userInterfaces/Button/Button';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
-import Button from '../../shared/userInterfaces/Button/Button';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
   const [form, setForm] = useState(null);
