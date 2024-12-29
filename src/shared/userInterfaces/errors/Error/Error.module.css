@@ -9,7 +9,7 @@
 }
 
 .Description {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -19,7 +19,7 @@
   padding: 8px;
   width: 100%;
   max-width: 160px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -31,14 +31,9 @@
     font-size: 64px;
   }
 
-  .Description {
-    font-size: 16px;
-  }
-
   .HomeButton {
     padding: 10px;
     max-width: 200px;
-    font-size: 14px;
   }
 }
 

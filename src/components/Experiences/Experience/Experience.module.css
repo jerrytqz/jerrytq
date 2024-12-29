@@ -33,7 +33,7 @@
 .DateRange,
 .Location {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .DateRange,
@@ -42,8 +42,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .Company,
   .DateRange,
   .Location {
     display: block;
+    font-size: 18px;
   }
 }

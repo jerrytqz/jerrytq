@@ -8,7 +8,7 @@ const NotFoundError = (props) => {
       title="404"
       description="The page you requested could not be found!"
       homeButton
-      containerStyle={props.containerStyle}
+      containerStyle={{ marginTop: '64px' }}
     />
   );
 };

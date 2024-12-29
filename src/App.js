@@ -41,9 +41,7 @@ class App extends Component {
               />
               <Route
                 path="*"
-                element={
-                  <NotFoundError containerStyle={{ marginTop: '64px' }} />
-                }
+                element={<NotFoundError />}
                 errorElement={<GeneralError />}
               />
             </Routes>

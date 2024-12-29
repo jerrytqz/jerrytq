@@ -44,7 +44,10 @@ const ProjectCards = () => {
       <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
   ) : fetchError ? (
-    <FetchError description={fetchErrorMsg} />
+    <FetchError
+      containerStyle={{ marginTop: '64px' }}
+      description={fetchErrorMsg}
+    />
   ) : (
     <div className={classes.Container}>
       {projectCards.map((projectCard) => (

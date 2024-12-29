@@ -44,7 +44,15 @@ const Experiences = () => {
           style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
         />
       ) : fetchError ? (
-        <FetchError description={fetchErrorMsg} />
+        <FetchError
+          containerStyle={{
+            boxSizing: 'border-box',
+            width: '80%',
+            margin: 'auto',
+            maxWidth: '1000px',
+          }}
+          description={fetchErrorMsg}
+        />
       ) : (
         experiences.map((experience) => (
           <Experience
