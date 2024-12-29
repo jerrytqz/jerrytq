@@ -17,11 +17,11 @@
 }
 
 .SocialMediaIcon+.SocialMediaIcon {
-  margin-left: 24px;
+  margin-left: 22px;
 }
 
 .SocialMediaIcon {
-  transform: scale(1.5);
+  transform: scale(1.4);
   text-decoration: none;
 }
 
@@ -41,6 +41,14 @@
 
   .CopyrightText {
     font-size: 18px;
+  }
+
+  .SocialMediaIcon {
+    transform: scale(1.5);
+  }
+
+  .SocialMediaIcon+.SocialMediaIcon {
+    margin-left: 24px;
   }
 }
 
