@@ -8,7 +8,11 @@ import classes from './Toolbar.module.css';
 const Toolbar = (props) => {
   return (
     <header className={classes.Container}>
-      <MenuButton onClick={props.onSidebarOpen} ariaLabel="Open sidebar" />
+      <MenuButton
+        className={classes.Min768None}
+        onClick={props.onSidebarOpen}
+        ariaLabel="Open sidebar"
+      />
       <Logo />
       <nav className={classes.Min768Block}>
         <NavigationItems toolbar />

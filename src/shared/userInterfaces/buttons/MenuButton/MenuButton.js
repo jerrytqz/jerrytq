@@ -8,7 +8,9 @@ import classes from './MenuButton.module.css';
 const MenuButton = (props) => {
   return (
     <Button
-      className={classes.SidebarButton}
+      className={[classes.Container, props.className ? props.className : '']
+        .join(' ')
+        .trim()}
       onClick={props.onClick}
       ariaLabel={props.ariaLabel}
     >
