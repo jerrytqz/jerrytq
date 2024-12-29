@@ -1,26 +1,15 @@
-.ArrowDown {
-  margin-top: 2px;
-  margin-left: 4px;
-  border-top: 6px solid var(--color-text);
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  width: 0;
-  height: 0;
-}
-
-.ArrowUp {
-  margin-top: 2px;
-  margin-left: 4px;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid var(--color-text);
-  border-left: 6px solid transparent;
-  width: 0;
-  height: 0;
-}
-
 .Container {
   margin: 0;
   width: 100%;
+}
+
+.CaretUp,
+.CaretDown {
+  margin-left: 4px;
+}
+
+.CaretUp {
+  margin-top: 4px;
 }
 
 .Button,
@@ -44,17 +33,9 @@
   color: black;
 }
 
-.Button.clicked > .ArrowUp {
-  border-bottom-color: black;
-}
-
 .Button.active {
   background-color: var(--color-accent-dark);
   color: black;
-}
-
-.Button.active > .ArrowDown {
-  border-top-color: black;
 }
 
 .ContainerToolbar {
@@ -70,17 +51,9 @@
   color: black;
 }
 
-.ButtonToolbar.clicked > .ArrowUp {
-  border-bottom-color: black;
-}
-
 .ButtonToolbar.active {
   background-color: var(--color-accent-dark);
   color: black;
-}
-
-.ButtonToolbar.active > .ArrowDown {
-  border-top-color: black;
 }
 
 .Icon {
@@ -94,27 +67,9 @@
     color: black;
   }
 
-  .Button:hover > .ArrowDown {
-    transition: 0.25s;
-    border-top-color: black;
-  }
-
-  .Button:hover > .ArrowUp {
-    transition: 0.25s;
-  }
-
   .ButtonToolbar:hover {
     transition: 0.25s;
     cursor: pointer;
     color: black;
-  }
-
-  .ButtonToolbar:hover > .ArrowDown {
-    transition: 0.25s;
-    border-top-color: black;
-  }
-
-  .ButtonToolbar:hover > .ArrowUp {
-    transition: 0.25s;
   }
 }

@@ -1,3 +1,4 @@
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -58,9 +59,9 @@ const DropdownItem = (props) => {
         )}
         {props.name}
         {showDropdown ? (
-          <span className={classes.ArrowUp} />
+          <FontAwesomeIcon icon={faCaretUp} className={classes.CaretUp} />
         ) : (
-          <span className={classes.ArrowDown} />
+          <FontAwesomeIcon icon={faCaretDown} className={classes.CaretDown} />
         )}
       </button>
       <DropdownArea

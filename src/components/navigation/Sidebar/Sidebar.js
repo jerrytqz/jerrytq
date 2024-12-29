@@ -1,11 +1,11 @@
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import classes from './Sidebar.module.css';
 
-import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../../shared/userInterfaces/Backdrop/Backdrop';
 import Button from '../../../shared/userInterfaces/Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import NavigationItems from '../NavigationItems/NavigationItems';
+import classes from './Sidebar.module.css';
 
 const Sidebar = (props) => (
   <>
