@@ -9,6 +9,7 @@ import { BACKEND_BASE_DIR } from '../../shared/constants';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
+import LinkButton from '../../shared/userInterfaces/buttons/LinkButton/LinkButton';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import Technology from '../Technology/Technology';
 import classes from './Project.module.css';
@@ -89,14 +90,12 @@ const Project = () => {
         <div className={classes.DescriptionArea}>
           <p className={classes.Description}>{project.description}</p>
           {project.projectLinks.WEB ? (
-            <a
+            <LinkButton
               className={classes.WebsiteButton}
               href={project.projectLinks.WEB}
-              target="_blank"
-              rel="noreferrer"
             >
               ✨ See it live! ✨
-            </a>
+            </LinkButton>
           ) : null}
         </div>
       </div>

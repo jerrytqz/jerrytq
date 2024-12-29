@@ -72,25 +72,10 @@
 }
 
 .WebsiteButton {
-  display: block;
-  box-sizing: border-box;
   margin-top: 32px;
-  border-radius: 8px;
-  background-color: var(--color-secondary);
-  padding: 16px;
   width: 100%;
-  color: white;
   font-weight: 600;
   font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-}
-
-@media (any-hover: hover) and (pointer: fine) {
-  .WebsiteButton:hover {
-    cursor: pointer;
-    background-color: var(--color-hover);
-  }
 }
 
 .Footer {
