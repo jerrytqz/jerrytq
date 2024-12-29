@@ -5,8 +5,8 @@ import parse from 'html-react-parser';
 import React, { useEffect, useState } from 'react';
 
 import { BACKEND_BASE_DIR } from '../../shared/constants';
-import Button from '../../shared/userInterfaces/Button/Button';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
+import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './ContactForm.module.css';
 

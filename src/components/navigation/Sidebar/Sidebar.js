@@ -1,9 +1,7 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import Backdrop from '../../../shared/userInterfaces/Backdrop/Backdrop';
-import Button from '../../../shared/userInterfaces/Button/Button';
+import MenuButton from '../../../shared/userInterfaces/buttons/MenuButton/MenuButton';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './Sidebar.module.css';
 
@@ -15,17 +13,7 @@ const Sidebar = (props) => (
         .trim()}
     >
       <header className={classes.Header}>
-        <Button
-          className={classes.SidebarButton}
-          onClick={props.onSidebarClose}
-          ariaLabel="Close sidebar"
-        >
-          <FontAwesomeIcon
-            icon={faBars}
-            className={classes.BarsIcon}
-            fixedWidth
-          />
-        </Button>
+        <MenuButton onClick={props.onSidebarClose} ariaLabel="Close sidebar" />
       </header>
       <nav className={classes.NavItems}>
         <NavigationItems />

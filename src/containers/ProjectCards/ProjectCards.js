@@ -49,7 +49,7 @@ const ProjectCards = () => {
       description={fetchErrorMsg}
     />
   ) : (
-    <div className={classes.Container}>
+    <section className={classes.Container}>
       {projectCards.map((projectCard) => (
         <ProjectCard
           key={projectCard.slug}
@@ -60,7 +60,7 @@ const ProjectCards = () => {
           shortDescription={projectCard.shortDescription}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
