@@ -5,6 +5,7 @@ import classes from './Courses.module.css';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
+import Divider from '../../shared/userInterfaces/Divider/Divider';
 
 const TERM_NAMES = ['1A', '1B', 'WT1', '2A', 'WT2', '2B', 'WT3', '3A'];
 
@@ -43,7 +44,7 @@ const Courses = () => {
     <section className={classes.Container}>
       <header className={classes.Header}>
         <h2 className={classes.Title}>Courses</h2>
-        <hr />
+        <Divider />
       </header>
       <label
         className={[classes.TermNameSelectWrapper, classes.Min768None].join(

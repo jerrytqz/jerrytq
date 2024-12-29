@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Divider from '../../shared/userInterfaces/Divider/Divider';
 
 const Project = () => {
   const { slug } = useParams();
@@ -84,7 +85,7 @@ const Project = () => {
           </p>
         </div>
       </header>
-      <hr />
+      <Divider />
       <div className={classes.Content}>
         <Slideshow imageLinks={project.imageLinks} />
         <div className={classes.DescriptionArea}>

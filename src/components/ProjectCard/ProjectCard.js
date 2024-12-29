@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import classes from './ProjectCard.module.css';
+import Divider from '../../shared/userInterfaces/Divider/Divider';
 
 const ProjectCard = (props) => {
   return (
@@ -13,7 +14,7 @@ const ProjectCard = (props) => {
         draggable={false}
       />
       <h3 className={classes.Name}>{props.name}</h3>
-      <hr className={classes.Divider} />
+      <Divider className={classes.Divider} />
       <p className={classes.ShortDescription}>{props.shortDescription}</p>
     </NavLink>
   );

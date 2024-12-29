@@ -5,6 +5,7 @@ import Experience from './Experience/Experience';
 import { BACKEND_BASE_DIR } from '../../shared/constants';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
+import Divider from '../../shared/userInterfaces/Divider/Divider';
 
 const Experiences = () => {
   const [experiences, setExperiences] = useState({});
@@ -36,7 +37,7 @@ const Experiences = () => {
     <section className={classes.Container}>
       <header className={classes.Header}>
         <h2 className={classes.Title}>Experience</h2>
-        <hr />
+        <Divider />
       </header>
       {fetchLoading ? (
         <LoadingSpinner
