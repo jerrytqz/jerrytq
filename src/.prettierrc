@@ -3,5 +3,6 @@
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "singleQuote": true,
+  "endOfLine": "crlf",
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-css-order"]
 }
