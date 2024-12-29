@@ -4,12 +4,12 @@
 }
 
 .Header {
-  color: white;
   text-align: center;
 }
 
 .Title {
   font-size: 72px;
+  color: white;
 }
 
 .Subtitle {

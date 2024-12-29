@@ -53,6 +53,10 @@
   color: greenyellow;
 }
 
+.LineNumber, .Command {
+  font-size: 16px;
+}
+
 .TypingBar {
   background-color: white;
   width: 2px;

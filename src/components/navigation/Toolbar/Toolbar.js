@@ -4,6 +4,8 @@ import classes from './Toolbar.module.css';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Logo from '../../Logo/Logo';
 import Button from '../../../shared/userInterfaces/Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Toolbar = (props) => {
   return (
@@ -13,9 +15,11 @@ const Toolbar = (props) => {
         onClick={props.onSidebarOpen}
         ariaLabel="Open sidebar"
       >
-        <span className={classes.HamburgerLine} />
-        <span className={classes.HamburgerLine} />
-        <span className={classes.HamburgerLine} />
+        <FontAwesomeIcon
+          icon={faBars}
+          className={classes.BarsIcon}
+          fixedWidth
+        />
       </Button>
       <Logo />
       <nav className={classes.Min768Block}>

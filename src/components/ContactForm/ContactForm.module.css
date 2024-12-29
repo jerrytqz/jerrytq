@@ -32,6 +32,8 @@
   width: fit-content;
   margin-bottom: 4px;
   padding: 0;
+  color: black;
+  font-size: 16px;
 }
 
 .Form input, textarea {

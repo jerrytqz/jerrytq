@@ -24,7 +24,7 @@
 .TableHeader {
   background-color: #1e4b5a;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
   padding: 16px;
   border: 1px solid var(--color-border);
@@ -43,6 +43,7 @@
   display: flex;
   align-items: center;
   font-size: 18px;
+  color: black;
 }
 
 .Min768TableCell {
@@ -62,10 +63,6 @@
     margin: 16px auto 0 auto;
   }
 
-  .TableHeader {
-    font-size: 18px;
-  }
-
   .TermNameSelect {
     margin-left: 8px;
     border: none;
@@ -79,5 +76,6 @@
     max-width: none;
     width: 100%;
     margin: 0;
+    color: unset;
   }
 }

@@ -4,6 +4,8 @@ import classes from './Sidebar.module.css';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../../shared/userInterfaces/Backdrop/Backdrop';
 import Button from '../../../shared/userInterfaces/Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = (props) => (
   <>
@@ -18,9 +20,11 @@ const Sidebar = (props) => (
           onClick={props.onSidebarClose}
           ariaLabel="Close sidebar"
         >
-          <span className={classes.HamburgerLine} />
-          <span className={classes.HamburgerLine} />
-          <span className={classes.HamburgerLine} />
+          <FontAwesomeIcon
+            icon={faBars}
+            className={classes.BarsIcon}
+            fixedWidth
+          />
         </Button>
       </header>
       <nav className={classes.NavItems}>
