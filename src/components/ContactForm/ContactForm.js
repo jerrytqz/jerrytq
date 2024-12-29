@@ -79,7 +79,7 @@ const ContactForm = () => {
             contact form is the perfect gateway.
             <br />
             <br />
-            If you prefer, I'm also available through{' '}
+            You can also reach me through{' '}
             <a className={classes.EmailLink} href="mailto:contact@jerrytq.com">
               email
             </a>
