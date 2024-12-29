@@ -1,6 +1,6 @@
 .Container {
-  padding: 50px 0;
   background-color: var(--color-accent);
+  padding: 50px 0;
 }
 
 .Header {
@@ -10,24 +10,24 @@
 }
 
 .Title {
-  font-size: 38px;
   font-weight: 800;
+  font-size: 38px;
 }
 
 .Table {
-  border-collapse: collapse;
   margin: 8px auto 0 auto;
+  border-collapse: collapse;
   width: 80%;
   max-width: 1000px;
 }
 
 .TableHeader {
+  border: 1px solid var(--color-border);
   background-color: #1e4b5a;
+  padding: 16px;
   color: white;
   font-size: 18px;
   text-align: left;
-  padding: 16px;
-  border: 1px solid var(--color-border);
 }
 
 .TermNameSelect {
@@ -37,13 +37,13 @@
 }
 
 .TermNameSelectWrapper {
-  max-width: 1000px;
-  width: 80%;
-  margin: 16px auto 0 auto;
   display: flex;
   align-items: center;
-  font-size: 18px;
+  margin: 16px auto 0 auto;
+  width: 80%;
+  max-width: 1000px;
   color: black;
+  font-size: 18px;
 }
 
 .Min768TableCell {
@@ -73,9 +73,9 @@
   }
 
   .TermNameSelectWrapper {
-    max-width: none;
-    width: 100%;
     margin: 0;
+    width: 100%;
+    max-width: none;
     color: unset;
   }
 }

@@ -1,13 +1,13 @@
 .Container {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 20px 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background-color: var(--color-primary);
+  align-items: center;
+  box-sizing: border-box;
   margin-top: auto;
+  background-color: var(--color-primary);
+  padding: 0 20px 16px;
+  width: 100%;
 }
 
 .SocialMediaIcons {
@@ -16,7 +16,7 @@
   margin: 16px 0;
 }
 
-.SocialMediaIcon+.SocialMediaIcon {
+.SocialMediaIcon + .SocialMediaIcon {
   margin-left: 22px;
 }
 
@@ -26,17 +26,17 @@
 }
 
 .CopyrightText {
-  color: white;
   margin: 0;
+  color: white;
   font-size: 16px;
 }
 
 @media only screen and (min-width: 768px) {
   .Container {
-    padding: 0 20px;
-    height: 65px;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 20px;
+    height: 65px;
   }
 
   .CopyrightText {
@@ -47,7 +47,7 @@
     transform: scale(1.5);
   }
 
-  .SocialMediaIcon+.SocialMediaIcon {
+  .SocialMediaIcon + .SocialMediaIcon {
     margin-left: 24px;
   }
 }

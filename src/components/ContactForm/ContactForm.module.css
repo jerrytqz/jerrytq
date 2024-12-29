@@ -1,57 +1,59 @@
-.Container, .SubmitMsgContainer {
+.Container,
+.SubmitMsgContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--color-border);
-  margin: 64px auto;
-  border-radius: 12px;
-  width: 60%;
-  padding: 32px;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 64px auto;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 32px;
+  width: 60%;
 }
 
 .Description {
-  font-size: 18px;
-  max-width: 290px;
-  text-align: center;
   margin: 0 0 32px;
+  max-width: 290px;
+  font-size: 18px;
+  text-align: center;
 }
 
-.Form>div {
+.Form > div {
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
   box-sizing: border-box;
+  margin-top: 8px;
 }
 
-.Form>div:first-child {
+.Form > div:first-child {
   margin-top: 0;
 }
 
 .Form label {
-  width: fit-content;
   margin-bottom: 4px;
   padding: 0;
+  width: fit-content;
   color: black;
   font-size: 16px;
 }
 
-.Form input, textarea {
+.Form input,
+textarea {
   appearance: none;
   width: 100%;
 }
 
 .Form textarea {
-  resize: vertical;
   height: 64px;
+  resize: vertical;
 }
 
 .Form ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   color: var(--color-failure);
   font-size: 14px;
+  list-style: none;
 }
 
 .SubmitButton {
@@ -66,25 +68,25 @@
 
 .SubmitMsgTitle {
   margin-top: 8px;
-  font-size: 50px;
-  font-weight: 800;
   color: var(--color-success);
+  font-weight: 800;
+  font-size: 50px;
   text-align: center;
 }
 
 .SubmitMsgDescription {
-  font-size: 16px;
   margin-top: 8px;
   color: var(--color-success);
+  font-size: 16px;
   text-align: center;
 }
 
 .EmailLink {
-  text-decoration: none;
-  color: var(--color-secondary);
-  padding: 2px 6px;
-  background-color: var(--color-accent-dark);
   border-radius: 4px;
+  background-color: var(--color-accent-dark);
+  padding: 2px 6px;
+  color: var(--color-secondary);
+  text-decoration: none;
 }
 
 .CheckMark {
@@ -102,10 +104,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .Container, .SubmitMsgContainer {
+  .Container,
+  .SubmitMsgContainer {
+    flex-direction: row;
     padding: 64px;
     max-width: 800px;
-    flex-direction: row;
   }
 
   .Description {

@@ -9,15 +9,15 @@
 }
 
 .Title {
-  font-size: 38px;
   font-weight: 800;
+  font-size: 38px;
 }
 
 .MultiArea {
   margin: auto;
+  margin-top: 16px;
   width: 80%;
   max-width: 1000px;
-  margin-top: 16px;
 }
 
 .Skills {

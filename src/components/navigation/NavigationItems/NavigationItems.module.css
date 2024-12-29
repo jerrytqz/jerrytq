@@ -1,19 +1,19 @@
 .Container {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  list-style: none;
 }
 
 .ContainerToolbar {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   align-items: center;
   gap: 2px;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  list-style: none;
 }

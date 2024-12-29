@@ -1,34 +1,43 @@
 .Container {
+  display: flex;
   position: absolute;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .Bubble {
   position: relative;
-  width: 30px;
-  height: 30px;
-  background: #4fc3dc;
-  margin: 0 4px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 15px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  top: 115%;
+  transform: scale(0);
   animation: float 10s linear infinite;
   animation-duration: calc(125s / var(--i));
   animation-delay: calc(30s / var(--j));
-  top: 115%;
-  transform: scale(0);
+  margin: 0 4px;
+  box-shadow:
+    0 0 0 15px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+  border-radius: 50%;
+  background: #4fc3dc;
+  width: 30px;
+  height: 30px;
 }
 
 .Bubble:nth-child(2n) {
+  box-shadow:
+    0 0 0 12px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
   background: #ff2d75;
-  box-shadow: 0 0 0 12px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
 }
 
 .Bubble:nth-child(3n) {
+  box-shadow:
+    0 0 0 10px #2dff2d44,
+    0 0 50px #2dff2d,
+    0 0 100px #2dff2d;
   background: #2dff2d;
-  box-shadow: 0 0 0 10px #2dff2d44, 0 0 50px #2dff2d, 0 0 100px #2dff2d;
 }
 
 .Bubble:nth-child(4n) {

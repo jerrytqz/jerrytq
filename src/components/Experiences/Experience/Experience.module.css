@@ -1,21 +1,21 @@
 .Container {
   display: flex;
   gap: 16px;
-  width: 80%;
-  max-width: 1000px;
   margin: auto;
   padding: 24px;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .Info {
   display: flex;
   flex-direction: column;
-  width: 100%
+  width: 100%;
 }
 
 .Image {
-  height: 72px;
   width: 72px;
+  height: 72px;
 }
 
 .InfoRow {
@@ -29,17 +29,21 @@
   margin: 0;
 }
 
-.Company, .DateRange, .Location {
+.Company,
+.DateRange,
+.Location {
   margin: 0;
   font-size: 18px;
 }
 
-.DateRange, .Location {
+.DateRange,
+.Location {
   display: none;
 }
 
 @media only screen and (min-width: 768px) {
-  .DateRange, .Location {
+  .DateRange,
+  .Location {
     display: block;
   }
 }

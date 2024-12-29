@@ -1,14 +1,14 @@
 .Container {
-  background-color: var(--color-secondary);
   border: none;
+  border-radius: 8px;
+  background-color: var(--color-secondary);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
   .Container:hover {
-    background-color: var(--color-hover);
     cursor: pointer;
+    background-color: var(--color-hover);
   }
 }

@@ -1,6 +1,6 @@
 .Container {
-  padding: 60px 30px;
   background-color: var(--color-primary);
+  padding: 60px 30px;
 }
 
 .Header {
@@ -8,8 +8,8 @@
 }
 
 .Title {
-  font-size: 72px;
   color: white;
+  font-size: 72px;
 }
 
 .Subtitle {

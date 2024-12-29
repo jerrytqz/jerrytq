@@ -4,16 +4,16 @@
 }
 
 .Title {
-  font-size: 18px;
-  font-weight: 600;
-  padding: 16px;
   cursor: pointer;
-  user-select: none;
   box-shadow: 0 1px 0 var(--color-border);
-  background-color: unset;
   border: none;
-  text-align: left;
+  background-color: unset;
+  padding: 16px;
   color: black;
+  font-weight: 600;
+  font-size: 18px;
+  user-select: none;
+  text-align: left;
 }
 
 .Body {

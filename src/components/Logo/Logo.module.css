@@ -1,15 +1,15 @@
 .Container {
-  padding: 0 8px 0 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  padding: 0 8px 0 8px;
   color: black;
+  text-decoration: none;
 }
 
 .Icon {
-  height: 45px;
   width: 45px;
+  height: 45px;
 }
 
 .Name {
@@ -28,7 +28,7 @@
 }
 
 @media (any-hover: hover) and (pointer: fine) {
-  .Container:hover>img {
+  .Container:hover > img {
     animation: spin 1s linear infinite;
   }
 }

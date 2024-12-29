@@ -1,7 +1,7 @@
 .Container {
   margin: auto;
-  max-width: 600px;
   padding: 30px;
+  max-width: 600px;
 }
 
 .Header {
@@ -17,87 +17,87 @@
 }
 
 .Name {
-  text-align: center;
-  font-size: 50px;
   font-weight: 800;
+  font-size: 50px;
+  text-align: center;
 }
 
 .Credits {
   display: flex;
   align-items: center;
-  font-size: 20px;
-  color: black;
-  white-space: nowrap;
   overflow: hidden;
+  color: black;
+  font-size: 20px;
+  white-space: nowrap;
 }
 
 .CreditsImage {
-  height: 20px;
   margin-right: 6px;
+  height: 20px;
 }
 
 .Date {
   display: flex;
   align-items: center;
-  font-size: 20px;
-  color: black;
-  white-space: nowrap;
-  overflow: hidden;
   margin-top: -8px;
+  overflow: hidden;
+  color: black;
+  font-size: 20px;
+  white-space: nowrap;
 }
 
 .DateImage {
-  height: 20px;
   margin-right: 6px;
+  height: 20px;
 }
 
 .Content {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .DescriptionArea {
   margin-top: 30px;
-  padding: 20px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
+  padding: 20px;
 }
 
 .Description {
-  text-align: justify;
   margin: 0;
   font-size: 16px;
   line-height: 30px;
+  text-align: justify;
 }
 
 .WebsiteButton {
   display: block;
-  margin-top: 32px;
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
-  background-color: var(--color-secondary);
-  text-align: center;
   box-sizing: border-box;
+  margin-top: 32px;
   border-radius: 8px;
+  background-color: var(--color-secondary);
+  padding: 16px;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
   .WebsiteButton:hover {
-    background-color: var(--color-hover);
     cursor: pointer;
+    background-color: var(--color-hover);
   }
 }
 
 .Footer {
   margin-top: 30px;
-  padding: 20px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
+  padding: 20px;
 }
 
 .Technologies {
@@ -113,8 +113,8 @@
 }
 
 .SocialMediaIcon {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 
 .SocialMediaIcon:hover {
@@ -131,8 +131,8 @@
 
 @media only screen and (min-width: 768px) {
   .Container {
-    max-width: 800px;
     padding: 60px;
+    max-width: 800px;
   }
 
   .Name {
@@ -140,9 +140,9 @@
   }
 
   .CreditsDate {
-    margin-top: 20px;
     flex-direction: row;
     align-items: normal;
+    margin-top: 20px;
   }
 
   .Credits {
@@ -168,7 +168,8 @@
     margin-top: 0;
   }
 
-  .Credits, .Date {
+  .Credits,
+  .Date {
     margin-bottom: 0;
   }
 
@@ -179,8 +180,8 @@
   }
 
   .Name {
-    text-align: left;
     font-size: 50px;
+    text-align: left;
   }
 
   .Content {
@@ -188,11 +189,11 @@
   }
 
   .DescriptionArea {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     margin-top: 0;
     margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
   }
 
   .Description {

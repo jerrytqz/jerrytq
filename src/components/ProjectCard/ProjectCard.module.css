@@ -3,41 +3,44 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 16px;
-  border-radius: 6px;
-  border: 1px solid var(--color-border);
+  transition:
+    border-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
   box-shadow: 0 0 8px var(--color-border);
-  width: 256px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
   background: white;
+  padding: 16px;
+  width: 256px;
   text-decoration: none;
-  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
   .Container:hover {
-    cursor: pointer;
     transform: scale(1.05);
+    cursor: pointer;
     border: 1px solid var(--color-secondary);
   }
 }
 
 .Image {
-  width: 256px;
-  height: 256px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
+  width: 256px;
+  height: 256px;
 }
 
 .Divider {
-  width: 100%;
   margin: -4px;
+  width: 100%;
 }
 
 .Name {
   color: black;
 }
 
-.Name, .ShortDescription {
+.Name,
+.ShortDescription {
   margin: 0;
   text-align: center;
 }

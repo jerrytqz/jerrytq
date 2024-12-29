@@ -1,21 +1,21 @@
 .Container {
+  display: flex;
   position: relative;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-primary);
   padding: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .HeroImageWrapper {
-  border-radius: 50%;
+  z-index: 50;
   border: 5px solid white;
+  border-radius: 50%;
+  background-color: white;
   width: 300px;
   height: 300px;
-  z-index: 50;
-  background-color: white;
 }
 
 .HeroImage {
@@ -26,23 +26,23 @@
 }
 
 .PrimaryText {
+  z-index: 50;
   margin-top: 15px;
   color: white;
   font-weight: bold;
   font-size: 52px;
-  z-index: 50;
   text-align: center;
   white-space: nowrap;
 }
 
 .CommandContainer {
-  margin-top: 20px;
-  padding: 10px 12px;
-  background-color: #201c1c;
-  border-radius: 5px;
   display: flex;
-  box-shadow: 0px 0px 10px black;
   z-index: 50;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 5px;
+  background-color: #201c1c;
+  padding: 10px 12px;
 }
 
 .LineNumber {
@@ -53,7 +53,8 @@
   color: greenyellow;
 }
 
-.LineNumber, .Command {
+.LineNumber,
+.Command {
   font-size: 16px;
 }
 
@@ -73,18 +74,18 @@
 }
 
 .StatusContainer {
+  display: flex;
   position: absolute;
   left: calc(50% + 115px);
-  background-color: var(--color-primary);
-  min-height: 30px;
-  min-width: 30px;
-  box-shadow: 0px 0px 5px black;
-  display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  cursor: default;
   z-index: 50;
+  cursor: default;
+  box-shadow: 0px 0px 5px black;
+  background-color: var(--color-primary);
+  min-width: 30px;
+  min-height: 30px;
+  color: white;
   line-height: 0;
 }
 
