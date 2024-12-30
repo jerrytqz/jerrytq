@@ -60,9 +60,9 @@
     height: fit-content;
   }
 
-  .ArrowLeft:hover,
-  .ArrowRight:hover {
-    opacity: 0.6 !important;
+  .Top:hover .ArrowLeft:hover,
+  .Top:hover .ArrowRight:hover {
+    opacity: 0.6;
   }
 
   .Top:hover .ArrowLeft,
