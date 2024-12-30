@@ -11,6 +11,7 @@ const Sidebar = (props) => (
       className={[classes.Container, props.show ? classes.Show : '']
         .join(' ')
         .trim()}
+      inert={props.show ? undefined : ''} // Workaround until upgrade to React 19
     >
       <header className={classes.Header}>
         <MenuButton onClick={props.onSidebarClose} ariaLabel="Close sidebar" />
