@@ -18,9 +18,9 @@
   cursor: pointer;
   border: none;
   border-radius: 0;
-  background-color: black;
+  background-color: var(--color-dark);
   padding: 16px;
-  color: white;
+  color: var(--color-light);
   font-weight: bold;
   font-size: 16px;
   user-select: none;
@@ -63,7 +63,6 @@
   .ArrowLeft:hover,
   .ArrowRight:hover {
     opacity: 0.6 !important;
-    background-color: black;
   }
 
   .Top:hover .ArrowLeft,

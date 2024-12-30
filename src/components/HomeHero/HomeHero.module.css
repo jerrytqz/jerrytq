@@ -11,9 +11,9 @@
 
 .HeroImageWrapper {
   z-index: 50;
-  border: 5px solid white;
+  border: 5px solid var(--color-light);
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--color-light);
   width: 300px;
   height: 300px;
 }
@@ -28,7 +28,7 @@
 .PrimaryText {
   z-index: 50;
   margin-top: 15px;
-  color: white;
+  color: var(--color-light);
   font-weight: bold;
   font-size: 52px;
   text-align: center;
@@ -39,14 +39,14 @@
   display: flex;
   z-index: 50;
   margin-top: 20px;
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px var(--color-dark);
   border-radius: 5px;
   background-color: #201c1c;
   padding: 10px 12px;
 }
 
 .LineNumber {
-  color: white;
+  color: var(--color-light);
 }
 
 .Command {
@@ -59,7 +59,7 @@
 }
 
 .TypingBar {
-  background-color: white;
+  background-color: var(--color-light);
   width: 2px;
 }
 
@@ -81,16 +81,16 @@
   align-items: center;
   z-index: 50;
   cursor: default;
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px var(--color-dark);
   background-color: var(--color-primary);
   min-width: 30px;
   min-height: 30px;
-  color: white;
+  color: var(--color-light);
   line-height: 0;
 }
 
 .StatusMessage {
-  color: white;
+  color: var(--color-light);
   font-size: 12px;
 }
 

@@ -35,11 +35,7 @@ html {
   text-size-adjust: none;
 }
 
-#root {
-  display: flex;
-  flex-flow: column;
-  min-height: 100%;
-
+:root {
   --color-primary: #14323c;
   --color-secondary: #393ae7;
   --color-accent: #f7f7f7;
@@ -49,6 +45,14 @@ html {
   --color-hover: #5355d4;
   --color-success: green;
   --color-failure: red;
+  --color-light: white;
+  --color-dark: black;
+}
+
+#root {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
 }
 
 code {
@@ -63,7 +67,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: black;
+  color: var(--color-dark);
 }
 
 p {
@@ -85,9 +89,9 @@ input {
   border: 1px solid var(--color-border);
   border-radius: 6px;
   background-clip: padding-box;
-  background-color: #fff;
+  background-color: var(--color-light);
   padding: 7px 14px;
-  color: black;
+  color: var(--color-dark);
   font-weight: 400;
   font-size: 15px;
   line-height: 1.5;

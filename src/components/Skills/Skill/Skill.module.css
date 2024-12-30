@@ -11,12 +11,12 @@
 
 .Name {
   display: block;
-  color: black;
+  color: var(--color-dark);
 }
 
 .Proficiency {
   display: none;
-  color: black;
+  color: var(--color-dark);
 }
 
 /* .Container img:hover + .Info > .Name {

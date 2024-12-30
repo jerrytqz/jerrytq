@@ -15,7 +15,7 @@
 
 .Link.active {
   background-color: var(--color-accent-dark);
-  color: black;
+  color: var(--color-dark);
 }
 
 .ContainerToolbar {
@@ -31,7 +31,7 @@
 
 .LinkToolbar.active {
   background-color: var(--color-accent-dark);
-  color: black;
+  color: var(--color-dark);
 }
 
 .Icon {
@@ -41,11 +41,11 @@
 @media (any-hover: hover) and (pointer: fine) {
   .Link:hover {
     transition: 0.25s;
-    color: black;
+    color: var(--color-dark);
   }
 
   .LinkToolbar:hover {
     transition: 0.25s;
-    color: black;
+    color: var(--color-dark);
   }
 }

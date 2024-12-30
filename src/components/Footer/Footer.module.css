@@ -22,12 +22,13 @@
 
 .SocialMediaIcon {
   transform: scale(1.4);
+  color: var(--color-light);
   text-decoration: none;
 }
 
 .CopyrightText {
   margin: 0;
-  color: white;
+  color: var(--color-light);
   font-size: 16px;
 }
 

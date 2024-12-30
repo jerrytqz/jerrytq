@@ -9,7 +9,7 @@
   border: none;
   background-color: unset;
   padding: 16px;
-  color: black;
+  color: var(--color-dark);
   font-weight: 600;
   font-size: 18px;
   user-select: none;

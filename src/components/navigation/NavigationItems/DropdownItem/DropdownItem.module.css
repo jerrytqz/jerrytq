@@ -30,12 +30,12 @@
 }
 
 .Button.clicked {
-  color: black;
+  color: var(--color-dark);
 }
 
 .Button.active {
   background-color: var(--color-accent-dark);
-  color: black;
+  color: var(--color-dark);
 }
 
 .ContainerToolbar {
@@ -48,12 +48,12 @@
 }
 
 .ButtonToolbar.clicked {
-  color: black;
+  color: var(--color-dark);
 }
 
 .ButtonToolbar.active {
   background-color: var(--color-accent-dark);
-  color: black;
+  color: var(--color-dark);
 }
 
 .Icon {
@@ -64,12 +64,12 @@
   .Button:hover {
     transition: 0.25s;
     cursor: pointer;
-    color: black;
+    color: var(--color-dark);
   }
 
   .ButtonToolbar:hover {
     transition: 0.25s;
     cursor: pointer;
-    color: black;
+    color: var(--color-dark);
   }
 }
