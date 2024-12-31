@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/navigation/Sidebar/Sidebar';
 import Toolbar from './components/navigation/Toolbar/Toolbar';
+import { ProjectNamesProvider } from './shared/context/ProjectNamesContext';
 
 const Layout = (props) => {
   const location = useLocation();
@@ -15,11 +16,13 @@ const Layout = (props) => {
 
   return (
     <>
-      <Toolbar onSidebarOpen={() => setShowSidebar(true)} />
-      <Sidebar
-        show={showSidebar}
-        onSidebarClose={() => setShowSidebar(false)}
-      />
+      <ProjectNamesProvider>
+        <Toolbar onSidebarOpen={() => setShowSidebar(true)} />
+        <Sidebar
+          show={showSidebar}
+          onSidebarClose={() => setShowSidebar(false)}
+        />
+      </ProjectNamesProvider>
       <main>{props.children}</main>
       <Footer />
     </>
