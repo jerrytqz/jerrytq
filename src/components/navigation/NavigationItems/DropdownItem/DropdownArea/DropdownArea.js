@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { useProjectNames } from '../../../../../shared/context/ProjectNamesContext';
 import LoadingSpinner from '../../../../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../../../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './DropdownArea.module.css';
@@ -8,8 +9,10 @@ import classes from './DropdownArea.module.css';
 const NUM_COLS = 4;
 
 const DropdownArea = (props) => {
-  const linksPerCol = Math.floor(props.links.length / NUM_COLS);
-  const remainder = props.links.length % NUM_COLS;
+  const { fetchLoading, fetchError, projectNames: links } = useProjectNames();
+
+  const linksPerCol = Math.floor(links.length / NUM_COLS);
+  const remainder = links.length % NUM_COLS;
   const cols = [];
   let start = 0;
   let end = 0;
@@ -27,26 +30,26 @@ const DropdownArea = (props) => {
         .join(' ')
         .trim()}
       style={
-        !props.toolbar && !props.fetchLoading && !props.fetchError
+        !props.toolbar && !fetchLoading && !fetchError
           ? { paddingLeft: '32px' }
           : {}
       }
     >
-      {props.fetchLoading ? (
+      {fetchLoading ? (
         <LoadingSpinner
           style={{
             fontSize: props.toolbar ? '9px' : '6px',
             margin: '26px auto',
           }}
         />
-      ) : props.fetchError ? (
+      ) : fetchError ? (
         props.toolbar ? (
           <FetchError containerStyle={{ margin: 'auto' }} />
         ) : (
           <FetchError
             containerStyle={{ padding: '0' }}
-            titleStyle={{ fontSize: '22px' }}
-            descriptionStyle={{ fontSize: '16px' }}
+            titleStyle={{ fontSize: '22px', textAlign: 'left' }}
+            descriptionStyle={{ fontSize: '16px', textAlign: 'left' }}
           />
         )
       ) : props.toolbar ? (
@@ -54,8 +57,8 @@ const DropdownArea = (props) => {
           start = end;
           end = start + linksPerCol + (col < remainder ? 1 : 0);
           return (
-            <div className={classes.Col} key={props.links[col].name}>
-              {props.links.slice(start, end).map((link) => (
+            <div className={classes.Col} key={links[col].name}>
+              {links.slice(start, end).map((link) => (
                 <NavLink
                   key={link.name}
                   to={
@@ -78,7 +81,7 @@ const DropdownArea = (props) => {
           );
         })
       ) : (
-        props.links.map((link) => (
+        links.map((link) => (
           <NavLink
             key={link.name}
             to={

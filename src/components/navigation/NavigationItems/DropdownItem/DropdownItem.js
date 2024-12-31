@@ -66,11 +66,8 @@ const DropdownItem = (props) => {
       </button>
       <DropdownArea
         baseLink={props.baseLink}
-        links={props.links}
         show={showDropdown}
         toolbar={props.toolbar}
-        fetchLoading={props.fetchLoading}
-        fetchError={props.fetchError}
       />
     </li>
   );
