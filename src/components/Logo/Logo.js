@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ASSETS_BASE_DIR } from '../../shared/constants';
+import { ASSETS_BASE_URL } from '../../shared/urlBases';
 import classes from './Logo.module.css';
 
 const Logo = () => (
@@ -9,7 +9,7 @@ const Logo = () => (
     <Link to="/" className={classes.Container}>
       <img
         className={classes.Icon}
-        src={`${ASSETS_BASE_DIR}/icon.png`}
+        src={`${ASSETS_BASE_URL}icon.png`}
         alt="Icon"
         draggable={false}
       />

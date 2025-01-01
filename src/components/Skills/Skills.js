@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import { API_BASE_URL } from '../../shared/urlBases';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
@@ -15,7 +15,7 @@ const Skills = () => {
   const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
 
   useEffect(() => {
-    fetch(`${BACKEND_BASE_DIR}/fetch-skills/`, { method: 'GET' })
+    fetch(`${API_BASE_URL}fetch-skills/`, { method: 'GET' })
       .then((response) => {
         if (!response.ok)
           return response.json().then((result) => {

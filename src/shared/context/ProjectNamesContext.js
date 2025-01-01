@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import { BACKEND_BASE_DIR } from '../constants';
+import { API_BASE_URL } from '../urlBases';
 
 const ProjectNamesContext = createContext();
 
@@ -14,7 +14,7 @@ export const ProjectNamesProvider = (props) => {
   const [projectNames, setProjectNames] = useState([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_BASE_DIR}/fetch-project-names/`, { method: 'GET' })
+    fetch(`${API_BASE_URL}fetch-project-names/`, { method: 'GET' })
       .then((response) => {
         if (!response.ok)
           return response.json().then((result) => {

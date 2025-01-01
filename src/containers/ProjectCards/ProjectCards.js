@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import { API_BASE_URL } from '../../shared/urlBases';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './ProjectCards.module.css';
@@ -13,7 +13,7 @@ const ProjectCards = () => {
   const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
 
   useEffect(() => {
-    fetch(`${BACKEND_BASE_DIR}/fetch-project-cards/`, { method: 'GET' })
+    fetch(`${API_BASE_URL}fetch-project-cards/`, { method: 'GET' })
       .then((response) => {
         if (!response.ok)
           return response.json().then((result) => {

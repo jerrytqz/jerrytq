@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
 import React, { useEffect, useState } from 'react';
 
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import { API_BASE_URL } from '../../shared/urlBases';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
@@ -20,7 +20,7 @@ const ContactForm = () => {
   useEffect(() => {
     setFetchLoading(true);
     setFetchError(false);
-    fetch(`${BACKEND_BASE_DIR}/contact/`, { method: 'GET' })
+    fetch(`${API_BASE_URL}contact/`, { method: 'GET' })
       .then((response) => response.json())
       .then((result) => {
         const cleanHtmlString = DOMPurify.sanitize(result.form, {
@@ -39,7 +39,7 @@ const ContactForm = () => {
     event.preventDefault();
     setSubmitLoading(true);
     const data = new FormData(event.target);
-    fetch(`${BACKEND_BASE_DIR}/contact/`, { method: 'POST', body: data })
+    fetch(`${API_BASE_URL}contact/`, { method: 'POST', body: data })
       .then((response) => {
         if (!response.ok)
           return response.json().then((result) => {

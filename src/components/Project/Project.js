@@ -2,10 +2,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import getRequest from '../../shared/api/getRequest';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
@@ -17,32 +18,17 @@ import Slideshow from './Slideshow/Slideshow';
 
 const Project = () => {
   const { slug } = useParams();
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
-  const [project, setProject] = useState({});
 
-  useEffect(() => {
-    setFetchLoading(true);
-    setFetchError(false);
-    fetch(`${BACKEND_BASE_DIR}/fetch-project/?slug=${slug}`, { method: 'GET' })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            if (response.status === 404) setFetchErrorMsg(result.error);
-            throw new Error(result.error);
-          });
-        else return response.json();
-      })
-      .then((result) => {
-        setProject(result.project);
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, [slug]);
+  const {
+    data: project,
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['project', slug],
+    queryFn: () => getRequest(`fetch-project/`, { slug: slug }),
+    select: (data) => data.project,
+  });
 
   return fetchLoading ? (
     <div
@@ -55,10 +41,10 @@ const Project = () => {
     >
       <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
-  ) : fetchError ? (
+  ) : hasFetchError ? (
     <FetchError
       containerStyle={{ marginTop: '64px' }}
-      description={fetchErrorMsg}
+      description={fetchError.message}
       homeButton
     />
   ) : (

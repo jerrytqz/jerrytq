@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { ASSETS_BASE_DIR } from '../../shared/constants';
+import { ASSETS_BASE_URL } from '../../shared/urlBases';
 import BubbleBackground from '../../shared/userInterfaces/BubbleBackground/BubbleBackground';
 import classes from './HomeHero.module.css';
 
@@ -74,7 +74,7 @@ const HomeHero = () => {
           onLoad={() => setHeroImageStyle({ display: 'block' })}
           style={heroImageStyle}
           className={classes.HeroImage}
-          src={`${ASSETS_BASE_DIR}/home/hero/jerry-zheng.png`}
+          src={`${ASSETS_BASE_URL}home/hero/jerry-zheng.png`}
           alt="Jerry Zheng"
           draggable={false}
         />

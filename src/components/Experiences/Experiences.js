@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import { API_BASE_URL } from '../../shared/urlBases';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
@@ -14,7 +14,7 @@ const Experiences = () => {
   const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
 
   useEffect(() => {
-    fetch(`${BACKEND_BASE_DIR}/fetch-experiences/`, { method: 'GET' })
+    fetch(`${API_BASE_URL}fetch-experiences/`, { method: 'GET' })
       .then((response) => {
         if (!response.ok)
           return response.json().then((result) => {

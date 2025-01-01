@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { BACKEND_BASE_DIR } from '../../shared/constants';
+import { API_BASE_URL } from '../../shared/urlBases';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
@@ -19,7 +19,7 @@ const Courses = () => {
   useEffect(() => {
     setFetchLoading(true);
     setFetchError(false);
-    fetch(`${BACKEND_BASE_DIR}/fetch-courses/?termName=${termName}`, {
+    fetch(`${API_BASE_URL}fetch-courses/?termName=${termName}`, {
       method: 'GET',
     })
       .then((response) => {
