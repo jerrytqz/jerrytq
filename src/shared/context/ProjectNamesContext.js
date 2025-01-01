@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { createContext, useContext } from 'react';
 
-import { API_BASE_URL } from '../urlBases';
+import getRequest from '../../shared/api/getRequest';
 
 const ProjectNamesContext = createContext();
 
@@ -9,34 +10,21 @@ export const useProjectNames = () => {
 };
 
 export const ProjectNamesProvider = (props) => {
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [projectNames, setProjectNames] = useState([]);
-
-  useEffect(() => {
-    fetch(`${API_BASE_URL}fetch-project-names/`, { method: 'GET' })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            throw new Error(result.error);
-          });
-        else return response.json();
-      })
-      .then((result) => {
-        setProjectNames(
-          result.projectNames.concat({ name: 'All Projects >>', slug: '' }),
-        );
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, []);
+  const {
+    data: projectNames = [],
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['projectNames'],
+    queryFn: () => getRequest(`fetch-project-names/`),
+    select: (data) =>
+      data.projectNames.concat({ name: 'All Projects >>', slug: '' }),
+  });
 
   return (
     <ProjectNamesContext.Provider
-      value={{ projectNames, fetchLoading, fetchError }}
+      value={{ projectNames, fetchLoading, hasFetchError, fetchError }}
     >
       {props.children}
     </ProjectNamesContext.Provider>

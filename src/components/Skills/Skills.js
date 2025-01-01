@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 
-import { API_BASE_URL } from '../../shared/urlBases';
+import getRequest from '../../shared/api/getRequest';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
@@ -9,30 +10,16 @@ import Skill from './Skill/Skill';
 import classes from './Skills.module.css';
 
 const Skills = () => {
-  const [skills, setSkills] = useState({});
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
-
-  useEffect(() => {
-    fetch(`${API_BASE_URL}fetch-skills/`, { method: 'GET' })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            if (response.status === 404) setFetchErrorMsg(result.error);
-            throw new Error(result.error);
-          });
-        else return response.json();
-      })
-      .then((result) => {
-        setSkills(result.skills);
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, []);
+  const {
+    data: skills,
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['skills'],
+    queryFn: () => getRequest(`fetch-skills/`),
+    select: (data) => data.skills,
+  });
 
   return (
     <section className={classes.Container}>
@@ -46,7 +33,7 @@ const Skills = () => {
           {
             title: 'Languages',
             body:
-              fetchLoading || fetchError ? null : (
+              fetchLoading || hasFetchError ? null : (
                 <div className={classes.Skills}>
                   {skills.languages.map((lang) => (
                     <Skill
@@ -63,7 +50,7 @@ const Skills = () => {
           {
             title: 'Frameworks',
             body:
-              fetchLoading || fetchError ? null : (
+              fetchLoading || hasFetchError ? null : (
                 <div className={classes.Skills}>
                   {skills.frameworks.map((frame) => (
                     <Skill
@@ -80,7 +67,7 @@ const Skills = () => {
           {
             title: 'Libraries',
             body:
-              fetchLoading || fetchError ? null : (
+              fetchLoading || hasFetchError ? null : (
                 <div className={classes.Skills}>
                   {skills.libraries.map((lib) => (
                     <Skill
@@ -97,7 +84,7 @@ const Skills = () => {
           {
             title: 'Tools',
             body:
-              fetchLoading || fetchError ? null : (
+              fetchLoading || hasFetchError ? null : (
                 <div className={classes.Skills}>
                   {skills.tools.map((tool) => (
                     <Skill
@@ -114,7 +101,7 @@ const Skills = () => {
           {
             title: 'Platforms',
             body:
-              fetchLoading || fetchError ? null : (
+              fetchLoading || hasFetchError ? null : (
                 <div className={classes.Skills}>
                   {skills.platforms.map((plat) => (
                     <Skill
@@ -134,8 +121,8 @@ const Skills = () => {
           <LoadingSpinner
             style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
           />
-        ) : fetchError ? (
-          <FetchError description={fetchErrorMsg} />
+        ) : hasFetchError ? (
+          <FetchError description={fetchError.message} />
         ) : null}
       </MultiArea>
     </section>

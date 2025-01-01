@@ -9,7 +9,7 @@ const Logo = () => (
     <Link to="/" className={classes.Container}>
       <img
         className={classes.Icon}
-        src={`${ASSETS_BASE_URL}icon.png`}
+        src={new URL('icon.png', ASSETS_BASE_URL)}
         alt="Icon"
         draggable={false}
       />

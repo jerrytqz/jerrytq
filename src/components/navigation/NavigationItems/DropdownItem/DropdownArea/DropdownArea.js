@@ -9,7 +9,12 @@ import classes from './DropdownArea.module.css';
 const NUM_COLS = 4;
 
 const DropdownArea = (props) => {
-  const { fetchLoading, fetchError, projectNames: links } = useProjectNames();
+  const {
+    projectNames: links,
+    fetchLoading,
+    hasFetchError,
+    fetchError,
+  } = useProjectNames();
 
   const linksPerCol = Math.floor(links.length / NUM_COLS);
   const remainder = links.length % NUM_COLS;
@@ -30,7 +35,7 @@ const DropdownArea = (props) => {
         .join(' ')
         .trim()}
       style={
-        !props.toolbar && !fetchLoading && !fetchError
+        !props.toolbar && !fetchLoading && !hasFetchError
           ? { paddingLeft: '32px' }
           : {}
       }
@@ -42,11 +47,15 @@ const DropdownArea = (props) => {
             margin: '26px auto',
           }}
         />
-      ) : fetchError ? (
+      ) : hasFetchError ? (
         props.toolbar ? (
-          <FetchError containerStyle={{ margin: 'auto' }} />
+          <FetchError
+            description={fetchError.message}
+            containerStyle={{ margin: 'auto' }}
+          />
         ) : (
           <FetchError
+            description={fetchError.message}
             containerStyle={{ padding: '0' }}
             titleStyle={{ fontSize: '22px', textAlign: 'left' }}
             descriptionStyle={{ fontSize: '16px', textAlign: 'left' }}

@@ -1,36 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { API_BASE_URL } from '../../shared/urlBases';
+import getRequest from '../../shared/api/getRequest';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './ProjectCards.module.css';
 
 const ProjectCards = () => {
-  const [projectCards, setProjectCards] = useState({});
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
-
-  useEffect(() => {
-    fetch(`${API_BASE_URL}fetch-project-cards/`, { method: 'GET' })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            if (response.status === 404) setFetchErrorMsg(result.error);
-            throw new Error(result.error);
-          });
-        else return response.json();
-      })
-      .then((result) => {
-        setProjectCards(result.projectCards);
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, []);
+  const {
+    data: projectCards,
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['projectCards'],
+    queryFn: () => getRequest(`fetch-project-cards/`),
+    select: (data) => data.projectCards,
+  });
 
   return fetchLoading ? (
     <div
@@ -43,10 +30,10 @@ const ProjectCards = () => {
     >
       <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
-  ) : fetchError ? (
+  ) : hasFetchError ? (
     <FetchError
       containerStyle={{ marginTop: '64px' }}
-      description={fetchErrorMsg}
+      description={fetchError.message}
     />
   ) : (
     <section className={classes.Container}>

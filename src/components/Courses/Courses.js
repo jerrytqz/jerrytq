@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
 
-import { API_BASE_URL } from '../../shared/urlBases';
+import getRequest from '../../shared/api/getRequest';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
@@ -11,34 +12,17 @@ const TERM_NAMES = ['1A', '1B', 'WT1', '2A', 'WT2', '2B', 'WT3', '3A'];
 
 const Courses = () => {
   const [termName, setTermName] = useState(TERM_NAMES[TERM_NAMES.length - 1]);
-  const [courses, setCourses] = useState([]);
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
 
-  useEffect(() => {
-    setFetchLoading(true);
-    setFetchError(false);
-    fetch(`${API_BASE_URL}fetch-courses/?termName=${termName}`, {
-      method: 'GET',
-    })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            if (response.status === 404) setFetchErrorMsg(result.error);
-            throw new Error(result.error);
-          });
-        else return response.json();
-      })
-      .then((result) => {
-        setCourses(result.courses);
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, [termName]);
+  const {
+    data: courses,
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['courses', termName],
+    queryFn: () => getRequest(`fetch-courses/`, { termName: termName }),
+    select: (data) => data.courses,
+  });
 
   return (
     <section className={classes.Container}>
@@ -94,7 +78,7 @@ const Courses = () => {
             <th className={classes.TableHeader}>Name</th>
             <th className={classes.TableHeader}>Description</th>
           </tr>
-          {fetchLoading || fetchError
+          {fetchLoading || hasFetchError
             ? null
             : courses.map((course, index) => (
                 <Course
@@ -114,7 +98,7 @@ const Courses = () => {
           style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
         />
       ) : null}
-      {fetchError ? (
+      {hasFetchError ? (
         <FetchError
           containerStyle={{
             boxSizing: 'border-box',
@@ -122,7 +106,7 @@ const Courses = () => {
             margin: 'auto',
             maxWidth: '1000px',
           }}
-          description={fetchErrorMsg}
+          description={fetchError.message}
         />
       ) : null}
     </section>

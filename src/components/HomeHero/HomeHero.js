@@ -74,7 +74,7 @@ const HomeHero = () => {
           onLoad={() => setHeroImageStyle({ display: 'block' })}
           style={heroImageStyle}
           className={classes.HeroImage}
-          src={`${ASSETS_BASE_URL}home/hero/jerry-zheng.png`}
+          src={new URL('home/hero/jerry-zheng.png', ASSETS_BASE_URL)}
           alt="Jerry Zheng"
           draggable={false}
         />

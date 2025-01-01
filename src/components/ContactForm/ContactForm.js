@@ -1,72 +1,73 @@
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 
-import { API_BASE_URL } from '../../shared/urlBases';
+import getRequest from '../../shared/api/getRequest';
+import InternalFetchError from '../../shared/api/internalFetchError';
+import postRequest from '../../shared/api/postRequest';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
-  const [form, setForm] = useState(null);
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [submitLoading, setSubmitLoading] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  useEffect(() => {
-    setFetchLoading(true);
-    setFetchError(false);
-    fetch(`${API_BASE_URL}contact/`, { method: 'GET' })
-      .then((response) => response.json())
-      .then((result) => {
-        const cleanHtmlString = DOMPurify.sanitize(result.form, {
+  const {
+    data: form,
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['contact'],
+    queryFn: () => getRequest(`contact/`),
+    select: (data) =>
+      parse(
+        DOMPurify.sanitize(data.form, {
           USE_PROFILES: { html: true },
-        });
-        setForm(parse(cleanHtmlString));
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, []);
+        }),
+      ),
+  });
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    setSubmitLoading(true);
-    const data = new FormData(event.target);
-    fetch(`${API_BASE_URL}contact/`, { method: 'POST', body: data })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            const cleanHtmlString = DOMPurify.sanitize(result.form, {
-              USE_PROFILES: { html: true },
-            });
-            setForm(parse(cleanHtmlString));
-            setSubmitLoading(false);
-          });
-        else {
-          setSubmitSuccess(true);
-          setSubmitLoading(false);
-        }
-      })
-      .catch(() => {
-        setFetchError(true);
-        setSubmitLoading(false);
-      });
-  };
+  const {
+    error: submitError,
+    isError: hasSubmitError,
+    isPending: submitLoading,
+    isSuccess: submitSuccess,
+    mutate: doPostRequest,
+  } = useMutation({
+    mutationFn: postRequest,
+  });
+
+  const submitHandler = useCallback(
+    (event) => {
+      event.preventDefault();
+      doPostRequest({ endpoint: 'contact/', data: new FormData(event.target) });
+    },
+    [doPostRequest],
+  );
+
+  const errorForm = useMemo(
+    () =>
+      parse(
+        DOMPurify.sanitize(submitError ? submitError.message : '', {
+          USE_PROFILES: { html: true },
+        }),
+      ),
+    [submitError],
+  );
 
   let result = fetchLoading ? (
     <LoadingSpinner
       className={classes.LoadingSpinner}
       style={{ margin: '96px auto' }}
     />
-  ) : fetchError ? (
-    <FetchError />
+  ) : hasFetchError ||
+    (hasSubmitError && submitError instanceof InternalFetchError) ? (
+    <FetchError
+      description={fetchError ? fetchError.message : submitError.message}
+    />
   ) : (
     <section className={classes.Container}>
       {submitLoading ? (
@@ -92,7 +93,7 @@ const ContactForm = () => {
             className={classes.Form}
             onSubmit={(event) => submitHandler(event)}
           >
-            {form}
+            {hasSubmitError ? errorForm : form}
             <Button className={classes.SubmitButton}>Submit</Button>
           </form>
         </>

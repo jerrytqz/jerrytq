@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 
-import { API_BASE_URL } from '../../shared/urlBases';
+import getRequest from '../../shared/api/getRequest';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
@@ -8,30 +9,16 @@ import Experience from './Experience/Experience';
 import classes from './Experiences.module.css';
 
 const Experiences = () => {
-  const [experiences, setExperiences] = useState({});
-  const [fetchLoading, setFetchLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [fetchErrorMsg, setFetchErrorMsg] = useState(null);
-
-  useEffect(() => {
-    fetch(`${API_BASE_URL}fetch-experiences/`, { method: 'GET' })
-      .then((response) => {
-        if (!response.ok)
-          return response.json().then((result) => {
-            if (response.status === 404) setFetchErrorMsg(result.error);
-            throw new Error(result.error);
-          });
-        else return response.json();
-      })
-      .then((result) => {
-        setExperiences(result.experiences);
-        setFetchLoading(false);
-      })
-      .catch(() => {
-        setFetchError(true);
-        setFetchLoading(false);
-      });
-  }, []);
+  const {
+    data: experiences,
+    isLoading: fetchLoading,
+    isError: hasFetchError,
+    error: fetchError,
+  } = useQuery({
+    queryKey: ['experiences'],
+    queryFn: () => getRequest(`fetch-experiences/`),
+    select: (data) => data.experiences,
+  });
 
   return (
     <section className={classes.Container}>
@@ -43,7 +30,7 @@ const Experiences = () => {
         <LoadingSpinner
           style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
         />
-      ) : fetchError ? (
+      ) : hasFetchError ? (
         <FetchError
           containerStyle={{
             boxSizing: 'border-box',
@@ -51,7 +38,7 @@ const Experiences = () => {
             margin: 'auto',
             maxWidth: '1000px',
           }}
-          description={fetchErrorMsg}
+          description={fetchError.message}
         />
       ) : (
         experiences.map((experience) => (
