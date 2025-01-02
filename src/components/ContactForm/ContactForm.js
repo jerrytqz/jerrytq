@@ -51,11 +51,11 @@ const ContactForm = () => {
   const errorForm = useMemo(
     () =>
       parse(
-        DOMPurify.sanitize(submitError ? submitError.message : '', {
+        DOMPurify.sanitize(hasSubmitError ? submitError.message : '', {
           USE_PROFILES: { html: true },
         }),
       ),
-    [submitError],
+    [submitError, hasSubmitError],
   );
 
   let result = fetchLoading ? (
@@ -66,7 +66,8 @@ const ContactForm = () => {
   ) : hasFetchError ||
     (hasSubmitError && submitError instanceof InternalFetchError) ? (
     <FetchError
-      description={fetchError ? fetchError.message : submitError.message}
+      error={hasFetchError ? fetchError : submitError}
+      containerStyle={{ marginTop: '32px' }}
     />
   ) : (
     <section className={classes.Container}>

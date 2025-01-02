@@ -38,7 +38,7 @@ const Experiences = () => {
             margin: 'auto',
             maxWidth: '1000px',
           }}
-          description={fetchError.message}
+          error={fetchError}
         />
       ) : (
         experiences.map((experience) => (

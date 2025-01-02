@@ -1,5 +1,6 @@
 import React from 'react';
 
+import InternalFetchError from '../../../api/internalFetchError';
 import Error from '../Error/Error';
 
 const FetchError = (props) => {
@@ -7,8 +8,9 @@ const FetchError = (props) => {
     <Error
       title="Not Available!"
       description={
-        props.description ||
-        'The resource you requested could not be retrieved. Please try again later.'
+        !props.error || props.error instanceof InternalFetchError
+          ? 'The resource you requested could not be retrieved. Please try again later.'
+          : props.error.message
       }
       homeButton={props.homeButton}
       containerStyle={props.containerStyle}

@@ -49,13 +49,10 @@ const DropdownArea = (props) => {
         />
       ) : hasFetchError ? (
         props.toolbar ? (
-          <FetchError
-            description={fetchError.message}
-            containerStyle={{ margin: 'auto' }}
-          />
+          <FetchError error={fetchError} containerStyle={{ margin: 'auto' }} />
         ) : (
           <FetchError
-            description={fetchError.message}
+            error={fetchError}
             containerStyle={{ padding: '0' }}
             titleStyle={{ fontSize: '22px', textAlign: 'left' }}
             descriptionStyle={{ fontSize: '16px', textAlign: 'left' }}

@@ -122,7 +122,7 @@ const Skills = () => {
             style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
           />
         ) : hasFetchError ? (
-          <FetchError description={fetchError.message} />
+          <FetchError error={fetchError} />
         ) : null}
       </MultiArea>
     </section>

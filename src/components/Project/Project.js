@@ -44,7 +44,7 @@ const Project = () => {
   ) : hasFetchError ? (
     <FetchError
       containerStyle={{ marginTop: '64px' }}
-      description={fetchError.message}
+      error={fetchError}
       homeButton
     />
   ) : (
