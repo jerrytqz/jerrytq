@@ -1,5 +1,6 @@
 import { API_BASE_URL } from '../urlBases';
 import InternalFetchError from './internalFetchError';
+import verifyIsJson from './verifyIsJson';
 
 const postRequest = async ({ endpoint, data = new FormData() }) => {
   const url = new URL(endpoint, API_BASE_URL);
@@ -13,6 +14,8 @@ const postRequest = async ({ endpoint, data = new FormData() }) => {
   } catch (error) {
     throw new InternalFetchError(error.name, error.message);
   }
+
+  await verifyIsJson(response);
 
   const result = await response.json();
 
