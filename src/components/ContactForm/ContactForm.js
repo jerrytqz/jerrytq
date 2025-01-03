@@ -16,9 +16,9 @@ import classes from './ContactForm.module.css';
 const ContactForm = () => {
   const {
     data: form,
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['contact'],
     queryFn: () => getRequest(`contact/`),
@@ -58,15 +58,15 @@ const ContactForm = () => {
     [submitError, hasSubmitError],
   );
 
-  let result = fetchLoading ? (
+  let result = queryLoading ? (
     <LoadingSpinner
       className={classes.LoadingSpinner}
       style={{ margin: '96px auto' }}
     />
-  ) : hasFetchError ||
+  ) : hasQueryError ||
     (hasSubmitError && submitError instanceof InternalFetchError) ? (
     <FetchError
-      error={hasFetchError ? fetchError : submitError}
+      error={hasQueryError ? queryError : submitError}
       containerStyle={{ marginTop: '32px' }}
       homeButton
     />

@@ -19,13 +19,13 @@ const NavigationItem = (props) => {
           ].join(' ')
         }
       >
-        {!props.toolbar && (
+        {!props.toolbar ? (
           <FontAwesomeIcon
             icon={props.icon}
             className={classes.Icon}
             fixedWidth
           />
-        )}
+        ) : null}
         {props.children}
       </NavLink>
     </li>

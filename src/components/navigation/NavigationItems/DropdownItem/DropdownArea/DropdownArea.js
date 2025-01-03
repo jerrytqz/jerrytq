@@ -11,9 +11,9 @@ const NUM_COLS = 4;
 const DropdownArea = (props) => {
   const {
     projectNames: links,
-    fetchLoading,
-    hasFetchError,
-    fetchError,
+    queryLoading,
+    hasQueryError,
+    queryError,
   } = useProjectNames();
 
   const linksPerCol = Math.floor(links.length / NUM_COLS);
@@ -35,24 +35,24 @@ const DropdownArea = (props) => {
         .join(' ')
         .trim()}
       style={
-        !props.toolbar && !fetchLoading && !hasFetchError
+        !props.toolbar && !queryLoading && !hasQueryError
           ? { paddingLeft: '32px' }
           : {}
       }
     >
-      {fetchLoading ? (
+      {queryLoading ? (
         <LoadingSpinner
           style={{
             fontSize: props.toolbar ? '9px' : '6px',
             margin: '26px auto',
           }}
         />
-      ) : hasFetchError ? (
+      ) : hasQueryError ? (
         props.toolbar ? (
-          <FetchError error={fetchError} containerStyle={{ margin: 'auto' }} />
+          <FetchError error={queryError} containerStyle={{ margin: 'auto' }} />
         ) : (
           <FetchError
-            error={fetchError}
+            error={queryError}
             containerStyle={{ padding: '0' }}
             titleStyle={{ fontSize: '22px', textAlign: 'left' }}
             descriptionStyle={{ fontSize: '16px', textAlign: 'left' }}

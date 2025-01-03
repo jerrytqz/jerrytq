@@ -10,16 +10,16 @@ import classes from './ProjectCards.module.css';
 const ProjectCards = () => {
   const {
     data: projectCards,
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['projectCards'],
     queryFn: () => getRequest(`project-cards/`),
     select: (data) => data.projectCards,
   });
 
-  return fetchLoading ? (
+  return queryLoading ? (
     <div
       style={{
         position: 'absolute',
@@ -30,10 +30,10 @@ const ProjectCards = () => {
     >
       <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
-  ) : hasFetchError ? (
+  ) : hasQueryError ? (
     <FetchError
       containerStyle={{ marginTop: '64px' }}
-      error={fetchError}
+      error={queryError}
       homeButton
     />
   ) : (

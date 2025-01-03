@@ -12,9 +12,9 @@ import classes from './Skills.module.css';
 const Skills = () => {
   const {
     data: skills,
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['skills'],
     queryFn: () => getRequest(`skills/`),
@@ -33,7 +33,7 @@ const Skills = () => {
           {
             title: 'Languages',
             body:
-              fetchLoading || hasFetchError ? null : (
+              queryLoading || hasQueryError ? null : (
                 <div className={classes.Skills}>
                   {skills.languages.map((lang) => (
                     <Skill
@@ -50,7 +50,7 @@ const Skills = () => {
           {
             title: 'Frameworks',
             body:
-              fetchLoading || hasFetchError ? null : (
+              queryLoading || hasQueryError ? null : (
                 <div className={classes.Skills}>
                   {skills.frameworks.map((frame) => (
                     <Skill
@@ -67,7 +67,7 @@ const Skills = () => {
           {
             title: 'Libraries',
             body:
-              fetchLoading || hasFetchError ? null : (
+              queryLoading || hasQueryError ? null : (
                 <div className={classes.Skills}>
                   {skills.libraries.map((lib) => (
                     <Skill
@@ -84,7 +84,7 @@ const Skills = () => {
           {
             title: 'Tools',
             body:
-              fetchLoading || hasFetchError ? null : (
+              queryLoading || hasQueryError ? null : (
                 <div className={classes.Skills}>
                   {skills.tools.map((tool) => (
                     <Skill
@@ -101,7 +101,7 @@ const Skills = () => {
           {
             title: 'Platforms',
             body:
-              fetchLoading || hasFetchError ? null : (
+              queryLoading || hasQueryError ? null : (
                 <div className={classes.Skills}>
                   {skills.platforms.map((plat) => (
                     <Skill
@@ -117,12 +117,12 @@ const Skills = () => {
           },
         ]}
       >
-        {fetchLoading ? (
+        {queryLoading ? (
           <LoadingSpinner
             style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
           />
-        ) : hasFetchError ? (
-          <FetchError error={fetchError} />
+        ) : hasQueryError ? (
+          <FetchError error={queryError} />
         ) : null}
       </MultiArea>
     </section>

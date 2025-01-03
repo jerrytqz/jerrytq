@@ -11,9 +11,9 @@ import classes from './Experiences.module.css';
 const Experiences = () => {
   const {
     data: experiences,
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['experiences'],
     queryFn: () => getRequest(`experiences/`),
@@ -26,11 +26,11 @@ const Experiences = () => {
         <h2 className={classes.Title}>Experience</h2>
         <Divider />
       </header>
-      {fetchLoading ? (
+      {queryLoading ? (
         <LoadingSpinner
           style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
         />
-      ) : hasFetchError ? (
+      ) : hasQueryError ? (
         <FetchError
           containerStyle={{
             boxSizing: 'border-box',
@@ -38,7 +38,7 @@ const Experiences = () => {
             margin: 'auto',
             maxWidth: '1000px',
           }}
-          error={fetchError}
+          error={queryError}
         />
       ) : (
         experiences.map((experience) => (

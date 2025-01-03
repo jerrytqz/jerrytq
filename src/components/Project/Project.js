@@ -21,16 +21,16 @@ const Project = () => {
 
   const {
     data: project,
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['project', slug],
     queryFn: () => getRequest(`project/`, { slug: slug }),
     select: (data) => data.project,
   });
 
-  return fetchLoading ? (
+  return queryLoading ? (
     <div
       style={{
         position: 'absolute',
@@ -41,10 +41,10 @@ const Project = () => {
     >
       <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
-  ) : hasFetchError ? (
+  ) : hasQueryError ? (
     <FetchError
       containerStyle={{ marginTop: '64px' }}
-      error={fetchError}
+      error={queryError}
       homeButton
     />
   ) : (
@@ -111,7 +111,7 @@ const Project = () => {
                 (!project.projectLinks.WEB &&
                   Object.keys(project.projectLinks).length >= 1) ? (
                   <div className={classes.Links}>
-                    {project.projectLinks.GIT && (
+                    {project.projectLinks.GIT ? (
                       <a
                         className={classes.SocialMediaIcon}
                         href={project.projectLinks.GIT}
@@ -119,7 +119,7 @@ const Project = () => {
                       >
                         <FontAwesomeIcon icon={faGithub} size="3x" fixedWidth />
                       </a>
-                    )}
+                    ) : null}
                   </div>
                 ) : (
                   <p>There are no other links for this project.</p>

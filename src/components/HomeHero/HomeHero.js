@@ -89,7 +89,7 @@ const HomeHero = () => {
         <code className={classes.LineNumber}>{lineNumber} &nbsp;</code>
         <code className={classes.Command} ref={command} />
         <div
-          className={`${classes.TypingBar} ${typingBarBlink && classes.Blink}`}
+          className={`${classes.TypingBar} ${typingBarBlink ? classes.Blink : ''}`.trim()}
         />
       </div>
       <div

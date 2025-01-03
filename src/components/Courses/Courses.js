@@ -15,9 +15,9 @@ const Courses = () => {
 
   const {
     data: courses,
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['courses', termName],
     queryFn: () => getRequest(`courses/`, { termName: termName }),
@@ -78,7 +78,7 @@ const Courses = () => {
             <th className={classes.TableHeader}>Name</th>
             <th className={classes.TableHeader}>Description</th>
           </tr>
-          {fetchLoading || hasFetchError
+          {queryLoading || hasQueryError
             ? null
             : courses.map((course, index) => (
                 <Course
@@ -93,12 +93,12 @@ const Courses = () => {
               ))}
         </tbody>
       </table>
-      {fetchLoading ? (
+      {queryLoading ? (
         <LoadingSpinner
           style={{ fontSize: '9px', margin: '64px auto 0 auto' }}
         />
       ) : null}
-      {hasFetchError ? (
+      {hasQueryError ? (
         <FetchError
           containerStyle={{
             boxSizing: 'border-box',
@@ -106,7 +106,7 @@ const Courses = () => {
             margin: 'auto',
             maxWidth: '1000px',
           }}
-          error={fetchError}
+          error={queryError}
         />
       ) : null}
     </section>

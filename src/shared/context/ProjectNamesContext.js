@@ -12,9 +12,9 @@ export const useProjectNames = () => {
 export const ProjectNamesProvider = (props) => {
   const {
     data: projectNames = [],
-    isLoading: fetchLoading,
-    isError: hasFetchError,
-    error: fetchError,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useQuery({
     queryKey: ['projectNames'],
     queryFn: () => getRequest(`project-names/`),
@@ -24,7 +24,7 @@ export const ProjectNamesProvider = (props) => {
 
   return (
     <ProjectNamesContext.Provider
-      value={{ projectNames, fetchLoading, hasFetchError, fetchError }}
+      value={{ projectNames, queryLoading, hasQueryError, queryError }}
     >
       {props.children}
     </ProjectNamesContext.Provider>

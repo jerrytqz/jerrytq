@@ -50,13 +50,13 @@ const DropdownItem = (props) => {
           .trim()}
         onClick={() => setShowDropdown((prev) => !prev)}
       >
-        {!props.toolbar && (
+        {!props.toolbar ? (
           <FontAwesomeIcon
             icon={props.icon}
             className={classes.Icon}
             fixedWidth
           />
-        )}
+        ) : null}
         {props.name}
         {showDropdown ? (
           <FontAwesomeIcon icon={faCaretUp} className={classes.CaretUp} />
