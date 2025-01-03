@@ -26,7 +26,7 @@ const Project = () => {
     error: fetchError,
   } = useQuery({
     queryKey: ['project', slug],
-    queryFn: () => getRequest(`fetch-project/`, { slug: slug }),
+    queryFn: () => getRequest(`project/`, { slug: slug }),
     select: (data) => data.project,
   });
 

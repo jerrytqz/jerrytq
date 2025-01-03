@@ -16,7 +16,7 @@ const Experiences = () => {
     error: fetchError,
   } = useQuery({
     queryKey: ['experiences'],
-    queryFn: () => getRequest(`fetch-experiences/`),
+    queryFn: () => getRequest(`experiences/`),
     select: (data) => data.experiences,
   });
 

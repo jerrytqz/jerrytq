@@ -20,7 +20,7 @@ const Courses = () => {
     error: fetchError,
   } = useQuery({
     queryKey: ['courses', termName],
-    queryFn: () => getRequest(`fetch-courses/`, { termName: termName }),
+    queryFn: () => getRequest(`courses/`, { termName: termName }),
     select: (data) => data.courses,
   });
 

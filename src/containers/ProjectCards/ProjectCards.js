@@ -15,7 +15,7 @@ const ProjectCards = () => {
     error: fetchError,
   } = useQuery({
     queryKey: ['projectCards'],
-    queryFn: () => getRequest(`fetch-project-cards/`),
+    queryFn: () => getRequest(`project-cards/`),
     select: (data) => data.projectCards,
   });
 
@@ -31,7 +31,11 @@ const ProjectCards = () => {
       <LoadingSpinner className={classes.LoadingSpinner} />
     </div>
   ) : hasFetchError ? (
-    <FetchError containerStyle={{ marginTop: '64px' }} error={fetchError} />
+    <FetchError
+      containerStyle={{ marginTop: '64px' }}
+      error={fetchError}
+      homeButton
+    />
   ) : (
     <section className={classes.Container}>
       {projectCards.map((projectCard) => (

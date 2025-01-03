@@ -68,6 +68,7 @@ const ContactForm = () => {
     <FetchError
       error={hasFetchError ? fetchError : submitError}
       containerStyle={{ marginTop: '32px' }}
+      homeButton
     />
   ) : (
     <section className={classes.Container}>

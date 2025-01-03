@@ -17,7 +17,7 @@ const Skills = () => {
     error: fetchError,
   } = useQuery({
     queryKey: ['skills'],
-    queryFn: () => getRequest(`fetch-skills/`),
+    queryFn: () => getRequest(`skills/`),
     select: (data) => data.skills,
   });
 

@@ -17,7 +17,7 @@ export const ProjectNamesProvider = (props) => {
     error: fetchError,
   } = useQuery({
     queryKey: ['projectNames'],
-    queryFn: () => getRequest(`fetch-project-names/`),
+    queryFn: () => getRequest(`project-names/`),
     select: (data) =>
       data.projectNames.concat({ name: 'All Projects >>', slug: '' }),
   });
