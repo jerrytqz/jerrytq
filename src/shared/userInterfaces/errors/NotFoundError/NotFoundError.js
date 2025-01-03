@@ -2,7 +2,7 @@ import React from 'react';
 
 import Error from '../Error/Error';
 
-const NotFoundError = (props) => {
+const NotFoundError = () => {
   return (
     <Error
       title="404"
