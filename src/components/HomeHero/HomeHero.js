@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { ASSETS_BASE_URL } from '../../shared/urlBases';
-import BubbleBackground from '../../shared/userInterfaces/BubbleBackground/BubbleBackground';
+import BubbleBackground from '../BubbleBackground/BubbleBackground';
 import classes from './HomeHero.module.css';
 
 const WRITE_DELAY = 50;
