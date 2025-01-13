@@ -2,7 +2,15 @@ import React from 'react';
 
 import classes from './Button.module.css';
 
-const Button = (props) => {
+interface ButtonProps {
+  className?: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  style?: React.CSSProperties;
+  ariaLabel?: string;
+  children: React.ReactNode;
+}
+
+const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       className={[classes.Container, props.className ? props.className : '']
