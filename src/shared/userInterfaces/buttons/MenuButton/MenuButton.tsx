@@ -5,7 +5,13 @@ import React from 'react';
 import Button from '../Button/Button';
 import classes from './MenuButton.module.css';
 
-const MenuButton = (props) => {
+interface MenuButtonProps {
+  className?: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  ariaLabel?: string;
+}
+
+const MenuButton: React.FC<MenuButtonProps> = (props) => {
   return (
     <Button
       className={[classes.Container, props.className ? props.className : '']
