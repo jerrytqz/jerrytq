@@ -10,10 +10,10 @@ const NUM_COLS = 4;
 
 const DropdownArea = (props) => {
   const {
-    projectNames: links,
-    queryLoading,
-    hasQueryError,
-    queryError,
+    data: links,
+    isLoading: queryLoading,
+    isError: hasQueryError,
+    error: queryError,
   } = useProjectNames();
 
   const linksPerCol = Math.floor(links.length / NUM_COLS);

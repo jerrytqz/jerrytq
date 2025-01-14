@@ -1,4 +1,4 @@
-export interface ApiError {
+export interface IApiError {
   error: string;
 }
 
@@ -14,6 +14,15 @@ interface IExperience {
   };
 }
 
+interface IProjectName {
+  name: string;
+  slug: string;
+}
+
 export interface IExperiences {
   experiences: IExperience[];
+}
+
+export interface IProjectNames {
+  projectNames: IProjectName[];
 }

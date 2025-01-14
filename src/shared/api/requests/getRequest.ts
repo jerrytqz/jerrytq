@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../../urlBases';
-import { ApiError } from '../types';
+import { IApiError } from '../types';
 import InternalFetchError from '../utility/internalFetchError';
 import verifyIsJson from '../utility/verifyIsJson';
 
@@ -25,10 +25,10 @@ const getRequest = async <ApiResult>(
 
   await verifyIsJson(response);
 
-  const result: ApiResult | ApiError = await response.json();
+  const result: ApiResult | IApiError = await response.json();
 
   if (!response.ok) {
-    const res = result as ApiError;
+    const res = result as IApiError;
     throw new Error(res.error);
   }
 

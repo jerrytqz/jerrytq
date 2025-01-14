@@ -1,13 +1,13 @@
 import buttonClasses from '../Button/Button.module.css';
 import linkClasses from './LinkButton.module.css';
 
-interface LinkButtonProps {
+interface ILinkButtonProps {
   className?: string;
   href: string;
   children: React.ReactNode;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = (props) => {
+const LinkButton: React.FC<ILinkButtonProps> = (props) => {
   return (
     <a
       className={[

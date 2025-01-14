@@ -1,6 +1,6 @@
 import classes from './Button.module.css';
 
-interface ButtonProps {
+interface IButtonProps {
   className?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   style?: React.CSSProperties;
@@ -8,7 +8,7 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<IButtonProps> = (props) => {
   return (
     <button
       className={[classes.Container, props.className ? props.className : '']
