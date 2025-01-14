@@ -1,10 +1,14 @@
 import { API_BASE_URL } from '../urlBases';
 import InternalFetchError from './internalFetchError';
+import { ApiError } from './types';
 import verifyIsJson from './verifyIsJson';
 
-const getRequest = async (endpoint, params = {}) => {
+const getRequest = async <ApiResult>(
+  endpoint: string,
+  params: Record<string, string> = {},
+): Promise<ApiResult> => {
   const url = new URL(endpoint, API_BASE_URL);
-  let response;
+  let response: Response;
 
   Object.keys(params).forEach((key) =>
     url.searchParams.append(key, params[key]),
@@ -15,18 +19,20 @@ const getRequest = async (endpoint, params = {}) => {
       method: 'GET',
     });
   } catch (error) {
-    throw new InternalFetchError(error.name, error.message);
+    const e = error as Error;
+    throw new InternalFetchError(e.name, e.message);
   }
 
   await verifyIsJson(response);
 
-  const result = await response.json();
+  const result: ApiResult | ApiError = await response.json();
 
   if (!response.ok) {
-    throw new Error(result.error);
+    const res = result as ApiError;
+    throw new Error(res.error);
   }
 
-  return result;
+  return result as ApiResult;
 };
 
 export default getRequest;
