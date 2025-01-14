@@ -1,5 +1,3 @@
-import React from 'react';
-
 import buttonClasses from '../Button/Button.module.css';
 import linkClasses from './LinkButton.module.css';
 
