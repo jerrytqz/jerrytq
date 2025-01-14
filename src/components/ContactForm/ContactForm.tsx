@@ -1,10 +1,10 @@
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
-import React, { useCallback, useMemo } from 'react';
+import { FormEvent, useCallback, useMemo } from 'react';
 
+import { IContactFormGet, IContactFormPost } from '../../shared/api/interfaces';
 import getRequest from '../../shared/api/requests/getRequest';
 import postRequest from '../../shared/api/requests/postRequest';
 import InternalFetchError from '../../shared/api/utility/internalFetchError';
@@ -13,7 +13,7 @@ import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './ContactForm.module.css';
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
   const {
     data: form,
     isLoading: queryLoading,
@@ -21,13 +21,8 @@ const ContactForm = () => {
     error: queryError,
   } = useQuery({
     queryKey: ['contact'],
-    queryFn: () => getRequest(`contact/`),
-    select: (data) =>
-      parse(
-        DOMPurify.sanitize(data.form, {
-          USE_PROFILES: { html: true },
-        }),
-      ),
+    queryFn: () => getRequest<IContactFormGet>(`contact/`),
+    select: (data) => parse(data.form),
   });
 
   const {
@@ -37,24 +32,20 @@ const ContactForm = () => {
     isSuccess: submitSuccess,
     mutate: doPostRequest,
   } = useMutation({
-    mutationFn: postRequest,
+    mutationFn: postRequest<IContactFormPost>,
   });
 
   const submitHandler = useCallback(
-    (event) => {
+    (event: FormEvent<HTMLFormElement>): void => {
       event.preventDefault();
-      doPostRequest({ endpoint: 'contact/', data: new FormData(event.target) });
+      const formElement = event.target as HTMLFormElement;
+      doPostRequest({ endpoint: 'contact/', data: new FormData(formElement) });
     },
     [doPostRequest],
   );
 
   const errorForm = useMemo(
-    () =>
-      parse(
-        DOMPurify.sanitize(hasSubmitError ? submitError.message : '', {
-          USE_PROFILES: { html: true },
-        }),
-      ),
+    () => parse(hasSubmitError ? submitError.message : ''),
     [submitError, hasSubmitError],
   );
 

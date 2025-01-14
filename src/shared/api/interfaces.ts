@@ -30,3 +30,9 @@ export interface IExperiences {
 export interface IProjectNames {
   projectNames: IProjectName[];
 }
+
+export interface IContactFormGet {
+  form: string;
+}
+
+export interface IContactFormPost {}

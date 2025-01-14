@@ -2,7 +2,7 @@ import classes from './Button.module.css';
 
 interface IButtonProps {
   className?: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   style?: React.CSSProperties;
   ariaLabel?: string;
   children: React.ReactNode;

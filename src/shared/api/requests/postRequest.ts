@@ -3,20 +3,20 @@ import { IApiError } from '../interfaces';
 import InternalFetchError from '../utility/internalFetchError';
 import verifyIsJson from '../utility/verifyIsJson';
 
-const getRequest = async <TApiResult>(
-  endpoint: string,
-  params: Record<string, string> = {},
-): Promise<TApiResult> => {
+const postRequest = async <TApiResult>({
+  endpoint,
+  data = new FormData(),
+}: {
+  endpoint: string;
+  data?: FormData;
+}): Promise<TApiResult> => {
   const url = new URL(endpoint, API_BASE_URL);
   let response: Response;
 
-  Object.keys(params).forEach((key) =>
-    url.searchParams.append(key, params[key]),
-  );
-
   try {
     response = await fetch(url, {
-      method: 'GET',
+      method: 'POST',
+      body: data,
     });
   } catch (error) {
     const e = error as Error;
@@ -35,4 +35,4 @@ const getRequest = async <TApiResult>(
   return result as TApiResult;
 };
 
-export default getRequest;
+export default postRequest;
