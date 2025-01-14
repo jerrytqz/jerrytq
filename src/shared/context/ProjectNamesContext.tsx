@@ -1,8 +1,8 @@
 import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { createContext, useContext } from 'react';
 
+import { IProjectNames } from '../api/interfaces';
 import getRequest from '../api/requests/getRequest';
-import { IProjectNames } from '../api/types';
 
 interface IProjectNamesContext
   extends Pick<UseQueryResult, 'data' | 'isLoading' | 'isError' | 'error'> {}
