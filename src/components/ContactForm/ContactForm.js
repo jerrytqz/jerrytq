@@ -5,9 +5,9 @@ import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
 import React, { useCallback, useMemo } from 'react';
 
-import getRequest from '../../shared/api/getRequest';
-import InternalFetchError from '../../shared/api/internalFetchError';
-import postRequest from '../../shared/api/postRequest';
+import getRequest from '../../shared/api/requests/getRequest';
+import postRequest from '../../shared/api/requests/postRequest';
+import InternalFetchError from '../../shared/api/utility/internalFetchError';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';

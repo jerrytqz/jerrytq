@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import getRequest from '../../shared/api/getRequest';
+import getRequest from '../../shared/api/requests/getRequest';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';

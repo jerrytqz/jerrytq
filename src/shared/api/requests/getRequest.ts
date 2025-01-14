@@ -1,7 +1,7 @@
-import { API_BASE_URL } from '../urlBases';
-import InternalFetchError from './internalFetchError';
-import { ApiError } from './types';
-import verifyIsJson from './verifyIsJson';
+import { API_BASE_URL } from '../../urlBases';
+import { ApiError } from '../types';
+import InternalFetchError from '../utility/internalFetchError';
+import verifyIsJson from '../utility/verifyIsJson';
 
 const getRequest = async <ApiResult>(
   endpoint: string,

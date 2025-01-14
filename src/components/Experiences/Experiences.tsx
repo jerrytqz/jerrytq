@@ -1,14 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
 
-import getRequest from '../../shared/api/getRequest';
+import getRequest from '../../shared/api/requests/getRequest';
+import { IExperiences } from '../../shared/api/types';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import Experience from './Experience/Experience';
 import classes from './Experiences.module.css';
 
-const Experiences = () => {
+const Experiences: React.FC = () => {
   const {
     data: experiences,
     isLoading: queryLoading,
@@ -16,7 +16,7 @@ const Experiences = () => {
     error: queryError,
   } = useQuery({
     queryKey: ['experiences'],
-    queryFn: () => getRequest(`experiences/`),
+    queryFn: () => getRequest<IExperiences>(`experiences/`),
     select: (data) => data.experiences,
   });
 
@@ -41,7 +41,7 @@ const Experiences = () => {
           error={queryError}
         />
       ) : (
-        experiences.map((experience) => (
+        experiences?.map((experience) => (
           <Experience
             key={experience.company + experience.startDate}
             imageUrl={experience.imageLink.url}

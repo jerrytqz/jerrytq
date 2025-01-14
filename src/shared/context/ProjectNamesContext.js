@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { createContext, useContext } from 'react';
 
-import getRequest from '../../shared/api/getRequest';
+import getRequest from '../../shared/api/requests/getRequest';
 
 const ProjectNamesContext = createContext();
 

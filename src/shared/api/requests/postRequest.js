@@ -1,6 +1,6 @@
-import { API_BASE_URL } from '../urlBases';
-import InternalFetchError from './internalFetchError';
-import verifyIsJson from './verifyIsJson';
+import { API_BASE_URL } from '../../urlBases';
+import InternalFetchError from '../utility/internalFetchError';
+import verifyIsJson from '../utility/verifyIsJson';
 
 const postRequest = async ({ endpoint, data = new FormData() }) => {
   const url = new URL(endpoint, API_BASE_URL);
