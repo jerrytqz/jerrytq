@@ -6,21 +6,29 @@ export interface IApiError {
 
 // API RESULTS -------------------------------------------------------------------------------------
 
+interface IImageLink {
+  url: string;
+  alt: string;
+}
+
 interface IExperience {
   title: string;
   company: string;
   location: string;
   startDate: string;
   endDate: string;
-  imageLink: {
-    url: string;
-    alt: string;
-  };
+  imageLink: IImageLink;
 }
 
 interface IProjectName {
   name: string;
   slug: string;
+}
+
+interface ISkill {
+  name: string;
+  proficiency: string;
+  imageLink: IImageLink;
 }
 
 export interface IExperiences {
@@ -36,3 +44,13 @@ export interface IContactFormGet {
 }
 
 export interface IContactFormPost {}
+
+export interface ISkills {
+  skills: {
+    languages: ISkill[];
+    frameworks: ISkill[];
+    libraries: ISkill[];
+    tools: ISkill[];
+    platforms: ISkill[];
+  };
+}
