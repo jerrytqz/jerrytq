@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 
+import getRequest from '../../api/requests/getRequest';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import getRequest from '../../shared/api/requests/getRequest';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './ProjectCards.module.css';

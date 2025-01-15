@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { ASSETS_BASE_URL } from '../../shared/urlBases';
+import ASSETS_BASE_URL from '../../shared/assetsBase';
 import BubbleBackground from '../BubbleBackground/BubbleBackground';
 import classes from './HomeHero.module.css';
 

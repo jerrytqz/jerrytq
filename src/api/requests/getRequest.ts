@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../../urlBases';
+import API_BASE_URL from '../base';
 import { IApiError } from '../interfaces';
 import InternalFetchError from '../utility/internalFetchError';
 import verifyIsJson from '../utility/verifyIsJson';

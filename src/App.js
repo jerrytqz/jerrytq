@@ -4,9 +4,9 @@ import { Route, Routes, ScrollRestoration } from 'react-router-dom';
 
 import Layout from './Layout';
 import Project from './components/Project/Project';
-import Contact from './containers/Contact/Contact';
-import Home from './containers/Home/Home';
-import ProjectCards from './containers/ProjectCards/ProjectCards';
+import Contact from './pages/Contact/Contact';
+import Home from './pages/Home/Home';
+import ProjectCards from './pages/ProjectCards/ProjectCards';
 import GeneralError from './shared/userInterfaces/errors/GeneralError/GeneralError';
 import NotFoundError from './shared/userInterfaces/errors/NotFoundError/NotFoundError';
 

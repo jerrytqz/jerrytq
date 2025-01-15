@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ASSETS_BASE_URL } from '../../shared/urlBases';
+import ASSETS_BASE_URL from '../../shared/assetsBase';
 import classes from './Logo.module.css';
 
 const Logo = () => (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InternalFetchError from '../../../api/utility/internalFetchError';
+import InternalFetchError from '../../../../api/utility/internalFetchError';
 import Error from '../Error/Error';
 
 const FetchError = (props) => {

@@ -4,10 +4,10 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import parse from 'html-react-parser';
 import { FormEvent, useCallback, useMemo } from 'react';
 
-import { IContactFormGet, IContactFormPost } from '../../shared/api/interfaces';
-import getRequest from '../../shared/api/requests/getRequest';
-import postRequest from '../../shared/api/requests/postRequest';
-import InternalFetchError from '../../shared/api/utility/internalFetchError';
+import { IContactFormGet, IContactFormPost } from '../../api/interfaces';
+import getRequest from '../../api/requests/getRequest';
+import postRequest from '../../api/requests/postRequest';
+import InternalFetchError from '../../api/utility/internalFetchError';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';

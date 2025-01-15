@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { ISkills } from '../../shared/api/interfaces';
-import getRequest from '../../shared/api/requests/getRequest';
+import { ISkills } from '../../api/interfaces';
+import getRequest from '../../api/requests/getRequest';
 import Divider from '../../shared/userInterfaces/Divider/Divider';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import MultiArea from '../../shared/userInterfaces/MultiArea/MultiArea';
