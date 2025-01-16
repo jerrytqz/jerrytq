@@ -58,7 +58,7 @@ const ContactForm: React.FC = () => {
     (hasSubmitError && submitError instanceof InternalFetchError) ? (
     <FetchError
       error={hasQueryError ? queryError : submitError}
-      containerStyle={{ marginTop: '32px' }}
+      containerStyle={{ margin: '32px 0' }}
       homeButton
     />
   ) : (

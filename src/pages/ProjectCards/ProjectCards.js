@@ -32,7 +32,7 @@ const ProjectCards = () => {
     </div>
   ) : hasQueryError ? (
     <FetchError
-      containerStyle={{ marginTop: '64px' }}
+      containerStyle={{ margin: '64px 0' }}
       error={queryError}
       homeButton
     />

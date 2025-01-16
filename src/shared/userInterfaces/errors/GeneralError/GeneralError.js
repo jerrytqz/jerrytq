@@ -8,7 +8,7 @@ const GeneralError = () => {
       title="Oh, No!"
       description="Something went wrong! Please try refreshing or going back to home."
       homeButton
-      containerStyle={{ marginTop: '64px' }}
+      containerStyle={{ margin: '64px 0' }}
     />
   );
 };

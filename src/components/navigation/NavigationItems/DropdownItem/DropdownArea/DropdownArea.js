@@ -26,6 +26,21 @@ const DropdownArea = (props) => {
     cols.push(i);
   }
 
+  let fetchError = props.toolbar ? (
+    <FetchError error={queryError} containerStyle={{ margin: 'auto' }} />
+  ) : (
+    <FetchError
+      error={queryError}
+      containerStyle={{ padding: '0' }}
+      titleStyle={{ fontSize: '22px', textAlign: 'left' }}
+      descriptionStyle={{
+        fontSize: '16px',
+        textAlign: 'left',
+        marginBottom: '0',
+      }}
+    />
+  );
+
   return (
     <div
       className={[
@@ -48,16 +63,7 @@ const DropdownArea = (props) => {
           }}
         />
       ) : hasQueryError ? (
-        props.toolbar ? (
-          <FetchError error={queryError} containerStyle={{ margin: 'auto' }} />
-        ) : (
-          <FetchError
-            error={queryError}
-            containerStyle={{ padding: '0' }}
-            titleStyle={{ fontSize: '22px', textAlign: 'left' }}
-            descriptionStyle={{ fontSize: '16px', textAlign: 'left' }}
-          />
-        )
+        fetchError
       ) : props.toolbar ? (
         cols.map((col) => {
           start = end;
