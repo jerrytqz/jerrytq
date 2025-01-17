@@ -13,9 +13,7 @@ interface IMenuButtonProps {
 const MenuButton: React.FC<IMenuButtonProps> = (props) => {
   return (
     <Button
-      className={[classes.Container, props.className ? props.className : '']
-        .join(' ')
-        .trim()}
+      className={[classes.Container, props.className].join(' ').trim()}
       onClick={props.onClick}
       ariaLabel={props.ariaLabel}
     >

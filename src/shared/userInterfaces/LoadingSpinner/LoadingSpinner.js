@@ -6,12 +6,7 @@ const LoadingSpinner = (props) => {
   return (
     <div
       style={props.style}
-      className={[
-        classes.LoadingSpinner,
-        props.className ? props.className : '',
-      ]
-        .join(' ')
-        .trim()}
+      className={[classes.LoadingSpinner, props.className].join(' ').trim()}
     />
   );
 };

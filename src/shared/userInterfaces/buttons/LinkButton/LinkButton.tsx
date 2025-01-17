@@ -13,7 +13,7 @@ const LinkButton: React.FC<ILinkButtonProps> = (props) => {
       className={[
         buttonClasses.Container,
         linkClasses.Container,
-        props.className ? props.className : '',
+        props.className,
       ]
         .join(' ')
         .trim()}

@@ -11,9 +11,7 @@ interface IButtonProps {
 const Button: React.FC<IButtonProps> = (props) => {
   return (
     <button
-      className={[classes.Container, props.className ? props.className : '']
-        .join(' ')
-        .trim()}
+      className={[classes.Container, props.className].join(' ').trim()}
       onClick={props.onClick}
       style={props.style}
       aria-label={props.ariaLabel}

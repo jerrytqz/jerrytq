@@ -19,7 +19,7 @@
   padding: 8px;
   width: 100%;
   max-width: 160px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -48,6 +48,6 @@
 
   .HomeButton {
     padding: 12px;
-    font-size: 16px;
+    font-size: 20px;
   }
 }
