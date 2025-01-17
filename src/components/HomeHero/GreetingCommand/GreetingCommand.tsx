@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import classes from './GreetingCode.module.css';
+import classes from './GreetingCommand.module.css';
 
 const WRITE_DELAY = 50;
 const DELETE_DELAY = 50;
@@ -14,7 +14,7 @@ const COMMANDS = [
   "console.log('Chocolate is my favorite food!');",
 ];
 
-const GreetingCode: React.FC = () => {
+const GreetingCommand: React.FC = () => {
   const command = useRef<HTMLElement | null>(null);
   const lineNumber = useRef<HTMLElement | null>(null);
   const [typingBarBlink, setTypingBarBlink] = useState(false);
@@ -79,11 +79,11 @@ const GreetingCode: React.FC = () => {
   }, []);
 
   return (
-    <pre className={classes.CommandContainer}>
-      <code className={classes.LineNumber} ref={lineNumber} />
-      <code className={classes.Command} ref={command}>
+    <pre className={classes.Container}>
+      <code className={classes.LineNumber} ref={lineNumber}>
         1
       </code>
+      <code className={classes.Command} ref={command} />
       <div
         className={`${classes.TypingBar} ${typingBarBlink ? classes.Blink : ''}`.trim()}
       />
@@ -91,4 +91,4 @@ const GreetingCode: React.FC = () => {
   );
 };
 
-export default GreetingCode;
+export default GreetingCommand;

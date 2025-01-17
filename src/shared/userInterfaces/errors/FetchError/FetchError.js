@@ -6,7 +6,7 @@ import Error from '../Error/Error';
 const FetchError = (props) => {
   return (
     <Error
-      title="Not Available!"
+      title="Unavailable!"
       description={
         !props.error || props.error instanceof InternalFetchError
           ? 'The resource you requested could not be retrieved. Please try again later.'

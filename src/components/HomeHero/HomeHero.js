@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import ASSETS_BASE_URL from '../../shared/assetsBase';
 import BubbleBackground from './BubbleBackground/BubbleBackground';
-import GreetingCode from './GreetingCode/GreetingCode';
+import GreetingCommand from './GreetingCommand/GreetingCommand';
 import classes from './HomeHero.module.css';
 
 const HomeHero = () => {
@@ -29,7 +29,7 @@ const HomeHero = () => {
       <h1 className={[classes.PrimaryText, classes.Min768Block].join(' ')}>
         Jerry TQ Zheng
       </h1>
-      <GreetingCode />
+      <GreetingCommand />
       <div
         className={[classes.StatusContainer, classes.Min768Flex].join(' ')}
         style={statusContainerStyle}
