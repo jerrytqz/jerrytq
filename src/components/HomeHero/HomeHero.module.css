@@ -35,44 +35,6 @@
   white-space: nowrap;
 }
 
-.CommandContainer {
-  display: flex;
-  z-index: 50;
-  margin-top: 20px;
-  box-shadow: 0px 0px 10px var(--color-dark);
-  border-radius: 5px;
-  background-color: #201c1c;
-  padding: 10px 12px;
-}
-
-.LineNumber {
-  color: var(--color-light);
-}
-
-.Command {
-  color: greenyellow;
-}
-
-.LineNumber,
-.Command {
-  font-size: 16px;
-}
-
-.TypingBar {
-  background-color: var(--color-light);
-  width: 2px;
-}
-
-.Blink {
-  animation: blink 1s step-start infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
 .StatusContainer {
   display: flex;
   position: absolute;

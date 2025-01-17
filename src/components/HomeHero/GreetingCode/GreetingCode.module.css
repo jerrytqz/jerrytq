@@ -1,0 +1,40 @@
+.CommandContainer {
+  display: flex;
+  z-index: 50;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px var(--color-dark);
+  border-radius: 5px;
+  background-color: #201c1c;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.LineNumber {
+  margin-right: 16px;
+  color: var(--color-light);
+}
+
+.Command {
+  color: greenyellow;
+}
+
+.TypingBar {
+  background-color: var(--color-light);
+  width: 2px;
+}
+
+.Blink {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .CommandContainer {
+    font-size: 16px;
+  }
+}
