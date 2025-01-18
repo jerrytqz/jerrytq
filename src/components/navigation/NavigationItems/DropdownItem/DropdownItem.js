@@ -7,7 +7,7 @@ import DropdownArea from './DropdownArea/DropdownArea';
 import classes from './DropdownItem.module.css';
 
 const DropdownItem = (props) => {
-  const dropdownItem = useRef(null);
+  const dropdownItemRef = useRef(null);
   const location = useLocation();
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -15,8 +15,8 @@ const DropdownItem = (props) => {
     if (showDropdown) {
       const mouseDownHandler = (event) => {
         if (
-          dropdownItem.current &&
-          !dropdownItem.current.contains(event.target) &&
+          dropdownItemRef.current &&
+          !dropdownItemRef.current.contains(event.target) &&
           event.target.tagName !== 'A'
         ) {
           setShowDropdown(false);
@@ -37,7 +37,7 @@ const DropdownItem = (props) => {
 
   return (
     <li
-      ref={dropdownItem}
+      ref={dropdownItemRef}
       className={props.toolbar ? classes.ContainerToolbar : classes.Container}
     >
       <button

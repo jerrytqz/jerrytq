@@ -6,7 +6,7 @@ import verifyIsJson from '../utility/verifyIsJson';
 const getRequest = async <TApiResult>(
   endpoint: string,
   params: Record<string, string> = {},
-): Promise<TApiResult> => {
+) => {
   const url = new URL(endpoint, API_BASE_URL);
   let response: Response;
 

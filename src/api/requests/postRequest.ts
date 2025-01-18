@@ -9,7 +9,7 @@ const postRequest = async <TApiResult>({
 }: {
   endpoint: string;
   data?: FormData;
-}): Promise<TApiResult> => {
+}) => {
   const url = new URL(endpoint, API_BASE_URL);
   let response: Response;
 

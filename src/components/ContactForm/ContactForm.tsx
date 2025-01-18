@@ -36,7 +36,7 @@ const ContactForm: React.FC = () => {
   });
 
   const submitHandler = useCallback(
-    (event: FormEvent<HTMLFormElement>): void => {
+    (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       const formElement = event.target as HTMLFormElement;
       doPostRequest({ endpoint: 'contact/', data: new FormData(formElement) });
