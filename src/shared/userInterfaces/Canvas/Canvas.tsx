@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react';
 
 interface ICanvasProps {
   className?: string;
-  draw: (ctx: CanvasRenderingContext2D, time?: number) => void;
-  isAnimated?: boolean;
+  drawImage?: (ctx: CanvasRenderingContext2D) => void;
+  drawFrame?: (ctx: CanvasRenderingContext2D, deltaTime: number) => void;
 }
 
 const Canvas: React.FC<ICanvasProps> = (props) => {
-  const { draw, isAnimated } = props;
+  const { drawImage, drawFrame } = props;
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -15,38 +15,46 @@ const Canvas: React.FC<ICanvasProps> = (props) => {
     const ctx = canvas?.getContext('2d');
 
     let animationFrameId: number | null;
-    let time = 0;
+    let prevTime: number = 0;
 
-    const animate = () => {
-      if (canvas && ctx) {
+    const animate = (timestamp: DOMHighResTimeStamp) => {
+      if (drawFrame && canvas && ctx) {
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        draw(ctx, time++);
-        animationFrameId = window.requestAnimationFrame(animate);
+
+        const deltaTime = (timestamp - prevTime) / 1000;
+        const clampedDeltaTime = Math.min(deltaTime, 0.1);
+        prevTime = timestamp;
+
+        drawFrame(ctx, clampedDeltaTime);
+
+        animationFrameId = window.requestAnimationFrame(
+          (timestamp: DOMHighResTimeStamp) => animate(timestamp),
+        );
       }
     };
 
     const illustrate = () => {
-      if (canvas && ctx) {
+      if (drawImage && canvas && ctx) {
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
-        draw(ctx);
+
+        drawImage(ctx);
       }
     };
 
-    if (isAnimated) {
-      animate();
-    } else {
-      illustrate();
-    }
+    illustrate();
+    animationFrameId = window.requestAnimationFrame(
+      (timestamp: DOMHighResTimeStamp) => animate(timestamp),
+    );
 
     return () => {
       if (animationFrameId) {
         window.cancelAnimationFrame(animationFrameId);
       }
     };
-  }, [draw, isAnimated]);
+  }, [drawImage, drawFrame]);
 
   return <canvas className={props.className} ref={canvasRef} />;
 };

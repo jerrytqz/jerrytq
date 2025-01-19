@@ -1,5 +1,4 @@
 import { TinyColor } from '@ctrl/tinycolor';
-import { useCallback } from 'react';
 
 import Canvas from '../../../shared/userInterfaces/Canvas/Canvas';
 import { randomInt } from '../../../shared/utility/randomInt';
@@ -11,8 +10,12 @@ interface IBubble {
   radius: number;
   speed: number;
   color: TinyColor;
-  draw: (ctx: CanvasRenderingContext2D, spacing: number) => void;
-  animate: (ctx: CanvasRenderingContext2D, spacing: number) => void;
+  illustrate: (ctx: CanvasRenderingContext2D, spacing: number) => void;
+  animate: (
+    ctx: CanvasRenderingContext2D,
+    spacing: number,
+    deltaTime: number,
+  ) => void;
 }
 
 class Bubble implements IBubble {
@@ -36,7 +39,7 @@ class Bubble implements IBubble {
     this.color = color;
   }
 
-  draw(ctx: CanvasRenderingContext2D, spacing: number) {
+  illustrate(ctx: CanvasRenderingContext2D, spacing: number) {
     ctx.save();
 
     ctx.beginPath();
@@ -47,7 +50,7 @@ class Bubble implements IBubble {
       0,
       Math.PI * 2,
     );
-    ctx.fillStyle = this.color.toRgbString();
+    ctx.fillStyle = this.color.brighten(25).toRgbString();
     ctx.fill();
 
     ctx.beginPath();
@@ -59,7 +62,7 @@ class Bubble implements IBubble {
       Math.PI * 2,
     );
     ctx.shadowBlur = 15;
-    ctx.shadowColor = this.color.brighten(15).toRgbString();
+    ctx.shadowColor = this.color.brighten(30).toRgbString();
     ctx.fillStyle = this.color.setAlpha(0.44).toRgbString();
     ctx.fill();
 
@@ -89,16 +92,16 @@ class Bubble implements IBubble {
     ctx.restore();
   }
 
-  animate(ctx: CanvasRenderingContext2D, spacing: number) {
-    this.y -= this.speed;
-    this.radius += 0.01 + this.speed / 100;
+  animate(ctx: CanvasRenderingContext2D, spacing: number, deltaTime: number) {
+    this.y -= this.speed * deltaTime;
+    this.radius += (1 + this.speed / 100) * deltaTime;
 
-    this.draw(ctx, spacing);
+    this.illustrate(ctx, spacing);
 
     if (this.y + this.radius + 100 < 0) {
       this.radius = randomInt(2, 4);
       this.y = ctx.canvas.height + this.radius + randomInt(10, 50);
-      this.speed = randomInt(1, 3);
+      this.speed = randomInt(100, 300);
       this.color = new TinyColor({
         r: randomInt(64, 255),
         g: randomInt(64, 255),
@@ -114,22 +117,22 @@ for (let i = 0; i < 16; ++i) {
   bubbles.push(new Bubble(i));
 }
 
+const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
+  let end = bubbles.length;
+
+  if (ctx.canvas.width < 768) {
+    end = Math.floor(bubbles.length / 3);
+  }
+
+  const slicedBubbles = bubbles.slice(0, end);
+
+  slicedBubbles.forEach((bubble: IBubble) => {
+    bubble.animate(ctx, ctx.canvas.width / slicedBubbles.length, deltaTime);
+  });
+};
+
 const BubbleBackground: React.FC = () => {
-  const draw = useCallback((ctx: CanvasRenderingContext2D) => {
-    let end = bubbles.length;
-
-    if (ctx.canvas.width < 768) {
-      end = Math.floor(bubbles.length / 3);
-    }
-
-    const slicedBubbles = bubbles.slice(0, end);
-
-    slicedBubbles.forEach((bubble: IBubble) => {
-      bubble.animate(ctx, ctx.canvas.width / slicedBubbles.length);
-    });
-  }, []);
-
-  return <Canvas className={classes.Container} draw={draw} isAnimated />;
+  return <Canvas className={classes.Container} drawFrame={drawFrame} />;
 };
 
 export default BubbleBackground;
