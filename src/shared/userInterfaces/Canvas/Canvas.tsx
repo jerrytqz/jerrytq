@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+import classes from './Canvas.module.css';
+
 interface ICanvasProps {
   className?: string;
   drawImage?: (ctx: CanvasRenderingContext2D) => void;
@@ -56,7 +58,12 @@ const Canvas: React.FC<ICanvasProps> = (props) => {
     };
   }, [drawImage, drawFrame]);
 
-  return <canvas className={props.className} ref={canvasRef} />;
+  return (
+    <canvas
+      className={[classes.Container, props.className].join(' ').trim()}
+      ref={canvasRef}
+    />
+  );
 };
 
 export default Canvas;

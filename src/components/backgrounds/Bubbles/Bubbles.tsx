@@ -2,7 +2,6 @@ import { TinyColor } from '@ctrl/tinycolor';
 
 import Canvas from '../../../shared/userInterfaces/Canvas/Canvas';
 import { randomInt } from '../../../shared/utility/randomInt';
-import classes from '../backgrounds.module.css';
 
 interface IBubble {
   x: number;
@@ -128,8 +127,12 @@ const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
   });
 };
 
-const BubblesBackground: React.FC = () => {
-  return <Canvas className={classes.Container} drawFrame={drawFrame} />;
+interface IBubblesBackgroundProps {
+  className?: string;
+}
+
+const BubblesBackground: React.FC<IBubblesBackgroundProps> = (props) => {
+  return <Canvas className={props.className} drawFrame={drawFrame} />;
 };
 
 export default BubblesBackground;
