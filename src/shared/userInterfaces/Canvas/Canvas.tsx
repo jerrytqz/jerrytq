@@ -15,7 +15,7 @@ const Canvas: React.FC<ICanvasProps> = (props) => {
     const ctx = canvas?.getContext('2d');
 
     let animationFrameId: number | null;
-    let prevTime: number = 0;
+    let prevTime = 0;
 
     const animate = (timestamp: DOMHighResTimeStamp) => {
       if (drawFrame && canvas && ctx) {

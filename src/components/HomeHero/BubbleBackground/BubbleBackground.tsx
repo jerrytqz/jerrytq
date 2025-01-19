@@ -11,6 +11,7 @@ interface IBubble {
   speed: number;
   color: TinyColor;
   illustrate: (ctx: CanvasRenderingContext2D, spacing: number) => void;
+  reset: (y: number, radius: number) => void;
   animate: (
     ctx: CanvasRenderingContext2D,
     spacing: number,
@@ -92,30 +93,38 @@ class Bubble implements IBubble {
     ctx.restore();
   }
 
+  reset(y: number, radius: number) {
+    this.y = y;
+    this.radius = radius;
+    this.speed = randomInt(100, 300);
+    this.color = new TinyColor({
+      r: randomInt(64, 255),
+      g: randomInt(64, 255),
+      b: randomInt(64, 255),
+    });
+  }
+
   animate(ctx: CanvasRenderingContext2D, spacing: number, deltaTime: number) {
+    this.illustrate(ctx, spacing);
+
     this.y -= this.speed * deltaTime;
     this.radius += (1 + this.speed / 100) * deltaTime;
 
-    this.illustrate(ctx, spacing);
-
     if (this.y + this.radius + 100 < 0) {
-      this.radius = randomInt(2, 4);
-      this.y = ctx.canvas.height + this.radius + randomInt(10, 50);
-      this.speed = randomInt(100, 300);
-      this.color = new TinyColor({
-        r: randomInt(64, 255),
-        g: randomInt(64, 255),
-        b: randomInt(64, 255),
-      });
+      this.reset(
+        ctx.canvas.height + this.radius + randomInt(10, 50),
+        randomInt(2, 4),
+      );
     }
   }
 }
 
 const bubbles: IBubble[] = [];
-
 for (let i = 0; i < 16; ++i) {
   bubbles.push(new Bubble(i));
 }
+
+let initialized = false;
 
 const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
   let end = bubbles.length;
@@ -125,6 +134,16 @@ const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
   }
 
   const slicedBubbles = bubbles.slice(0, end);
+
+  if (!initialized) {
+    bubbles.forEach((bubble: IBubble) => {
+      bubble.reset(
+        Math.floor(Math.random() * ctx.canvas.height),
+        randomInt(5, 7),
+      );
+    });
+    initialized = true;
+  }
 
   slicedBubbles.forEach((bubble: IBubble) => {
     bubble.animate(ctx, ctx.canvas.width / slicedBubbles.length, deltaTime);
