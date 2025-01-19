@@ -2,7 +2,7 @@ import { TinyColor } from '@ctrl/tinycolor';
 
 import Canvas from '../../../shared/userInterfaces/Canvas/Canvas';
 import { randomInt } from '../../../shared/utility/randomInt';
-import classes from './BubbleBackground.module.css';
+import classes from '../backgrounds.module.css';
 
 interface IBubble {
   x: number;
@@ -28,7 +28,7 @@ class Bubble implements IBubble {
 
   constructor(
     x: number,
-    y: number = -1000,
+    y: number = 0,
     radius: number = 0,
     speed: number = 0,
     color: TinyColor = new TinyColor('white'),
@@ -41,52 +41,30 @@ class Bubble implements IBubble {
   }
 
   illustrate(ctx: CanvasRenderingContext2D, spacing: number) {
+    const x = this.x * spacing + spacing / 2;
+
     ctx.save();
 
     ctx.beginPath();
-    ctx.arc(
-      this.x * spacing + spacing / 2,
-      this.y,
-      this.radius,
-      0,
-      Math.PI * 2,
-    );
+    ctx.arc(x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fillStyle = this.color.brighten(25).toRgbString();
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(
-      this.x * spacing + spacing / 2,
-      this.y,
-      this.radius * 1.6,
-      0,
-      Math.PI * 2,
-    );
+    ctx.arc(x, this.y, this.radius * 1.6, 0, Math.PI * 2);
     ctx.shadowBlur = 15;
     ctx.shadowColor = this.color.brighten(30).toRgbString();
     ctx.fillStyle = this.color.setAlpha(0.44).toRgbString();
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(
-      this.x * spacing + spacing / 2,
-      this.y,
-      this.radius,
-      0,
-      Math.PI * 2,
-    );
+    ctx.arc(x, this.y, this.radius, 0, Math.PI * 2);
     ctx.shadowBlur = 50;
     ctx.fillStyle = this.color.setAlpha(1).toRgbString();
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(
-      this.x * spacing + spacing / 2,
-      this.y,
-      this.radius,
-      0,
-      Math.PI * 2,
-    );
+    ctx.arc(x, this.y, this.radius, 0, Math.PI * 2);
     ctx.shadowBlur = 100;
     ctx.fill();
 
@@ -139,7 +117,7 @@ const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
     bubbles.forEach((bubble: IBubble) => {
       bubble.reset(
         Math.floor(Math.random() * ctx.canvas.height),
-        randomInt(5, 7),
+        randomInt(6, 8),
       );
     });
     initialized = true;
@@ -150,8 +128,8 @@ const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
   });
 };
 
-const BubbleBackground: React.FC = () => {
+const BubblesBackground: React.FC = () => {
   return <Canvas className={classes.Container} drawFrame={drawFrame} />;
 };
 
-export default BubbleBackground;
+export default BubblesBackground;
