@@ -1,7 +1,7 @@
 import { TinyColor } from '@ctrl/tinycolor';
 
 import Canvas from '../../../shared/userInterfaces/Canvas/Canvas';
-import { randomInt } from '../../../shared/utility/randomInt';
+import { randomInt } from '../../../shared/utils/randomInt';
 
 interface IBubble {
   x: number;

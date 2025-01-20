@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/navigation/Sidebar/Sidebar';
 import Toolbar from './components/navigation/Toolbar/Toolbar';
-import { ProjectNamesProvider } from './shared/context/ProjectNamesContext';
+import { ProjectNamesProvider } from './shared/contexts/ProjectNamesContext';
 
 const Layout = (props) => {
   const location = useLocation();

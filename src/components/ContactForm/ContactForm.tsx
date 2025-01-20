@@ -7,7 +7,7 @@ import { FormEvent, useCallback, useMemo } from 'react';
 import { IContactFormGet, IContactFormPost } from '../../api/interfaces';
 import getRequest from '../../api/requests/getRequest';
 import postRequest from '../../api/requests/postRequest';
-import InternalFetchError from '../../api/utility/internalFetchError';
+import InternalFetchError from '../../api/utils/internalFetchError';
 import LoadingSpinner from '../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import Button from '../../shared/userInterfaces/buttons/Button/Button';
 import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError';

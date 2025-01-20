@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useProjectNames } from '../../../../../shared/context/ProjectNamesContext';
+import { useProjectNames } from '../../../../../shared/contexts/ProjectNamesContext';
 import LoadingSpinner from '../../../../../shared/userInterfaces/LoadingSpinner/LoadingSpinner';
 import FetchError from '../../../../../shared/userInterfaces/errors/FetchError/FetchError';
 import classes from './DropdownArea.module.css';

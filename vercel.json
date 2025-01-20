@@ -3,10 +3,6 @@
     {
       "source": "/static/:path*",
       "destination": "/404"
-    },
-    {
-      "source": "/_vercel/insights/:path*",
-      "destination": "/404"
     }
   ]
 }

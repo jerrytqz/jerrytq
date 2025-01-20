@@ -1,7 +1,7 @@
 import API_BASE_URL from '../base';
 import { IApiError } from '../interfaces';
-import InternalFetchError from '../utility/internalFetchError';
-import verifyIsJson from '../utility/verifyIsJson';
+import InternalFetchError from '../utils/internalFetchError';
+import verifyIsJson from '../utils/verifyIsJson';
 
 const getRequest = async <TApiResult>(
   endpoint: string,
