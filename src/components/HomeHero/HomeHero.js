@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import ASSETS_BASE_URL from '../../shared/assetsBase';
-import BubblesBackground from '../backgrounds/Bubbles/Bubbles';
+import BubbleBackground from '../backgrounds/BubbleBackground/BubbleBackground';
 import GreetingCommand from './GreetingCommand/GreetingCommand';
 import classes from './HomeHero.module.css';
 
@@ -14,7 +14,7 @@ const HomeHero = () => {
 
   return (
     <section className={classes.Container}>
-      <BubblesBackground />
+      <BubbleBackground />
       <div className={classes.HeroImageWrapper}>
         <img
           className={classes.HeroImage}

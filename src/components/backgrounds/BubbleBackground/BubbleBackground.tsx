@@ -10,7 +10,7 @@ interface IBubble {
   speed: number;
   color: TinyColor;
   illustrate: (ctx: CanvasRenderingContext2D, spacing: number) => void;
-  reset: (y: number, radius: number) => void;
+  reset: (ctx: CanvasRenderingContext2D) => void;
   animate: (
     ctx: CanvasRenderingContext2D,
     spacing: number,
@@ -70,10 +70,10 @@ class Bubble implements IBubble {
     ctx.restore();
   }
 
-  reset(y: number, radius: number) {
-    this.y = y;
-    this.radius = radius;
-    this.speed = randomInt(100, 300);
+  reset(ctx: CanvasRenderingContext2D) {
+    this.y = ctx.canvas.height + this.radius + randomInt(10, 50);
+    this.radius = randomInt(2, 4);
+    this.speed = randomInt(90, 300);
     this.color = new TinyColor({
       r: randomInt(64, 255),
       g: randomInt(64, 255),
@@ -82,17 +82,13 @@ class Bubble implements IBubble {
   }
 
   animate(ctx: CanvasRenderingContext2D, spacing: number, deltaTime: number) {
-    this.illustrate(ctx, spacing);
-
     this.y -= this.speed * deltaTime;
     this.radius += (1 + this.speed / 100) * deltaTime;
-
     if (this.y + this.radius + 100 < 0) {
-      this.reset(
-        ctx.canvas.height + this.radius + randomInt(10, 50),
-        randomInt(2, 4),
-      );
+      this.reset(ctx);
     }
+
+    this.illustrate(ctx, spacing);
   }
 }
 
@@ -104,35 +100,36 @@ for (let i = 0; i < 16; ++i) {
 let initialized = false;
 
 const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
+  let adjustedDeltaTime = deltaTime;
   let end = bubbles.length;
-
   if (ctx.canvas.width < 768) {
     end = Math.floor(bubbles.length / 3);
   }
 
-  const slicedBubbles = bubbles.slice(0, end);
-
   if (!initialized) {
     bubbles.forEach((bubble: IBubble) => {
-      bubble.reset(
-        Math.floor(Math.random() * ctx.canvas.height),
-        randomInt(6, 8),
-      );
+      bubble.reset(ctx);
     });
+    adjustedDeltaTime += 2.5;
     initialized = true;
   }
 
+  const slicedBubbles = bubbles.slice(0, end);
   slicedBubbles.forEach((bubble: IBubble) => {
-    bubble.animate(ctx, ctx.canvas.width / slicedBubbles.length, deltaTime);
+    bubble.animate(
+      ctx,
+      ctx.canvas.width / slicedBubbles.length,
+      adjustedDeltaTime,
+    );
   });
 };
 
-interface IBubblesBackgroundProps {
+interface IBubbleBackgroundProps {
   className?: string;
 }
 
-const BubblesBackground: React.FC<IBubblesBackgroundProps> = (props) => {
+const BubbleBackground: React.FC<IBubbleBackgroundProps> = (props) => {
   return <Canvas className={props.className} drawFrame={drawFrame} />;
 };
 
-export default BubblesBackground;
+export default BubbleBackground;
