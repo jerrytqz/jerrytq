@@ -17,7 +17,7 @@ const Sidebar = (props) => {
           className={[classes.Container, props.show ? classes.Show : '']
             .join(' ')
             .trim()}
-          inert={props.show ? undefined : ''} // Temporary workaround until upgrade to React 19
+          inert={props.show ? undefined : ''}
         >
           <header className={classes.Header}>
             <MenuButton

@@ -92,29 +92,29 @@ class Bubble implements IBubble {
   }
 }
 
-const bubbles: IBubble[] = [];
+const BUBBLES: IBubble[] = [];
 for (let i = 0; i < 16; ++i) {
-  bubbles.push(new Bubble(i));
+  BUBBLES.push(new Bubble(i));
 }
 
 let initialized = false;
 
 const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
   let adjustedDeltaTime = deltaTime;
-  let end = bubbles.length;
+  let end = BUBBLES.length;
   if (ctx.canvas.width < 768) {
-    end = Math.floor(bubbles.length / 3);
+    end = Math.floor(BUBBLES.length / 3);
   }
 
   if (!initialized) {
-    bubbles.forEach((bubble: IBubble) => {
+    BUBBLES.forEach((bubble: IBubble) => {
       bubble.reset(ctx);
     });
     adjustedDeltaTime += 2.5;
     initialized = true;
   }
 
-  const slicedBubbles = bubbles.slice(0, end);
+  const slicedBubbles = BUBBLES.slice(0, end);
   slicedBubbles.forEach((bubble: IBubble) => {
     bubble.animate(
       ctx,

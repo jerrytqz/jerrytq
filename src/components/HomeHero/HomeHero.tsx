@@ -1,24 +1,43 @@
-import { useState } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 
 import ASSETS_BASE_URL from '../../shared/assetsBase';
+import { randomInt } from '../../shared/utils/randomInt';
 import BubbleBackground from '../backgrounds/BubbleBackground/BubbleBackground';
+import SnowfallBackground from '../backgrounds/SnowfallBackground/SnowfallBackground';
 import GreetingCommand from './GreetingCommand/GreetingCommand';
 import classes from './HomeHero.module.css';
 
-const HomeHero = () => {
-  const [statusStyle, setStatusStyle] = useState({ display: 'none' });
-  const [statusContainerStyle, setStatusContainerStyle] = useState({
-    borderRadius: '50%',
-    padding: '0',
+const BACKGROUNDS = [BubbleBackground, SnowfallBackground];
+
+const HomeHero: React.FC = () => {
+  const [statusStyle, setStatusStyle] = useState<CSSProperties>({
+    display: 'none',
   });
+  const [statusContainerStyle, setStatusContainerStyle] =
+    useState<CSSProperties>({
+      borderRadius: '50%',
+      padding: '0',
+    });
+
+  const [backgroundIndex, setBackgroundIndex] = useState(0);
+
+  useEffect(() => {
+    if (BACKGROUNDS.length > 0) {
+      setBackgroundIndex(randomInt(0, BACKGROUNDS.length - 1));
+    } else {
+      setBackgroundIndex(-1);
+    }
+  }, []);
 
   return (
     <section className={classes.Container}>
-      <BubbleBackground />
+      {backgroundIndex !== -1
+        ? React.createElement(BACKGROUNDS[backgroundIndex])
+        : null}
       <div className={classes.HeroImageWrapper}>
         <img
           className={classes.HeroImage}
-          src={new URL('home/hero/jerry-zheng.png', ASSETS_BASE_URL)}
+          src={new URL('home/hero/jerry-zheng.png', ASSETS_BASE_URL).toString()}
           alt="Jerry Zheng"
           draggable={false}
         />
