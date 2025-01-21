@@ -22,7 +22,7 @@ const DropdownArea = (props) => {
   let start = 0;
   let end = 0;
 
-  for (let i = 0; i < NUM_COLS; i++) {
+  for (let i = 0; i < NUM_COLS; ++i) {
     cols.push(i);
   }
 

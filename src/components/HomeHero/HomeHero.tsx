@@ -19,7 +19,7 @@ const HomeHero: React.FC = () => {
       padding: '0',
     });
 
-  const [backgroundIndex, setBackgroundIndex] = useState(0);
+  const [backgroundIndex, setBackgroundIndex] = useState(-1);
 
   useEffect(() => {
     if (BACKGROUNDS.length > 0) {

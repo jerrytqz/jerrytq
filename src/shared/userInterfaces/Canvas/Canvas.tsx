@@ -52,9 +52,8 @@ const Canvas: React.FC<ICanvasProps> = (props) => {
     );
 
     return () => {
-      if (animationFrameId) {
-        window.cancelAnimationFrame(animationFrameId);
-      }
+      if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
+      if (ctx) ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     };
   }, [drawImage, drawFrame]);
 

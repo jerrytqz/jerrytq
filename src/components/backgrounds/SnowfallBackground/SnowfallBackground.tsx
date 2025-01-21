@@ -3,126 +3,102 @@ import { TinyColor } from '@ctrl/tinycolor';
 import Canvas from '../../../shared/userInterfaces/Canvas/Canvas';
 import { randomInt } from '../../../shared/utils/randomInt';
 
-interface IBubble {
+interface ISnowflake {
+  color: TinyColor;
   x: number;
   y: number;
-  radius: number;
-  speed: number;
-  color: TinyColor;
-  illustrate: (ctx: CanvasRenderingContext2D, spacing: number) => void;
+  size: number;
+  a: number;
+  xDelta: number;
+  yDelta: number;
+  aDelta: number;
+  illustrate: (ctx: CanvasRenderingContext2D) => void;
   reset: (ctx: CanvasRenderingContext2D) => void;
-  animate: (
-    ctx: CanvasRenderingContext2D,
-    spacing: number,
-    deltaTime: number,
-  ) => void;
+  animate: (ctx: CanvasRenderingContext2D, deltaTime: number) => void;
 }
 
-class Bubble implements IBubble {
+class Snowflake implements ISnowflake {
+  color: TinyColor;
   x: number;
   y: number;
-  radius: number;
-  speed: number;
-  color: TinyColor;
+  size: number;
+  a: number;
+  xDelta: number;
+  yDelta: number;
+  aDelta: number;
 
-  constructor(
-    x: number,
-    y: number = 0,
-    radius: number = 0,
-    speed: number = 0,
-    color: TinyColor = new TinyColor('white'),
-  ) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.speed = speed;
-    this.color = color;
-  }
-
-  illustrate(ctx: CanvasRenderingContext2D, spacing: number) {
-    const x = this.x * spacing + spacing / 2;
-
-    ctx.save();
-
-    ctx.beginPath();
-    ctx.arc(x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.color.brighten(25).toRgbString();
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(x, this.y, this.radius * 1.6, 0, Math.PI * 2);
-    ctx.shadowBlur = 15;
-    ctx.shadowColor = this.color.brighten(30).toRgbString();
-    ctx.fillStyle = this.color.setAlpha(0.44).toRgbString();
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.shadowBlur = 50;
-    ctx.fillStyle = this.color.setAlpha(1).toRgbString();
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.shadowBlur = 100;
-    ctx.fill();
-
-    ctx.restore();
+  constructor() {
+    this.color = new TinyColor('white');
+    this.x = 0;
+    this.y = 0;
+    this.size = 0;
+    this.a = 0;
+    this.xDelta = 0;
+    this.yDelta = 0;
+    this.aDelta = 0;
   }
 
   reset(ctx: CanvasRenderingContext2D) {
-    this.y = ctx.canvas.height + this.radius + randomInt(10, 50);
-    this.radius = randomInt(2, 4);
-    this.speed = randomInt(90, 300);
+    const width = ctx.canvas.width;
+    const height = ctx.canvas.height;
+
     this.color = new TinyColor({
-      r: randomInt(64, 255),
-      g: randomInt(64, 255),
-      b: randomInt(64, 255),
+      r: 52,
+      g: 235,
+      b: 236,
     });
+    this.x = randomInt(0, width);
+    this.y = randomInt(-(height * 0.3), height);
+    this.size = randomInt(10, 20) / 10;
+    this.a = randomInt(-10, 10) / 10;
+    this.xDelta = ((this.x - width / 2) / (width / 2) / 2) * 100;
+    this.yDelta = randomInt(100, 150);
+    this.aDelta = randomInt(3, 5);
   }
 
-  animate(ctx: CanvasRenderingContext2D, spacing: number, deltaTime: number) {
-    this.y -= this.speed * deltaTime;
-    this.radius += (1 + this.speed / 100) * deltaTime;
-    if (this.y + this.radius + 100 < 0) {
+  illustrate(ctx: CanvasRenderingContext2D) {
+    const newAlpha = this.a < 0 ? 0 : this.a > 1 ? 1 : this.a;
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = this.color.setAlpha(newAlpha).toRgbString();
+    ctx.strokeStyle = this.color.setAlpha(newAlpha).toRgbString();
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+  }
+
+  animate(ctx: CanvasRenderingContext2D, deltaTime: number) {
+    this.x += this.xDelta * deltaTime;
+    this.y += this.yDelta * deltaTime;
+    this.a += this.aDelta * deltaTime;
+    if (this.a > 2) {
+      this.aDelta *= -1;
+    } else if (this.a < 0 && this.aDelta < 0) {
       this.reset(ctx);
     }
 
-    this.illustrate(ctx, spacing);
+    this.illustrate(ctx);
   }
 }
 
-const BUBBLES: IBubble[] = [];
-for (let i = 0; i < 16; ++i) {
-  BUBBLES.push(new Bubble(i));
+const SNOWFLAKES: ISnowflake[] = [];
+for (let i = 0; i < 500; ++i) {
+  SNOWFLAKES.push(new Snowflake());
 }
 
 let initialized = false;
 
 const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
-  let end = BUBBLES.length;
-  if (ctx.canvas.width < 768) {
-    end = Math.floor(BUBBLES.length / 3);
-  }
-
-  const slicedBubbles = BUBBLES.slice(0, end);
-
   if (!initialized) {
-    BUBBLES.forEach((bubble: IBubble) => {
-      bubble.reset(ctx);
-    });
-    slicedBubbles.forEach((bubble: IBubble) => {
-      bubble.animate(
-        ctx,
-        ctx.canvas.width / slicedBubbles.length,
-        deltaTime + (Math.random() * 2.5 + 0.25),
-      );
+    SNOWFLAKES.forEach((snowflake: ISnowflake) => {
+      snowflake.reset(ctx);
     });
     initialized = true;
-  } else {
-    slicedBubbles.forEach((bubble: IBubble) => {
-      bubble.animate(ctx, ctx.canvas.width / slicedBubbles.length, deltaTime);
-    });
+  }
+
+  for (let i = 0; i < SNOWFLAKES.length; ++i) {
+    SNOWFLAKES[i].animate(ctx, deltaTime);
   }
 };
 
