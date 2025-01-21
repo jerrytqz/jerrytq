@@ -100,28 +100,30 @@ for (let i = 0; i < 16; ++i) {
 let initialized = false;
 
 const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
-  let adjustedDeltaTime = deltaTime;
   let end = BUBBLES.length;
   if (ctx.canvas.width < 768) {
     end = Math.floor(BUBBLES.length / 3);
   }
 
+  const slicedBubbles = BUBBLES.slice(0, end);
+
   if (!initialized) {
     BUBBLES.forEach((bubble: IBubble) => {
       bubble.reset(ctx);
     });
-    adjustedDeltaTime += 2.5;
+    slicedBubbles.forEach((bubble: IBubble) => {
+      bubble.animate(
+        ctx,
+        ctx.canvas.width / slicedBubbles.length,
+        deltaTime + (Math.random() * 2.5 + 0.25),
+      );
+    });
     initialized = true;
+  } else {
+    slicedBubbles.forEach((bubble: IBubble) => {
+      bubble.animate(ctx, ctx.canvas.width / slicedBubbles.length, deltaTime);
+    });
   }
-
-  const slicedBubbles = BUBBLES.slice(0, end);
-  slicedBubbles.forEach((bubble: IBubble) => {
-    bubble.animate(
-      ctx,
-      ctx.canvas.width / slicedBubbles.length,
-      adjustedDeltaTime,
-    );
-  });
 };
 
 interface IBubbleBackgroundProps {
