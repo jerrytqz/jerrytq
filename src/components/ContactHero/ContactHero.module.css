@@ -1,9 +1,14 @@
 .Container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-primary);
   padding: 60px 30px;
 }
 
 .Header {
+  z-index: 50;
   text-align: center;
 }
 
@@ -12,7 +17,16 @@
   font-size: 72px;
 }
 
-.Subtitle {
-  margin-top: 42px;
-  font-weight: normal;
+.Min768Block {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .Min768None {
+    display: none;
+  }
+
+  .Min768Block {
+    display: block;
+  }
 }

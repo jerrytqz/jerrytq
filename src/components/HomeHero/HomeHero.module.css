@@ -6,7 +6,6 @@
   align-items: center;
   background-color: var(--color-primary);
   padding: 60px;
-  overflow: hidden;
 }
 
 .HeroImageWrapper {

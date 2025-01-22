@@ -15,7 +15,6 @@
   margin: 0 0 32px;
   max-width: 338px;
   font-size: 18px;
-  text-align: center;
 }
 
 .Form > div {
@@ -114,7 +113,6 @@ textarea {
   .Description {
     margin: 0 48px 0 0;
     max-width: 290px;
-    text-align: left;
   }
 
   .SubmitMsg {
