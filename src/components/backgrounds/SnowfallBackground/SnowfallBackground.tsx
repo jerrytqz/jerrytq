@@ -12,9 +12,9 @@ interface ISnowflake {
   xDelta: number;
   yDelta: number;
   aDelta: number;
-  illustrate: (ctx: CanvasRenderingContext2D) => void;
   reset: (ctx: CanvasRenderingContext2D) => void;
-  animate: (ctx: CanvasRenderingContext2D, deltaTime: number) => void;
+  draw: (ctx: CanvasRenderingContext2D) => void;
+  update: (ctx: CanvasRenderingContext2D, deltaTime: number) => void;
 }
 
 class Snowflake implements ISnowflake {
@@ -56,7 +56,7 @@ class Snowflake implements ISnowflake {
     this.aDelta = randomInt(3, 5);
   }
 
-  illustrate(ctx: CanvasRenderingContext2D) {
+  draw(ctx: CanvasRenderingContext2D) {
     const newAlpha = this.a < 0 ? 0 : this.a > 1 ? 1 : this.a;
 
     ctx.beginPath();
@@ -68,7 +68,7 @@ class Snowflake implements ISnowflake {
     ctx.closePath();
   }
 
-  animate(ctx: CanvasRenderingContext2D, deltaTime: number) {
+  update(ctx: CanvasRenderingContext2D, deltaTime: number) {
     this.x += this.xDelta * deltaTime;
     this.y += this.yDelta * deltaTime;
     this.a += this.aDelta * deltaTime;
@@ -77,8 +77,6 @@ class Snowflake implements ISnowflake {
     } else if (this.a < 0 && this.aDelta < 0) {
       this.reset(ctx);
     }
-
-    this.illustrate(ctx);
   }
 }
 
@@ -97,9 +95,10 @@ const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
     initialized = true;
   }
 
-  for (let i = 0; i < SNOWFLAKES.length; ++i) {
-    SNOWFLAKES[i].animate(ctx, deltaTime);
-  }
+  SNOWFLAKES.forEach((snowflake) => {
+    snowflake.draw(ctx);
+    snowflake.update(ctx, deltaTime);
+  });
 };
 
 interface ISnowfallBackgroundProps {
