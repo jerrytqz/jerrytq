@@ -30,7 +30,12 @@ const HomeHero: React.FC = () => {
   }, []);
 
   return (
-    <section className={classes.Container}>
+    <section
+      className={classes.Container}
+      onClick={() =>
+        setBackgroundIndex((prev) => (prev + 1) % BACKGROUNDS.length)
+      }
+    >
       {backgroundIndex !== -1
         ? React.createElement(BACKGROUNDS[backgroundIndex])
         : null}
