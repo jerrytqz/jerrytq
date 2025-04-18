@@ -68,7 +68,7 @@ const HomeHero: React.FC = () => {
       >
         ✨
         <div className={classes.StatusMessage} style={statusStyle}>
-          Seeking Summer 2025 internships!
+          Seeking Winter 2026 internships!
         </div>
       </div>
     </section>
