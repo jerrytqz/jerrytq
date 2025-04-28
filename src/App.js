@@ -44,7 +44,7 @@ const App = () => {
           </Routes>
         </ErrorBoundary>
       </Layout>
-      <Analytics />
+      <Analytics debug={false} />
       <ScrollRestoration />
     </>
   );
