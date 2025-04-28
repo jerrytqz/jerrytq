@@ -1,10 +1,10 @@
-import SnowfallBackground from '../backgrounds/SnowfallBackground/SnowfallBackground';
+import ConnectedNetworkBackground from '../backgrounds/StarBackground/ConnectedNetworkBackground';
 import classes from './ContactHero.module.css';
 
 const ContactHero: React.FC = () => {
   return (
     <section className={classes.Container}>
-      <SnowfallBackground />
+      <ConnectedNetworkBackground />
       <header className={classes.Header}>
         <h1 className={[classes.Title, classes.Min768Block].join(' ')}>
           Contact Me!
