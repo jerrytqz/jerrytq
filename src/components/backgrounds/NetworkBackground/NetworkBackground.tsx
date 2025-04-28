@@ -91,14 +91,14 @@ const drawFrame = (ctx: CanvasRenderingContext2D, deltaTime: number) => {
   }
 };
 
-interface IConnectedNetworkBackgroundProps {
+interface INetworkBackgroundProps {
   className?: string;
 }
 
-const ConnectedNetworkBackground: React.FC<
-  IConnectedNetworkBackgroundProps
-> = ({ className }) => {
+const NetworkBackground: React.FC<INetworkBackgroundProps> = ({
+  className,
+}) => {
   return <Canvas className={className} drawFrame={drawFrame} />;
 };
 
-export default ConnectedNetworkBackground;
+export default NetworkBackground;

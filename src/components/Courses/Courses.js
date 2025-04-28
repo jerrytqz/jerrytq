@@ -8,7 +8,7 @@ import FetchError from '../../shared/userInterfaces/errors/FetchError/FetchError
 import Course from './Course/Course';
 import classes from './Courses.module.css';
 
-const TERM_NAMES = ['1A', '1B', 'WT1', '2A', 'WT2', '2B', 'WT3', '3A'];
+const TERM_NAMES = ['1A', '1B', 'WT1', '2A', 'WT2', '2B', 'WT3', '3A', '3B'];
 
 const Courses = () => {
   const [termName, setTermName] = useState(TERM_NAMES[TERM_NAMES.length - 1]);
